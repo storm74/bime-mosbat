@@ -1,0 +1,104 @@
+/*yekan*/
+@font-face {
+	font-family: 'yekan';
+	src: url(../fonts/Yekan.eot);
+	src: url(../fonts/Yekan.eot?#iefix) format("embedded-opentype"), url(../fonts/Yekan.woff) format("woff"), url(../fonts/Yekan.ttf) format("truetype"), url(fonts/Yekan.svg#BYekan) format("svg");
+	font-weight: normal;
+	font-style: normal
+}
+/*yekan*/
+/*iransans*/
+
+@font-face {
+	font-family: 'IRANSans-web';
+	src: url('../fonts/iransans/IRANSans-Bold.eot?#') format('eot'),  /* IE6–8 */
+url('../fonts/iransans/IRANSans-Bold.woff2') format('woff2'),  /* Chrome36+, Opera24+*/
+url('../fonts/iransans/IRANSans-Bold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'IRANSans-web';
+	src: url('../fonts/iransans/IRANSans-Black.eot?#') format('eot'),  /* IE6–8 */
+url('../fonts/iransans/IRANSans-Black.woff2') format('woff2'),  /* Chrome36+, Opera24+*/
+url('../fonts/iransans/IRANSans-Black.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+	font-weight: 900;
+}
+
+
+@font-face {
+	font-family: 'IRANSans-web';
+	src: url('IRANSans-UltraLight.eot?#') format('eot'),  /* IE6–8 */
+url('IRANSans-UltraLight.woff2') format('woff2'),  /* Chrome36+, Opera24+*/
+url('IRANSans-UltraLight.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+	font-weight: 200;
+}
+
+@font-face {
+	font-family: 'IRANSans-web';
+	src: url('../fonts/iransans/IRANSans-Light-Expanded.eot?#') format('eot'),  /* IE6–8 */
+url('../fonts/iransans/IRANSans-Light-Expanded.woff2') format('woff2'),  /* Chrome36+, Opera24+*/
+url('../fonts/iransans/IRANSans-Light-Expanded.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+	font-weight: 300;
+}
+
+
+@font-face {
+	font-family: 'IRANSans-web';
+	src: url('../fonts/iransans/IRANSANSExpanded.eot?#') format('eot'),  /* IE6–8 */
+url('../fonts/iransans/IRANSANSExpanded.woff2') format('woff2'),  /* Chrome36+, Opera24+*/
+url('../fonts/iransans/IRANSANSExpanded.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+	font-weight: normal;
+}
+
+.IRANSansUltraLight {
+	font-family: IRANSans-web;
+	color: #000;
+    margin-right: 50px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	font-weight: 200;
+}
+
+.IRANSansLight {
+	font-family: IRANSans-web;
+	color: #000;
+    margin-right: 50px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	font-weight: 300;
+}
+
+.IRANSans {
+	font-family: IRANSans-web;
+	color: #000;
+    margin-right: 50px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	font-weight: normal;
+}
+
+.IRANSansBold {
+	font-family: IRANSans-web;
+	color: #000;
+    margin-right: 50px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	font-weight: bold;
+}
+
+.IRANSansBlack {
+	font-family: IRANSans-web;
+	color: #000;
+    margin-right: 50px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	font-weight: 900;
+}
+
+/*iransans*/
