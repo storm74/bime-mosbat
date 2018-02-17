@@ -310,6 +310,42 @@
                         <a class="hover_shadow" href="tables.html"><i class="fa fa-fire-extinguisher yellow" aria-hidden="true"></i> بیمه آتش سوزی</a>
                     </li>
                     <li>
+                        <a class="hover_shadow" href="#"><i class="fa fa-user yellow" aria-hidden="true"></i>  کاربران  <span class="fa arrow"></span> </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href=""> مشاهده همه</a>
+                            </li>
+                            <li>
+                                <a href="morris.html"> افزودن</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list yellow" aria-hidden="true"></i>  بیمه شخص ثالث<span class="fa arrow"></span> </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="flot.html"> مشاهده لیست خودروها</a>
+                            </li>
+                            <li>
+                                <a href="morris.html"> افزودن</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list yellow" aria-hidden="true"></i>  بیمه شخص ثالث<span class="fa arrow"></span> </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="flot.html"> مشاهده لیست خودروها</a>
+                            </li>
+                            <li>
+                                <a href="morris.html"> افزودن</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
                     <li>
                         <a class="hover_shadow" href="#"><i class="fa fa-sitemap fa-fw yellow"></i> گزینه ای دیگر<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -368,10 +404,11 @@
 </div>
 <!-- /#wrapper -->
 @yield('footer')
-@yield('footer-links')
+
 <!-- jQuery -->
 <script src="{{asset('admin_assets/vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('admin_assets/dist/js/persianumber.js')}}"></script>
+@yield('footer-links')
 <!-- Bootstrap Core JavaScript -->
 <script src="{{asset('admin_assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 
