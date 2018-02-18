@@ -32,53 +32,33 @@
                 </thead>
                 <tbody>
                 @if($users)
+                    <?php $i=1; ?>
                     @foreach($users as $user)
-                <tr class="odd gradeX">
+                        @if($i % 2 == 0)
+                            <?php $table_class="even gradeC" ?>
+                            @else
+	                        <?php $table_class="odd gradeX" ?>
+                        @endif
+
+                <tr class={{$table_class}}>
                     <td><input type="checkbox"></td>
-                    <td>$user->id</td>
-                    <td>مطلب تست 1</td>
-                    <td class="center"><img src="{{asset('admin_assets/images/profiles/1.jpg')}}" alt=""></td>
-                    <td class="center">96/12/2</td>
-                    <td class="center">مدیر کل</td>
-                    <td class="center green">فعال</td>
+                    <td>{{$user->id}}</td>
+                    <td>{{$user->name}}1</td>
+                    <td class="center">{{$user->email}}</td>
+                    <td class="center"><img src="{{asset('admin_assets/images/profiles/'.$user->image)}}" alt=""></td>
+                    <td class="center">{{$user->created_at->diffForHumans()}}</td>
+                    <td class="center">{{$user->role->name}}</td>
+                    @if($user->is_active ==0)
+                        <td class="center green">فعال</td>
+                    @else
+                        <td class="center red">غیر فعال</td>
+                     @endif
                     <td class="center"><a href=""><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
-                    <td class="center"><i class="fa fa-trash red fa-2x" aria-hidden="true"></i></td>
-                </tr>
-                @endforeach
-                @endif
-                <tr class="even gradeC">
-                    <td><input type="checkbox"></td>
-                    <td>1</td>
-                    <td>مطلب باحال</td>
-                    <td class="center"><img src="{{asset('admin_assets/images/profiles/2.jpg')}}" alt=""></td>
-                    <td class="center">96/12/10</td>
-                    <td class="center">مدیر کل</td>
-                    <td class="center green">فعال</td>
-                    <td class="center"><a href=""><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
-                    <td class="center"><i class="fa fa-trash red fa-2x" aria-hidden="true"></i></td>
-                </tr>
-                <tr class="odd gradeX">
-                    <td><input type="checkbox"></td>
-                    <td>1</td>
-                    <td>مطلب تست 1</td>
-                    <td class="center"><img src="{{asset('admin_assets/images/profiles/1.jpg')}}" alt=""></td>
-                    <td class="center">96/12/2</td>
-                    <td class="center">مدیر کل</td>
-                    <td class="center red">غیر فعال</td>
-                    <td class="center"><a href=""><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
-                    <td class="center"><i class="fa fa-trash red fa-2x" aria-hidden="true"></i></td>
-                </tr>
-                <tr class="even gradeC">
-                    <td><input type="checkbox"></td>
-                    <td>1</td>
-                    <td>مطلب تست 2</td>
-                    <td class="center"><img src="{{asset('admin_assets/images/profiles/2.jpg')}}" alt=""></td>
-                    <td class="center">96/12/10</td>
-                    <td class="center">مدیر کل</td>
-                    <td class="center green">فعال</td>
-                    <td class="center"><a href=""><a href=""><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></a></td>
                     <td class="center"><a href=""><i class="fa fa-trash red fa-2x" aria-hidden="true"></i></a></td>
                 </tr>
+                        <?php $i = $i +1; ?>
+                @endforeach
+                @endif
                 </tbody>
             </table>
             <!-- /.table-responsive -->
