@@ -313,10 +313,10 @@
                         <a class="hover_shadow" href="#"><i class="fa fa-user yellow" aria-hidden="true"></i>  کاربران  <span class="fa arrow"></span> </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href=""> مشاهده همه</a>
+                                <a href="{{route('users.index')}}"> مشاهده همه</a>
                             </li>
                             <li>
-                                <a href="morris.html"> افزودن</a>
+                                <a href="{{route('users.create')}}"> افزودن</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

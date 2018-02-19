@@ -43,18 +43,25 @@
                 <tr class={{$table_class}}>
                     <td><input type="checkbox"></td>
                     <td>{{$user->id}}</td>
-                    <td>{{$user->name}}1</td>
+                    <td>{{$user->name}}</td>
                     <td class="center">{{$user->email}}</td>
-                    <td class="center"><img src="{{asset('admin_assets/images/profiles/'.$user->image)}}" alt=""></td>
-                    <td class="center">{{$user->created_at->diffForHumans()}}</td>
+                    <td class="center">
+                    @if($user->photo)
+                            <img src="{{asset($user->photo->path)}}" alt="">
+                        @else
+                        <h5>عکسی موجود نیست</h5>
+                        @endif
+                    </td>
+
+                    <td class="center" style="direction: ltr">{{$user->created_at->diffForHumans()}}</td>
                     <td class="center">{{$user->role->name}}</td>
-                    @if($user->is_active ==0)
+                    @if($user->is_active ==1)
                         <td class="center green">فعال</td>
                     @else
                         <td class="center red">غیر فعال</td>
                      @endif
-                    <td class="center"><a href=""><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
-                    <td class="center"><a href=""><i class="fa fa-trash red fa-2x" aria-hidden="true"></i></a></td>
+                    <td class="center"><a href="{{route('users.edit',['id'=>$user->id])}}"><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
+                    <td class="center"><a href="{{route('users.destroy',['id'=>$user->id])}}"><i class="fa fa-trash red fa-2x" aria-hidden="true"></i></a></td>
                 </tr>
                         <?php $i = $i +1; ?>
                 @endforeach
@@ -71,6 +78,16 @@
     <script src="{{asset('admin_assets/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('admin_assets/vendor/datatables-plugins/dataTables.bootstrap.min.js')}}"></script>
     <script src="{{asset('admin_assets/vendor/datatables-responsive/dataTables.responsive.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#dataTables-example').DataTable({
+                responsive: true,
+                select: {
+                    style: 'single'
+                }
+            });
+        });
+    </script>
 @endsection()
 {{--@section('page-header')--}}
 {{--@endsection()--}}
