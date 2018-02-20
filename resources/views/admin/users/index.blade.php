@@ -14,6 +14,28 @@
             نمایش کاربران سایت
         </div>
         <!-- /.panel-heading -->
+        @if(Session::has('deleted_user'))
+            <div style="line-height: 26px;font-size: 106%;font-family: yekan;" class="alert alert-danger alert-dismissable fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>سامانه اطلاع رسانی هوشمند : </strong>
+                {{session('deleted_user')}}
+            </div>
+            @endif
+        @if(Session::has('added_user'))
+            <div style="line-height: 26px;font-size: 106%;font-family: yekan;" class="alert alert-success alert-dismissable fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>سامانه اطلاع رسانی هوشمند : </strong>
+                {{session('added_user')}}
+            </div>
+        @endif
+        @if(Session::has('updated_user'))
+            <div style="line-height: 26px;font-size: 106%;font-family: yekan;" class="alert alert-success alert-dismissable fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>سامانه اطلاع رسانی هوشمند : </strong>
+                {{session('updated_user')}}
+            </div>
+        @endif
+        <p class="sucsess"></p>
         <div class="panel-body">
             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
@@ -61,7 +83,24 @@
                         <td class="center red">غیر فعال</td>
                      @endif
                     <td class="center"><a href="{{route('users.edit',['id'=>$user->id])}}"><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
-                    <td class="center"><a href="{{route('users.destroy',['id'=>$user->id])}}"><i class="fa fa-trash red fa-2x" aria-hidden="true"></i></a></td>
+
+
+
+
+                        {!! Form::open(['method'=>'DELETE','action'=>['AdminUsersController@destroy','id'=>$user->id]]) !!}
+
+                    <td class="center">
+                        {!! Form::button("<i class='fa fa-trash red fa-2x' aria-hidden='true'></i>",['type'=>'submit','style'=>'background: none;border: none;']) !!}
+                    </td>
+
+                    {{--<td class="center"><a href="{{route('users.destroy',['id'=>$user->id])}}"><i class="fa fa-trash red fa-2x" aria-hidden="true"></i></a></td>--}}
+                            {!! Form::close() !!}
+
+
+
+
+
+
                 </tr>
                         <?php $i = $i +1; ?>
                 @endforeach

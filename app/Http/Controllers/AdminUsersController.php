@@ -8,6 +8,7 @@ use App\Photo;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
 class AdminUsersController extends Controller
@@ -55,6 +56,8 @@ class AdminUsersController extends Controller
 	    $role_id = $request->role;
 	    $role = Role::findOrFail($role_id);
 	    $role->users()->save($user);
+	    $message ="حساب کاربری".' '.$user->name." "."با موفقیت ایجاد شد";
+	    Session::flash('added_user',$message);
 	    return redirect()->action('AdminUsersController@index');
     }
 
@@ -90,6 +93,8 @@ class AdminUsersController extends Controller
      */
     public function update(UsersEditRequest $request, $id)
     {
+    	$user_old_name = User::findOrFail($id)->name;
+    	$user_new_name = $request->name;
     	if (trim($request->password)==''){
 			$input = $request->except('password');
 	    }else{
@@ -98,14 +103,27 @@ class AdminUsersController extends Controller
 	    }
     	$user = User::findOrFail($id);
     	if ($file=$request->file('photo_id')){
+    		if ($user->photo){
+			    $old_photo_name = $user->photo->id;
+			    $old_photo_path = $user->photo->path;
+			    Photo::destroy($old_photo_name);
+			    unlink(public_path()."/".$user->photo->path);
+		    }
 			$name = time().$file->getClientOriginalName();
 		    $file->move('admin_assets/images/profiles',$name);
 		    $photo = Photo::create(['path'=>$name]);
+
 		    $input['photo_id'] = $photo->id;
 	    }
 	    $role_id = $request->role;
     	$input['role_id'] = $role_id;
 		$user->update($input);
+		if($user_new_name==$user_old_name){
+			$message ="حساب کاربری".' '.$user_new_name." "."با موفقیت به روز رسانی شد";
+		}else{
+			$message ="حساب کاربری".' '.$user_old_name."به نام "." ".$user_new_name." "." تغیر یافت و سایر تغیرات نیز با موفقیت ذخیره شدند";
+		}
+	    Session::flash('updated_user',$message);
 	    return redirect()->action('AdminUsersController@index');
     }
 
@@ -117,6 +135,15 @@ class AdminUsersController extends Controller
      */
     public function destroy($id)
     {
-
+	        $myUser = User::findOrFail($id);
+	        $name = $myUser->name;
+			$user = User::findOrFail($id);
+			unlink(public_path()."/".$user->photo->path);
+			$photo_id = $user->photo->id;
+			$user->delete();
+	        Photo::destroy($user->photo->id);
+	    $message ="حساب کاربری".' '.$name." "."با موفقیت حذف گردید";
+	        Session::flash('deleted_user',$message);
+	        return redirect()->action('AdminUsersController@index');
     }
 }
