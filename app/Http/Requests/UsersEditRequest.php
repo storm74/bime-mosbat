@@ -29,4 +29,13 @@ class UsersEditRequest extends FormRequest
 	        'role'=>'required'
         ];
     }
+	public function messages()
+	{
+
+		return [
+			'name.required'=>'لطفا نام و نام خانوادگی خود را وارد کنید',
+			'email.required'=>'لطفا ایمیل خود را وارد کنید',
+			'role.required'=>'لطفا سطح کاربری، کاربر جدید را انتخاب نمایید',
+		];
+	}
 }

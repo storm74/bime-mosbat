@@ -69,7 +69,7 @@
                     <td class="center">{{$user->email}}</td>
                     <td class="center">
                     @if($user->photo)
-                            <img src="{{asset($user->photo->path)}}" alt="">
+                            <img src="{{asset($user->photo->user_image())}}" alt="">
                         @else
                         <h5>عکسی موجود نیست</h5>
                         @endif

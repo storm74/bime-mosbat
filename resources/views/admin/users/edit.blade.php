@@ -7,7 +7,7 @@
         <div style="padding: 0 1px 11px 0;">
             <h3 class="green">{{$user->name}}</h3>
         @if($user->photo)
-                <img style="width: 100%" src="{{asset($user->photo->path)}}" alt="">
+                <img style="width: 100%" src="{{asset($user->photo->user_image())}}" alt="">
             @else
                 <img style="width: 100%" src="{{asset('admin_assets/images/icons/profile_placeholder.png')}}" alt="">
                 <p class="seondary-color">لطفا تصویری برای پروفایل خود انتخاب نمایید</p>

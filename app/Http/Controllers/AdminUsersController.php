@@ -9,7 +9,6 @@ use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Storage;
 
 class AdminUsersController extends Controller
 {
@@ -145,5 +144,6 @@ class AdminUsersController extends Controller
 	    $message ="حساب کاربری".' '.$name." "."با موفقیت حذف گردید";
 	        Session::flash('deleted_user',$message);
 	        return redirect()->action('AdminUsersController@index');
+
     }
 }
