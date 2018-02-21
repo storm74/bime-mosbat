@@ -334,13 +334,13 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list yellow" aria-hidden="true"></i>  بیمه شخص ثالث<span class="fa arrow"></span> </a>
+                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list yellow" aria-hidden="true"></i>  دسته بندی ها<span class="fa arrow"></span> </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html"> مشاهده لیست خودروها</a>
+                                <a href="{{route('categories.index')}}"> مشاهده همه</a>
                             </li>
                             <li>
-                                <a href="morris.html"> افزودن</a>
+                                <a href="{{route('categories.create')}}"> افزودن</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
