@@ -277,22 +277,22 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a class="hover_shadow" href="index.html"><i class="fa fa-dashboard fa-fw yellow"></i> پیشخوان</a>
+                        <a class="hover_shadow" href="index.html"><i class="fa fa-dashboard fa-fw orange"></i> پیشخوان</a>
                     </li>
                     <li>
-                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list yellow" aria-hidden="true"></i>  لیست شرکت های بیمه<span class="fa arrow"></span> </a>
+                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list orange" aria-hidden="true"></i>  لیست شرکت های بیمه<span class="fa arrow"></span> </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html"> مشاهده همه</a>
+                                <a href="{{route('insurance.index')}}"> مشاهده همه</a>
                             </li>
                             <li>
-                                <a href="morris.html"> افزودن</a>
+                                <a href="{{route('insurance.create')}}"> افزودن</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list yellow" aria-hidden="true"></i>  بیمه شخص ثالث<span class="fa arrow"></span> </a>
+                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list orange" aria-hidden="true"></i>  بیمه شخص ثالث<span class="fa arrow"></span> </a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="flot.html"> مشاهده لیست خودروها</a>
@@ -304,13 +304,13 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a class="hover_shadow" href="tables.html"><i class="fa fa-life-ring yellow" aria-hidden="true"></i> بیمه عمر</a>
+                        <a class="hover_shadow" href="tables.html"><i class="fa fa-life-ring orange" aria-hidden="true"></i> بیمه عمر</a>
                     </li>
                     <li>
-                        <a class="hover_shadow" href="tables.html"><i class="fa fa-fire-extinguisher yellow" aria-hidden="true"></i> بیمه آتش سوزی</a>
+                        <a class="hover_shadow" href="tables.html"><i class="fa fa-fire-extinguisher orange" aria-hidden="true"></i> بیمه آتش سوزی</a>
                     </li>
                     <li>
-                        <a class="hover_shadow" href="#"><i class="fa fa-user yellow" aria-hidden="true"></i>  کاربران  <span class="fa arrow"></span> </a>
+                        <a class="hover_shadow" href="#"><i class="fa fa-user orange" aria-hidden="true"></i>  کاربران  <span class="fa arrow"></span> </a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{route('users.index')}}"> مشاهده همه</a>
@@ -322,7 +322,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list yellow" aria-hidden="true"></i>  نوشته ها<span class="fa arrow"></span> </a>
+                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-file-pdf-o orange" aria-hidden="true"></i>  نوشته ها<span class="fa arrow"></span> </a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{route('posts.index')}}"> مشاهده همه مقالات</a>
@@ -334,20 +334,11 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list yellow" aria-hidden="true"></i>  دسته بندی ها<span class="fa arrow"></span> </a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{route('categories.index')}}"> مشاهده همه</a>
-                            </li>
-                            <li>
-                                <a href="{{route('categories.create')}}"> افزودن</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
+                        <a class="hover_shadow" href="{{route('categories.index')}}"><i class="fa fa-archive orange" aria-hidden="true"></i>  دسته بندی ها<span class="fa arrow"></span> </a>
                     </li>
                     <li>
                     <li>
-                        <a class="hover_shadow" href="#"><i class="fa fa-sitemap fa-fw yellow"></i> گزینه ای دیگر<span class="fa arrow"></span></a>
+                        <a class="hover_shadow" href="#"><i class="fa fa-sitemap fa-fw orange"></i> گزینه ای دیگر<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a class="hover_black" href="#">Second Level Item</a>

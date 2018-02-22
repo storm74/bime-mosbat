@@ -4,35 +4,40 @@
     <link href="{{asset('admin_assets/vendor/datatables-plugins/dataTables.bootstrap.css')}}" rel="stylesheet">
     <!-- DataTables Responsive CSS -->
     <link href="{{asset('admin_assets/vendor/datatables-responsive/dataTables.responsive.css')}}" rel="stylesheet">
+    <style>
+        th {
+            padding: 5px 5px 7px 5px !important;
+        }
+    </style>
 @endsection()
 @section('page-header')
-    مقالات
+    لیست بیمه ها
 @endsection
 @section('main-content')
     <div style="margin-top: 20px" class="panel panel-default">
         <div class="panel-heading">
-            نمایش مقالات و نوشته های سایت
+            نمایش لیست بیمه های شرکت
         </div>
         <!-- /.panel-heading -->
-        @if(Session::has('deleted_post'))
+        @if(Session::has('deleted_insurance'))
             <div style="line-height: 26px;font-size: 106%;font-family: yekan;" class="alert alert-danger alert-dismissable fade in">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>سامانه اطلاع رسانی هوشمند : </strong>
-                {{session('deleted_post')}}
+                {{session('deleted_insurance')}}
             </div>
         @endif
-        @if(Session::has('added_post'))
+        @if(Session::has('added_insurance'))
             <div style="line-height: 26px;font-size: 106%;font-family: yekan;" class="alert alert-success alert-dismissable fade in">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>سامانه اطلاع رسانی هوشمند : </strong>
-                {{session('added_post')}}
+                {{session('added_insurance')}}
             </div>
         @endif
-        @if(Session::has('updated_post'))
+        @if(Session::has('updated_insurance'))
             <div style="line-height: 26px;font-size: 106%;font-family: yekan;" class="alert alert-success alert-dismissable fade in">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>سامانه اطلاع رسانی هوشمند : </strong>
-                {{session('updated_post')}}
+                {{session('updated_insurance')}}
             </div>
         @endif
         <p class="sucsess"></p>
@@ -42,21 +47,22 @@
                 <tr>
                     <th><input type="checkbox"></th></th>
                     <th>  آیدی</th>
-                    <th>  نویسنده</th>
-                    <th>عنوان مقاله</th>
-                    <th>دسته بندی</th>
-                    <th>  تصویر شاخص</th>
-                    <th>  تاریخ ثبت نام </th>
-                    <th>  تاریخ ویرایش </th>
-                    <th>  وضعیت </th>
+                    <th>لوگوی شرکت</th>
+                    <th>نویسنده</th>
+                    <th>  نام شرکت بیمه</th>
+                    <th>رضایت</th>
+                    <th>شعب پرداخت</th>
+                    <th>زمان پرداخت</th>
+                    <th>تاریخ افزودن</th>
+                    <th>تاریخ ویرایش</th>
                     <th> ویرایش</th>
                     <th>  حذف</th>
                 </tr>
                 </thead>
                 <tbody>
-                @if($posts)
+                @if($insurances)
 					<?php $i=1; ?>
-                    @foreach($posts as $post)
+                    @foreach($insurances as $insurance)
                         @if($i % 2 == 0)
 							<?php $table_class="even gradeC" ?>
                         @else
@@ -65,35 +71,31 @@
 
                         <tr class={{$table_class}}>
                             <td><input type="checkbox"></td>
-                            <td>{{$post->id}}</td>
-                            <td class="center">{{$post->user->name}}</td>
-                            <td>{{$post->title}}</td>
-                            <td>{{$post->category ? $post->category->name : 'دسته بندی نشده'}}</td>
+                            <td>{{$insurance->id}}</td>
                             <td class="center">
-                                @if($post->photo)
-                                    <img src="{{asset($post->photo->post_image())}}" alt="">
+                                @if($insurance->photo)
+                                    <img src="{{asset($insurance->photo->insurance_image())}}" alt="">
                                 @else
                                     <h5>عکسی موجود نیست</h5>
                                 @endif
                             </td>
+                            <td class="center">{{$insurance->user->name}}</td>
+                            {{--<td class="center">نویسنده</td>--}}
+                            <td>{{$insurance->name}}</td>
+                            <td>{{$insurance->satisfactory ? $insurance->satisfactory : 'اطلاعات موجود نیست'}}</td>
+                            <td>{{$insurance->branches ? $insurance->branches : 'اطلاعات موجود نیست'}}</td>
+                            <td>{{$insurance->time_to_ok ? $insurance->time_to_ok : 'اطلاعات موجود نیست'}}</td>
 
-                            <td class="center" style="direction: ltr">{{$post->created_at->diffForHumans()}}</td>
-                            <td class="center" style="direction: ltr">{{$post->updated_at->diffForHumans()}}</td>
-                            @if($post->status ==1)
-                                <td class="center green">منتشر شده</td>
-                            @else
-                                <td class="center red">پیش نویس</td>
-                            @endif
-                            <td class="center"><a href="{{route('posts.edit',['id'=>$post->id])}}"><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
+                            <td class="center" style="direction: ltr">{{$insurance->created_at->diffForHumans()}}</td>
+                            <td class="center" style="direction: ltr">{{$insurance->updated_at->diffForHumans()}}</td>
+                            <td class="center"><a href="{{route('insurance.edit',['id'=>$insurance->id])}}"><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
 
 
-
-
-                            {!! Form::open(['method'=>'DELETE','action'=>['AdminPostsController@destroy','id'=>$post->id]]) !!}
-
+                            {!! Form::open(['method'=>'DELETE','action'=>['AdminInsuranceController@destroy','id'=>$insurance->id]]) !!}
                             <td class="center">
-                                {!! Form::button("<i class='fa fa-trash red fa-2x' aria-hidden='true'></i>",['type'=>'submit','style'=>'background: none;border: none;']) !!}
+                                {!! Form::button("<i class='fa fa-trash red fa-2x' aria-hidden='true'></i>",['type'=>'submit','aria-hidden'=>"true",'data-toggle'=>'modal','data-target'=>'#delete','style'=>'background: none;border: none;']) !!}
                             </td>
+
 
                             {{--<td class="center"><a href="{{route('users.destroy',['id'=>$post->id])}}"><i class="fa fa-trash red fa-2x" aria-hidden="true"></i></a></td>--}}
                             {!! Form::close() !!}

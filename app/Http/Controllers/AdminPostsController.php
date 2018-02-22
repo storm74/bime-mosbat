@@ -119,7 +119,7 @@ class AdminPostsController extends Controller
 	    if($post_new_title==$post_old_title){
 		    $message ="حساب کاربری".' '.$post_new_title." "."با موفقیت به روز رسانی شد";
 	    }else{
-		    $message ="حساب کاربری".' '.$post_old_title."به نام "." ".$post_new_title." "." تغیر یافت و سایر تغیرات نیز با موفقیت ذخیره شدند";
+		    $message ="حساب کاربری".' '.$post_old_title." "."به نام "." ".$post_new_title." "." تغیر یافت و سایر تغیرات نیز با موفقیت ذخیره شدند";
 	    }
 
 	    Session::flash('updated_post',$message);
