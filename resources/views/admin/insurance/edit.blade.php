@@ -1,56 +1,50 @@
 @extends('layouts.admin')
 @section('page-header')
-ویرایش مشخصات شرکت بیمه
+{{"ویرایش مشخصات شرکت بیمه"." ".$insurance->name}}
 @endsection()
 @section('main-content')
-    {!! Form::open(['method'=>'PATCH','action'=>['AdminInsuranceController@update',$insurance->id],'files' => true]) !!}
-    <div class="col-lg-8">
-        <div class="form-group">
-            {!! Form::label('name','نام شرکت') !!}
-            {!! Form::text('name',$insurance->name,['class'=>'form-control']) !!}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{"مشخصات کلی و تعرفه های محاسباتی بیمه"." ".$insurance->name}}
+                </div>
+                <!-- .panel-heading -->
+                <div class="panel-body">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#general">مشخصات عمومی</a>
+                                </h4>
+                            </div>
+                            <div id="general" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    @include('admin.includes.insu_edit_generall_section')
+                                    {{--./edit general data of insurance company--}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#thirdParty">تعرفه ها و قیمت های پایه بیمه شخص ثالث</a>
+                                </h4>
+                            </div>
+                            <div id="thirdParty" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    @include('admin.includes.insu_edit_thirdParty_section')
+                                    {{--./edit Third Party of insurance company--}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .panel-body -->
+            </div>
+            <!-- /.panel -->
         </div>
-        <div class="form-group">
-            {!! Form::label('branches',' تعداد شعب پرداخت خسارت') !!}
-            {!! Form::text('branches',$insurance->branches,['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('satisfaction','سطح رضایت مشتریان شرکت ( نمره از 10 )') !!}
-            {!! Form::text('satisfaction',$insurance->satisfaction,['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('time_to_ok','سرعت شرکت در پرداخت خسارت ( نمره از 10 )') !!}
-            {!! Form::text('time_to_ok',$insurance->time_to_ok,['class'=>'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-            {!! Form::label('content','توضیحاتی در  مورد شرکت بیمه') !!}
-            {!! Form::textarea('content',null,['class'=>'form-control','rows'=>'25']) !!}
-        </div>
-
-        <div class="form-group">
-            {!! Form::submit('ویرایش',['name'=>'add_insurance','class'=>'btn btn-primary']) !!}
-        </div>
-
+        <!-- /.col-lg-12 -->
     </div>
-
-    <div class="col-lg-4">
-        @include('admin.includes.error_alert')
-        <div style="padding: 0 1px 11px 0;">
-
-            @if($insurance->photo)
-                <h3 class="green" style="margin-bottom: 20px; font-family: yekan">لوگوی شرکت</h3>
-                <img style="width: 100%" src="{{asset($insurance->photo->insurance_image())}}" alt="">
-            @else
-                <img style="width: 100%" src="{{asset('admin_assets/images/icons/profile_placeholder.png')}}" alt="">
-                <p class="seondary-color">لطفا لوگوی شرکت بیمه را آپلود کنید</p>
-            @endif
-        </div>
-        <hr>
-        <div class="form-group">
-            {!! Form::label('photo_id','لوگو شرکت') !!}
-            {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
-        </div>
-    </div>
-    {!! Form::close() !!}
-
+    <!-- /.row -->
 @endsection()

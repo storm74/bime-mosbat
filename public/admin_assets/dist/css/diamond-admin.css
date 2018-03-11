@@ -96,6 +96,10 @@
 body {
   background-color: #f8f8f8;
 }
+.page-header{
+    font-size: 140%;
+    color: #337ab7;
+}
 /*fonts*/
 body{
   font-family: IRANSans-web;

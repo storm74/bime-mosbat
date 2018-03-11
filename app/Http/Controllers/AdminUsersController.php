@@ -120,7 +120,7 @@ class AdminUsersController extends Controller
 		if($user_new_name==$user_old_name){
 			$message ="حساب کاربری".' '.$user_new_name." "."با موفقیت به روز رسانی شد";
 		}else{
-			$message ="حساب کاربری".' '.$user_old_name."به نام "." ".$user_new_name." "." تغیر یافت و سایر تغیرات نیز با موفقیت ذخیره شدند";
+			$message ="حساب کاربری".' '.$user_old_name." "."به نام "." ".$user_new_name." "." تغیر یافت و سایر تغیرات نیز با موفقیت ذخیره شدند";
 		}
 	    Session::flash('updated_user',$message);
 	    return redirect()->action('AdminUsersController@index');

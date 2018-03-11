@@ -57,7 +57,7 @@ class AdminPostsController extends Controller
 	    $input['photo_id'] = $photo->id;
 	    $user = Auth::user();
 	    $user->posts()->create($input);
-	    $message ="نوشته".' '.$request->title." "."با موفقیت ایجاد شد";
+	    $message ="نوشته".'  '.$request->title." "."با موفقیت ایجاد شد";
 	    Session::flash('added_post',$message);
 	    return redirect()->action('AdminPostsController@index');
 
@@ -117,9 +117,9 @@ class AdminPostsController extends Controller
 	    }
 	    $post->update($input);
 	    if($post_new_title==$post_old_title){
-		    $message ="حساب کاربری".' '.$post_new_title." "."با موفقیت به روز رسانی شد";
+		    $message ="نوشته".' '.$post_new_title." "."با موفقیت به روز رسانی شد";
 	    }else{
-		    $message ="حساب کاربری".' '.$post_old_title." "."به نام "." ".$post_new_title." "." تغیر یافت و سایر تغیرات نیز با موفقیت ذخیره شدند";
+		    $message ="حساب کاربری".'  '.$post_old_title."  "."به نام "." ".$post_new_title."  "." تغیر یافت و سایر تغیرات نیز با موفقیت ذخیره شدند";
 	    }
 
 	    Session::flash('updated_post',$message);
@@ -142,7 +142,7 @@ class AdminPostsController extends Controller
 	    $photo_id = $post->photo->id;
 	    $post->delete();
 	    Photo::destroy($photo_id);
-	    $message ="حساب کاربری".' '.$title." "."با موفقیت حذف گردید";
+	    $message ="نوشته".' '.$title."  "."با موفقیت حذف گردید";
 	    Session::flash('deleted_post',$message);
 	    return redirect()->action('AdminPostsController@index');
 

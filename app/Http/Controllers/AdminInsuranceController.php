@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\InsuranceRequest;
 use App\Insurance;
 use App\Photo;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -88,7 +87,7 @@ class AdminInsuranceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(InsuranceRequest $request, $id)
     {
 	    $insurance_old_title = Insurance::findOrFail($id)->name;
 	    $insurance_new_title = $request->name;
@@ -134,7 +133,7 @@ class AdminInsuranceController extends Controller
 	    $photo_id = $insurance->photo->id;
 	    $insurance->delete();
 	    Photo::destroy($photo_id);
-	    $message ="شکت بیمه :".' '.$name." "."با موفقیت حذف گردید";
+	    $message ="شرکت بیمه :".' '.$name." "."با موفقیت حذف گردید";
 	    Session::flash('deleted_insurance',$message);
 	    return redirect()->action('AdminInsuranceController@index');
     }

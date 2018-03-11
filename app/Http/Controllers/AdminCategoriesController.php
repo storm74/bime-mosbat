@@ -90,9 +90,9 @@ class AdminCategoriesController extends Controller
     	$input = $request->all();
 	    $category->update($input);
 	    if($category_new_title==$category_old_title){
-		    $message ="حساب کاربری".' '.$category_new_title." "."با موفقیت به روز رسانی شد";
+		    $message ="دسته بندی".' '.$category_new_title." "."با موفقیت به روز رسانی شد";
 	    }else{
-		    $message ="حساب کاربری".' '.$category_old_title." "."به نام "." ".$category_new_title." "." تغیر یافت و سایر تغیرات نیز با موفقیت ذخیره شدند";
+		    $message ="دسته بندی".' '.$category_old_title." "."به نام "." ".$category_new_title." "." تغیر یافت و سایر تغیرات نیز با موفقیت ذخیره شدند";
 	    }
 
 	    Session::flash('updated_category',$message);

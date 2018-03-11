@@ -29,7 +29,7 @@ class Photo extends Model
 		return $this->hasOne('App\Post');
 	}
 	public function insurance(){
-		return $this->hasOne('App\Post');
+		return $this->hasOne('App\Insurance');
 	}
 }
 

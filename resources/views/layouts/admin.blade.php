@@ -113,12 +113,12 @@
                         <a href="#">
                             <div>
                                 <p>
-                                    <strong>Task 1</strong>
-                                    <span class="pull-right text-muted">40% Complete</span>
+                                    <strong>بیمه شخص ثالث</strong>
+                                    <span class="pull-left text-muted fa_number">80% تکمیل شده است</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <span class="sr-only">40% Complete (success)</span>
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                        <span class="sr-only fa_number">80% تکمیل شده است</span>
                                     </div>
                                 </div>
                             </div>
@@ -129,12 +129,12 @@
                         <a href="#">
                             <div>
                                 <p>
-                                    <strong>Task 2</strong>
-                                    <span class="pull-right text-muted">20% Complete</span>
+                                    <strong>سایر بیمه ها</strong>
+                                    <span class="pull-left text-muted fa_number">50% تکمیل شده است</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                        <span class="sr-only">20% Complete</span>
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                        <span class="sr-only fa_number">80% تکمیل شده است</span>
                                     </div>
                                 </div>
                             </div>
@@ -145,40 +145,24 @@
                         <a href="#">
                             <div>
                                 <p>
-                                    <strong>Task 3</strong>
-                                    <span class="pull-right text-muted">60% Complete</span>
+                                    <strong>قسمت مقالات</strong>
+                                    <span class="pull-left text-muted fa_number">81 درصد تکمیل شده است</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only">60% Complete (warning)</span>
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="81" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                        <span class="sr-only fa_number">81 درصد تکمیل شده است</span>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </li>
                     <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <p>
-                                    <strong>Task 4</strong>
-                                    <span class="pull-right text-muted">80% Complete</span>
-                                </p>
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                        <span class="sr-only">80% Complete (danger)</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a class="text-center" href="#">
-                            <strong>See All Tasks</strong>
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </li>
+                    {{--<li>--}}
+                        {{--<a class="text-center" href="#">--}}
+                            {{--<strong>See All Tasks</strong>--}}
+                            {{--<i class="fa fa-angle-right"></i>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
                 </ul>
                 <!-- /.dropdown-tasks -->
             </li>
@@ -191,54 +175,54 @@
                     <li>
                         <a href="#">
                             <div>
-                                <i class="fa fa-comment fa-fw"></i> New Comment
-                                <span class="pull-right text-muted small">4 minutes ago</span>
+                                <i class="fa fa-comment fa-fw"></i> نسخه 1 پنل مدیریتی الماس
+                                <span class="pull-right text-muted small fa_number">اسفند ماه 96</span>
                             </div>
                         </a>
                     </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                <span class="pull-right text-muted small">12 minutes ago</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                <span class="pull-right text-muted small">4 minutes ago</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-tasks fa-fw"></i> New Task
-                                <span class="pull-right text-muted small">4 minutes ago</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                <span class="pull-right text-muted small">4 minutes ago</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a class="text-center" href="#">
-                            <strong>See All Alerts</strong>
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </li>
+                    {{--<li class="divider"></li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#">--}}
+                            {{--<div>--}}
+                                {{--<i class="fa fa-twitter fa-fw"></i> 3 New Followers--}}
+                                {{--<span class="pull-right text-muted small">12 minutes ago</span>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="divider"></li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#">--}}
+                            {{--<div>--}}
+                                {{--<i class="fa fa-envelope fa-fw"></i> Message Sent--}}
+                                {{--<span class="pull-right text-muted small">4 minutes ago</span>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="divider"></li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#">--}}
+                            {{--<div>--}}
+                                {{--<i class="fa fa-tasks fa-fw"></i> New Task--}}
+                                {{--<span class="pull-right text-muted small">4 minutes ago</span>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="divider"></li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#">--}}
+                            {{--<div>--}}
+                                {{--<i class="fa fa-upload fa-fw"></i> Server Rebooted--}}
+                                {{--<span class="pull-right text-muted small">4 minutes ago</span>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="divider"></li>--}}
+                    {{--<li>--}}
+                        {{--<a class="text-center" href="#">--}}
+                            {{--<strong>See All Alerts</strong>--}}
+                            {{--<i class="fa fa-angle-right"></i>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
                 </ul>
                 <!-- /.dropdown-alerts -->
             </li>
@@ -248,12 +232,11 @@
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu l4 dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    <li><a href="{{route('users.edit',['id'=>Auth::user()->id])}}"><i class="fa fa-user fa-fw"></i> پروفایل کاربری</a>
                     </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                    </li>
+                    {{--<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>--}}
                     <li class="divider"></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out fa-fw"></i> خروج</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -277,7 +260,7 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a class="hover_shadow" href="index.html"><i class="fa fa-dashboard fa-fw orange"></i> پیشخوان</a>
+                        <a class="hover_shadow" href="{{route('admin_index')}}"><i class="fa fa-dashboard fa-fw orange"></i> پیشخوان</a>
                     </li>
                     <li>
                         <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list orange" aria-hidden="true"></i>  لیست شرکت های بیمه<span class="fa arrow"></span> </a>
@@ -317,6 +300,18 @@
                             </li>
                             <li>
                                 <a href="{{route('users.create')}}"> افزودن</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a class="hover_shadow" href="#"><i class="fa fa-user orange" aria-hidden="true"></i>  پرونده های چند رسانه ای  <span class="fa arrow"></span> </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{route('media.index')}}"> مشاهده همه</a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin.media.upload')}}"> افزودن</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -379,7 +374,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">
+                    <h1  class="page-header">
                         @yield('page-header')
                     </h1>
                     @yield('main-content')
