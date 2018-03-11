@@ -4,7 +4,7 @@
     <link href="{{asset('admin_assets/vendor/datatables-plugins/dataTables.bootstrap.css')}}" rel="stylesheet">
     <!-- DataTables Responsive CSS -->
     <link href="{{asset('admin_assets/vendor/datatables-responsive/dataTables.responsive.css')}}" rel="stylesheet">
-@endsection()
+@endsection
 @section('page-header')
     مقالات
 @endsection

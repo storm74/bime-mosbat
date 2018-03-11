@@ -20,4 +20,9 @@ class AdminMediasController extends Controller
     public function upload(){
         return view('admin.media.create');
     }
+    public function store(Request $request){
+        $file = $request->file('file');
+        $name=time().$file->getClientOriginalName();
+        $file->move('upload_test',$name);
+    }
 }

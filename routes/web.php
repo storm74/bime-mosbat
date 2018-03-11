@@ -41,4 +41,5 @@ Route::group(['middleware'=>'admin'], function (){
 
 	Route::get('admin/media','AdminMediasController@index')->name('media.index');
 	Route::get('admin/media/upload','AdminMediasController@upload')->name('admin.media.upload');
+	Route::patch('admin/media','AdminMediasController@store')->name('admin.media.store');
 });
