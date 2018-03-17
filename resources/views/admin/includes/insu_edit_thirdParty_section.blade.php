@@ -1,5 +1,6 @@
 <div class="row">
-    {!! Form::open(['method'=>'PATCH','action'=>['AdminInsuranceController@update',$insurance->id],'files' => true]) !!}
+    {{--{!! Form::open(['method'=>'PATCH','action'=>['AdminInsuranceController@update',$insurance->id],'files' => true]) !!}--}}
+    <form action="">
     <div class="col-lg-8">
         <h2 class="page-header">خودروهای سواری : </h2>
         <div class="form-group">

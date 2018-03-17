@@ -1,0 +1,17 @@
+.blog-home-button{
+    margin: 6px 0 16px 0px;
+}
+.blog-home-div{
+    overflow: auto;
+    height:auto;
+    -webkit-box-shadow: 0 10px 6px -2px #777;
+    -moz-box-shadow: 0 10px 6px -2px #777;
+    box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 98%;margin-top:2.4%;  -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+@media (max-width: 568px) {
+.xs-full-width{
+    width: 100%;
+}
+}

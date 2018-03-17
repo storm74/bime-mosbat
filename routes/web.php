@@ -14,15 +14,12 @@
 use App\User;
 use App\Insurance;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home','PostsController@home_post_section')->name('home');
+Route::get('/','PostsController@home_post_section');
+Route::get('blog','PostsController@blog_home')->name('blog-home');
+Route::get('blog/{title}/{id}','PostsController@blog_single')->name('blog-single');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route::group(['middleware'=>'admin'], function (){
 
 	Route::resource('admin/users','AdminUsersController');
@@ -42,4 +39,20 @@ Route::group(['middleware'=>'admin'], function (){
 	Route::get('admin/media','AdminMediasController@index')->name('media.index');
 	Route::get('admin/media/upload','AdminMediasController@upload')->name('admin.media.upload');
 	Route::patch('admin/media','AdminMediasController@store')->name('admin.media.store');
+
+
+    Route::resource('admin/comments','PostCommentsController');
+    Route::resource('admin/comment/replies','CommentRepliesController');
+
+    Route::get('/admin/fire',function (){
+        return view('admin.nodata');
+    })->name('admin.fire');
+    Route::get('/admin/life',function (){
+        return view('admin.nodata')->name('admin.life');
+    });
 });
+Route::get('/status',function (){
+    return view('auth.login');
+});
+
+

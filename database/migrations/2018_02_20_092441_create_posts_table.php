@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->text('content')->nullable();
             $table->integer('status')->default('0');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

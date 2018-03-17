@@ -33,6 +33,11 @@
                             </div>
                             <div id="thirdParty" class="panel-collapse collapse">
                                 <div class="panel-body">
+                                    <div class="danger" style="background: red; color: #fff; padding: 20px;">
+                                        اطلاعات مربوط به بیمه شخص ثالٍ و بدنه به دلیل کمبود اطلاعات تکمیل نشده است!
+                                        <br>
+                                        لطفا اطلاعات مورد نیاز را به بخش پشتیبانی شاتل وب تحویل دهید.
+                                    </div>
                                     @include('admin.includes.insu_edit_thirdParty_section')
                                     {{--./edit Third Party of insurance company--}}
                                 </div>

@@ -47,7 +47,7 @@ class AdminPostsController extends Controller
     public function store(PostsRequest $request)
     {
 //    	return $request->status;
-//	    $input =$request->all();
+	    $input =$request->all();
 //	    return $input;
     if ($file = $request->file('photo_id')){
 		    $name = time().$file ->getClientOriginalName();
@@ -119,7 +119,7 @@ class AdminPostsController extends Controller
 	    if($post_new_title==$post_old_title){
 		    $message ="نوشته".' '.$post_new_title." "."با موفقیت به روز رسانی شد";
 	    }else{
-		    $message ="حساب کاربری".'  '.$post_old_title."  "."به نام "." ".$post_new_title."  "." تغیر یافت و سایر تغیرات نیز با موفقیت ذخیره شدند";
+		    $message ="نوشته ".'  '.$post_old_title."  "."به نام "." ".$post_new_title."  "." تغیر یافت و سایر تغیرات نیز با موفقیت ذخیره شدند";
 	    }
 
 	    Session::flash('updated_post',$message);

@@ -1,0 +1,913 @@
+@import "menu.css";
+@import "font-awesome.css";
+body {
+	width: 100% !important;
+	text-decoration: none;
+	text-align: right !important;
+	font-family: Rohan !important; 
+}
+
+
+.panelright {
+	height: 100%;
+	width: 100%;
+	background-color: rgb(40, 40, 40);
+	box-shadow: 0px 10px 46px 0px rgba(40, 40, 40, 0.61);
+	background-color: #282828;
+}
+/*
+	.homebuttons{
+	 position: absolute ;
+     top:1%;
+		right: 85%
+
+		
+   
+  
+ }
+*/
+.logo-1 {
+	padding-top: 17px;
+	
+	margin-right: 1%;
+}
+.titellogo {
+		
+	
+	margin-right: 20%;
+	display: block;
+	padding-top: 80px;
+	height: 30px;
+	color: #FECB09;
+	font-weight: bold;
+	font-family: Rohan;
+	font-size: 19px;
+	font-weight: normal;
+}
+.descr {
+	
+	margin-right: 30%;
+	display: block;
+	padding-top: 25px;
+	height: 50px;
+	color: #B0B0B0;
+	font-size: 13px;
+}
+.menu ul {
+	margin-top: 0%
+}
+.menu ul li img {
+	margin-left: 15px;
+	width: 25px;
+	height: 25px
+}
+.menu ul a li {
+	font-family: Rohan;
+	color: #57bc72;
+	direction: rtl;
+	float: right;
+	padding-bottom: 1%;
+	list-style: none;
+	text-align: right;
+	padding-right: 0%;
+	width: 90%;
+	font-size: 15px;
+	padding-top: 6%;
+	margin-right: 40%;
+	border-bottom: dotted rgb(40, 40, 40) 1px ; 
+}
+.menu ul a:hover li {
+	font-family: Rohan;
+	color: #57bc72;
+	direction: rtl;
+	float: right;
+	padding-bottom: 1%;
+	list-style: none;
+	text-align: right;
+	padding-right: 0%;
+	width: 90%;
+	font-size: 15px;
+	padding-top: 6%;
+	margin-right: 40%;
+	border-bottom: dotted #FECB09 1px ; 
+	transition: all 0.5s ease;
+}
+.homepic {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+	.backgroundpage1 , .backgroundpage2 , .backgroundpage3{
+	width: 100%;
+	height: 100%;
+	
+}
+.btn-panelright ul{padding-right: 5%}
+.btn-panelright ul li {
+	float: right;
+	padding-right: 0%
+	
+	
+}
+.btn-panelright ul li a {
+	float: right;
+	text-decoration: none;
+}
+
+
+
+
+.chegonebimebekharim{
+font-size: 37px;
+color: #fecb09;
+ position: relative;
+margin-top: 10%;
+font-family: Rohan;
+margin-right: 5%;left:0px;
+top:0px;
+z-index:1
+}
+
+
+.chegonebimebekharim img{width: 80px; height:80px;margin-left: 10px; margin-top: -30px; display: block; float: right;left:0px;
+top:0px;
+z-index:1}
+
+.matnpage3{margin-top: 15%; margin-right: 8%;position: absolute;left:0px;
+top:0px;
+z-index:1}
+
+.matnpage3 .matn1 p{color: #8DCCE3;font-family: Rohan;font-size: 15px;font-style: normal;text-align: justify;line-height:2.5;word-spacing: 0.1em;}
+
+.matnpage3 .matn2 p{margin-top: 19%; color: #8DCCE3;font-family: Rohan;font-size: 15px;font-style: normal;text-align: justify;line-height:2.5;word-spacing: 0.1em;}
+
+.capshen{border-right: 3px #fecb09 solid;position: absolute;margin-top: 37%; left:0px;
+
+top:0px;
+z-index:1;height: 120px}
+
+.capshen .cap1 p {font-size: 14px;
+color: #fecb09 ;font-family: Rohan;}
+
+.capshen .cap2 p {font-size: 13px;
+color: #57bc72 ;font-family: Rohan;}
+
+.page4{background-color: #F3F3F3}
+
+.titlepage4{font-size: 37px;
+color: #57bc72;
+ position: relative;
+margin-top: 5%;
+font-family: Rohan;
+left:0px;
+top:0px;
+z-index:1;text-align: center !important;
+}
+a .moreblog{
+
+
+
+text-decoration:none;
+
+
+z-index:1;text-align: center !important;
+	
+}
+
+
+a .moreblog{
+
+
+    margin-top:29%;
+    text-decoration:none;
+
+padding-top: -10 !important;
+    z-index:1;text-align: center !important;
+
+}
+
+
+a .moreblog p{  margin: 0 auto; /* کلید */
+    width: 275px;   /* کلید */
+    font-family: Rohan;
+    font-size: 23px;
+    padding: 10px;
+    color: #fff !important;
+    border: 2px solid #57bc72;
+    border-radius: 5px;
+    background: #57bc72;
+    text-decoration:none;
+    padding-top: -10 !important;
+}
+a:hover .moreblog p{  margin: 0 auto; /* کلید */
+    width: 275px;   /* کلید */
+    font-family: Rohan;
+    font-size: 23px;
+    padding: 10px;
+    color: #57bc72 !important;
+    border: 2px solid #57bc72;
+    border-radius: 5px;
+    text-decoration:none;
+    transition: 0.5s;
+    background: rgba(0,0,0,0.00);
+    padding-top: -10 !important;
+}
+
+
+.blogpost{
+margin-top: 4%;
+margin-right: 10%;
+left:0px;
+top:0px;
+z-index:1;text-align: center !important;
+	margin-left: 20%
+    padding-top: -10 !important;
+}
+.blogpost a ul{
+	width: 20%;
+left:0px;
+top:0px;
+z-index:1;text-align: center !important;
+	float: right;
+	margin: auto;
+	margin-right: 5%;
+	background-color: rgba(255,255,255,1.00);
+	border-radius: 3px ;
+
+ 
+  max-width:300px;
+  -webkit-box-shadow: 0 10px 6px -2px #777;
+    -moz-box-shadow: 0 10px 6px -2px #777;
+         box-shadow: 0 10px 6px -2px #777;
+
+}
+.blogpost a:hover ul{
+	width: 20%;
+left:0px;
+top:0px;
+z-index:1;text-align: center !important;
+	float: right;
+	margin: auto;
+	margin-right: 5%;
+	background-color: rgba(255,255,255,1.00);
+	border-radius: 3px ;
+  transition: 0.5s;
+   -webkit-box-shadow: 0 10px 6px -6px #57bc72;
+    -moz-box-shadow: 0 10px 6px -6px #57bc72;
+         box-shadow: 0 10px 6px -6px #57bc72;
+  max-width:300px;
+
+
+}
+	
+	
+
+li .picblog{width: 100%;border-radius: 3px ;}
+
+li .titleblog h3{color: #57bc72;font-family: Rohan;font-size: 19px;padding: 7px;padding-top: 20px;}
+
+li .contentblog p{color: #8f8f8f;font-family: Rohan;font-size: 12px;padding-top: 5px;padding-bottom: 5px; text-align: justify;line-height:2;padding-left: 20px;padding-right: 20px}
+
+
+
+
+/***** استایل صفحه دوم - بخش تب ها /**/
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: #979392;
+    padding: 16px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+	font-family: Rohan;
+	border-radius: 5px 5px 0px 0px ; 
+	margin-left: 30px;
+	 background-color: rgb(255, 255, 255);
+
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #fecb09;
+	
+}
+
+#myInput1 , #myInput2 , #myInput3, #myInput4 , #myInput5 {
+    border-box: box-sizing;
+    background-image: url('pic-video/searchicon.png');
+    background-position: 40px 8px;
+    background-repeat: no-repeat;
+    font-size: 12px;
+    padding: 8px 20px 9px 45px;
+    border: none;
+	font-family: Rohan;	
+	border-radius: 5px 0px 0px 0px ; 
+	width: 100%;
+}
+
+#myInput1:focus , #myInput2:focus , #myInput3:focus {outline: 3px solid #fecb09;}
+
+.dropdown1 , .dropdown2 , .dropdown3{
+    position: relative;
+    display: inline-block;
+}
+	 
+.dropdown-content {
+    display: none;
+   	font-family: Rohan;
+    background-color: rgba(246,246,246,0.55);
+	width: 500px;
+    overflow: auto;
+ 	border-radius: 5px 0px 5px 5px ; 
+    z-index: -10;
+	font-size: 13px;
+	position: absolute;
+	  cursor: pointer;
+}
+
+.dropdown-content a {
+    display: block;
+   margin: 10px 10px; 
+	padding: 8px 12px 8px 12px;
+	 cursor: pointer;
+ float: right;   text-decoration: none;
+opacity: 1;
+	background-color: rgba(255,255,255,0.84);
+	border-radius: 3px ; 
+color: rgba(131,131,131,1.00);
+}
+
+.dropdown1 a:hover , .dropdown2 a:hover , .dropdown3 a:hover , .dropdown4 a:hover , .dropdown5 a:hover {background-color: #fecb09 ; color: white}
+	  
+ .btnenter{background-color: #4CAF50 !important ; border-radius: 5px;color:#fff }
+	  
+.show {display:block;}
+
+
+	.titlesabt{
+		font-size: 40px;
+		color: #fff;
+		margin: auto;
+		margin-top: 5%;
+		font-family: Rohan;
+		margin-right: 43%;
+		
+	}
+	.boxtab{
+	
+		height: 370px;
+		
+		
+		margin-top: 20%;
+		margin-right: 10%;
+			border-radius: 3px 3px 3px 3px;
+  background-color: rgb(40, 40, 40);
+  opacity: 0.91;
+  box-shadow: 0px 10px 46px 0px rgba(87, 188, 114, 0.61);
+  z-index: 17;
+}
+	
+	
+	
+/* Style the tab */
+.tab {
+    overflow: hidden;
+border-radius: 3px 3px 0px 0px;
+    background-color: #338449
+		
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: #338449;
+    float: right;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 24px;
+    transition: 0.3s;
+    font-size: 14px;
+	font-family: Rohan;
+	 color: #fecb09;
+	
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #C7C7C7
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color:  rgb(40, 40, 40);
+
+	
+	color: #fecb09;
+	
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 8px 12px;
+  
+    border-top: none;
+}
+
+	.tab .tablinks img {
+		width: 18px;
+		height: 18px;
+		margin-left: 5px;
+	}
+	
+	
+	
+
+		.selecte-car ul{margin-right: 5%}
+		.selecte-car ul li {float: right; margin-top: 5%;}
+	.dropbtn img {
+		width: 20px;
+		height: 19px;
+		margin-left: 2px;
+	}
+		.dropbtn .img2 {
+		width: 10px;
+		height: 7px;
+		margin-left: -4px;margin-right: 10px;margin-top: 4px;
+	}
+
+
+
+	.matnenter{
+		margin-top: 20px; position: relative;
+	}
+	.matnenter .tozihat{float: right;
+		
+	}	
+	.matnenter .tozihat h3{font-family: Rohan;font-size: 15px; color: #fecb09; padding-right: 15px; padding-left: 15px;
+	}	
+	.matnenter .tozihat p{font-family: Rohan;font-size: 13px;line-height: 25px; color: #B0B0B0; padding-right: 15px;margin-top: -15px; padding-left: 15px;letter-spacing: 1px; text-align: justify
+	}
+
+
+
+
+/*** استایل فوتر*****/
+
+
+
+
+
+
+	
+	.footertitle{ width: 100%; margin-right: 10%;margin-top:5%;}
+	.footerlogo img	{ width: 136px; height: 136px; margin-right: 20%}
+	.footerhead	{ width: 100%;}
+	
+	#footertitle1	{
+	 
+	    width: 100% ; 
+	    font-family: Rohan;
+	    font-size: 27px;
+	    margin-top:2%;
+	    color:#fff;
+	    
+	}
+	
+	#footertitle2	{
+	   font-size: 18px;
+	    margin-top:3%;
+	    width: 100%;
+	    color:#fecb09;
+	}
+	
+	#footertitle3	{
+	   font-size: 17px;
+	    margin-top:3%;
+	    width: 100%;
+     	color:#57bc72;
+	    
+	}
+	
+		.menufooter	{
+ margin-right:5%;
+  margin-top:3%;
+  float:right;
+     
+	
+		
+		
+	}
+	
+	
+		.divulmenu{	
+		    
+		    border-top: 2px #ccc solid ;
+		  width:80%;
+		  margin-right:15%;
+		   
+		    
+		}
+	.menu1 {  margin-top:2%;float:right ;margin-right:10%; }
+	.menu2{  margin-top:2%;float:right;margin-right:20%; }
+	
+	.menu1 li , .menu2 li{padding-top:20px;  font-size: 16px;color:#959595}
+	
+	.menu1 #id1, .menu2 #id1{ 
+	    font-size: 18px !important;
+		color:#a18002 !important;
+		padding-bottom:20px;  
+		font-size: 14px;color:#959595}
+	
+        .tamasfooter	{
+  float:right;
+  margin-top:-2%;
+     padding:2%;
+     padding-top:1%;
+     padding-right:4%;
+     box-shadow:0px 10px 46px 0px rgba(73, 75, 73, 0.6);
+     border-radius: 3px ;
+	}
+	.divultamas{	margin-right: 5%;}
+
+	.divultamas li{padding-top:20px;  font-size: 14px;color:#6d6d6d}
+	.divultamas li i{font-size: 19px;color:#57bc72;padding-left:3px;margin-top:5px;}
+	
+	.divultamas #id1{
+		    padding-bottom:20px;
+		   
+			font-size: 18px !important;
+			color:#a18002 !important; }
+
+
+
+
+
+@media (min-width: 1200px) {
+
+
+			 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* تبلت‌های پورتره تا تا منظره‌ای و دسکتاپ‌ها */
+@media (min-width: 768px) and (max-width: 991px) {
+	.logo-1 {
+		padding-top: 10px;
+height: 80%;
+		margin-right: 4%;
+	}
+.titellogo {
+
+
+	margin-right: 15%;
+	display: block;
+	padding-top: 20px;
+	height: 30px;
+	color: #FECB09;
+	font-weight: bold;
+	font-family: Rohan;
+	font-size: 16px;
+	font-weight: normal;
+}
+	.titellogo p {
+
+	padding-top: 20px;
+}
+
+	.descr {
+
+		margin-right: 18%;
+		display: block;
+		padding-top: 25px;
+		height: 50px;
+		color: #B0B0B0;
+		font-size: 13px;
+	}
+
+	.menu ul {
+		margin-top: 1%;
+		margin-right: 5%;
+	}
+	.menu ul a li {
+		padding-top: 7%;
+	}
+	.menu ul a:hover li {
+		padding-top: 7%;
+
+	}
+	.btn-panelright ul{padding-right: 6%}
+	.btn-panelright ul li {
+		float: right;
+		padding-right: 0%
+
+
+	}
+	.btn-panelright ul li a {
+		float: right;
+		text-decoration: none;
+	}
+
+	.homebuttons{margin-top: 0px !important;
+	}
+	.matnenter{
+		visibility: hidden;
+	}
+
+
+	.chegonebimebekharim{
+		font-size: 37px;
+		color: #fecb09;
+		position: relative;
+		margin-top: 3%;
+		font-family: Rohan;
+		margin-right: 2%;left:0px;
+		top:0px;
+		z-index:1
+	}
+	.capshen{border-right: 3px #fecb09 solid;position: absolute;margin-top:50%; left:0px;
+
+		top:0px;
+		z-index:1;height: 120px;margin-left: -5% ;}
+}
+ 
+/* تلفن‌های منظره‌ای تا تبلت‌های پورتره */
+@media (max-width: 768px) {
+
+	.panelright {
+
+	background-image: url("../pic-video/pic1.png") ;
+		padding-bottom: 10%;
+}
+	.logo-1 {
+		padding-top: -10px;
+		height: 80%;
+		margin-right: 10%;
+	}
+
+	.titellogo {
+
+
+		margin-right: 15%;
+		display: block;
+		padding-top: 20px;
+		height: 30px;
+		color: #fff;
+		font-weight: bold;
+		font-family: Rohan;
+		font-size: 35px;
+		font-weight: normal;
+	}
+
+
+	.titellogo p{
+		margin-right: 0%;
+		display: block;
+		padding-top: 1px;
+		height: 30px;
+		color: #ffff00 !important;
+		font-weight: bold;
+		font-family: Rohan;
+		font-size: 20px !important;
+		font-weight: normal;
+	}
+	.descr {
+		visibility: hidden;
+	}
+
+	.menu ul {
+		margin-top: 0%;
+
+	}	.menu {
+				 background-color: rgba(30,21,43,0.7) !important;
+margin-right: 25%;
+	border-radius:5px;
+	padding-bottom: 10px;
+	margin-top: -3%;
+	}
+	.menu ul li img {
+		margin-left: 15px;
+		width: 25px;
+		height: 25px
+	}
+	.menu ul a li {
+		font-family: Rohan;
+		color: #57bc72;
+		direction: rtl;
+		float: right;
+		padding-bottom: 1%;
+		list-style: none;
+		text-align: right;
+		padding-right: 0%;
+		width: 50%;
+		font-size: 15px;
+		padding-top: 6%;
+		margin-right: 25%;
+		border-bottom: dotted rgb(40, 40, 40) 1px ;
+	}
+	.menu ul a:hover li {
+		font-family: Rohan;
+		color: #57bc72;
+		direction: rtl;
+		float: right;
+		padding-bottom: 1%;
+		list-style: none;
+		text-align: right;
+		padding-right: 0%;
+		width: 50%;
+		font-size: 15px;
+		padding-top: 6%;
+		margin-right: 28%;
+		border-bottom: dotted #FECB09 1px ;
+		transition: all 0.5s ease;
+	}
+
+	.btn-panelright ul{padding-right: 10%}
+	.btn-panelright ul li {
+		float: right;
+		padding-right: 1%
+
+
+	}
+	.btn-panelright ul li a {
+		float: right;
+		text-decoration: none;
+	}
+	a.bhome{ text-indent: 10px !important;
+		background-color: rgba(30,21,43,0.7) !important;
+		border: 1px solid rgba(30,21,43,0.0)!important;
+	}
+	.regester{    margin-top: -21% !important;}
+	.matnenter{
+		visibility: hidden;
+	}
+
+	.chegonebimebekharim{
+		font-size:34px;
+
+		margin-top: 3%;
+
+	}
+	.capshen{	visibility: hidden;}
+}
+ 
+/* تلفن‌های منظره‌ای و پایین‌تر از آن */
+@media (max-width:575px) {
+	.matnpage3{
+		margin-top: 20% !important;
+		font-size:34px;
+		margin-top: 3%;padding: 30px;
+		margin-left:10% !important;background-color: rgba(0,0,0,0.38) !important;
+
+	}
+    .matn1 , .matn2{color: rgba(239,239,239,0) !important;}
+
+    .chegonebimebekharim{
+        font-size:30px;
+
+        margin-top: 5% !important;
+
+    }
+	.capshen{	visibility: hidden;}
+	.panelright {
+
+		background-image: url("../pic-video/pic1.png") ;
+		padding-bottom: 10%;
+	}
+	.logo-1 {
+		visibility: hidden;
+	}
+
+	.titellogo {
+
+
+		margin-right: 20%;
+		display: block;
+		height: 30px;
+		color: #fff;
+		font-weight: bold;
+		font-family: Rohan;
+		font-size: 35px;
+		font-weight: normal;
+	}
+
+
+	.titellogo p{
+		visibility: hidden;
+	}
+	.descr {
+		visibility: hidden;
+	}
+
+	.menu ul {
+		margin-top: 0%;
+
+	}	.menu {
+			 background-color: rgba(30,21,43,0.7) !important;
+			 margin-right: 20%;
+			 border-radius:5px;
+margin-bottom: 20%;
+			 margin-top: -90%;
+	margin-left: 10%;
+		 }
+	.menu ul li img {
+		margin-left: 15px;
+		width: 25px;
+		height: 25px
+	}
+	.menu ul a li {
+		font-family: Rohan;
+		color: #57bc72;
+		direction: rtl;
+		float: right;
+		padding-bottom: 1%;
+		list-style: none;
+		text-align: right;
+		padding-right: 0%;
+		width: 50%;
+		font-size: 15px;
+		padding-top: 6%;
+		margin-right: 25%;
+		border-bottom: dotted rgb(40, 40, 40) 1px ;
+	}
+	.menu ul a:hover li {
+		font-family: Rohan;
+		color: #57bc72;
+		direction: rtl;
+		float: right;
+		padding-bottom: 1%;
+		list-style: none;
+		text-align: right;
+		padding-right: 0%;
+		width: 50%;
+		font-size: 15px;
+		padding-top: 6%;
+		margin-right: 28%;
+		border-bottom: dotted #FECB09 1px ;
+		transition: all 0.5s ease;
+	}
+
+	.btn-panelright ul{padding-right: 10%;margin-top: -20%}
+	.btn-panelright ul li {
+		float: right;
+		padding-right: 1%
+
+
+	}
+	.btn-panelright ul li a {
+		float: right;
+		text-decoration: none;
+	}
+	a.bhome{ text-indent: 10px !important;
+		background-color: rgba(30,21,43,0.7) !important;
+		border: 1px solid rgba(30,21,43,0.0)!important;
+	}
+	.regester{    margin-top: -26% !important;}
+	.matnenter{
+		visibility: hidden;
+	}
+	.boxtab{height: 400px;}
+}

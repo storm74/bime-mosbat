@@ -61,42 +61,18 @@
                     <li>
                         <a href="#">
                             <div>
-                                <strong>John Smith</strong>
+                                <strong>تیم فنی شاتل وب :</strong>
                                 <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
+                                        <em class="fa_number green">1396/12/23</em>
                                     </span>
                             </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <strong>John Smith</strong>
-                                <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <strong>John Smith</strong>
-                                <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            <div>جهت تکمیل بخش های مربوط به بیمه پنل مدیریتی، لطفا اطلاعات مورد نیاز را به بخش پشتیبانی شاتل وب تحویل دهید.</div>
                         </a>
                     </li>
                     <li class="divider"></li>
                     <li>
                         <a class="text-center" href="#">
-                            <strong>Read All Messages</strong>
+                            <strong>پیام دیگری موجود نیست</strong>
                             <i class="fa fa-angle-right"></i>
                         </a>
                     </li>
@@ -114,11 +90,11 @@
                             <div>
                                 <p>
                                     <strong>بیمه شخص ثالث</strong>
-                                    <span class="pull-left text-muted fa_number">80% تکمیل شده است</span>
+                                    <span class="pull-left text-muted fa_number">90% تکمیل شده است</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <span class="sr-only fa_number">80% تکمیل شده است</span>
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                        <span class="sr-only fa_number">90% تکمیل شده است</span>
                                     </div>
                                 </div>
                             </div>
@@ -129,12 +105,28 @@
                         <a href="#">
                             <div>
                                 <p>
-                                    <strong>سایر بیمه ها</strong>
-                                    <span class="pull-left text-muted fa_number">50% تکمیل شده است</span>
+                                    <strong>بیمه بدنه</strong>
+                                    <span class="pull-left text-muted fa_number">60% تکمیل شده است</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <span class="sr-only fa_number">80% تکمیل شده است</span>
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                        <span class="sr-only fa_number">60% تکمیل شده است</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">
+                            <div>
+                                <p>
+                                    <strong>بیمه آتش سوزی</strong>
+                                    <span class="pull-left text-muted fa_number">70% تکمیل شده است</span>
+                                </p>
+                                <div class="progress progress-striped active">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                        <span class="sr-only fa_number">70% تکمیل شده است</span>
                                     </div>
                                 </div>
                             </div>
@@ -146,11 +138,11 @@
                             <div>
                                 <p>
                                     <strong>قسمت مقالات</strong>
-                                    <span class="pull-left text-muted fa_number">81 درصد تکمیل شده است</span>
+                                    <span class="pull-left text-muted fa_number">93 درصد تکمیل شده است</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="81" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only fa_number">81 درصد تکمیل شده است</span>
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="81" aria-valuemin="0" aria-valuemax="100" style="width: 93%">
+                                        <span class="sr-only fa_number">93 درصد تکمیل شده است</span>
                                     </div>
                                 </div>
                             </div>
@@ -236,7 +228,16 @@
                     </li>
                     {{--<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>--}}
                     <li class="divider"></li>
-                    <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out fa-fw"></i> خروج</a>
+                    <li>
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            خروج
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -260,6 +261,9 @@
                         <!-- /input-group -->
                     </li>
                     <li>
+                        <a class="hover_shadow" href="{{route('home')}}"><i class="fa fa-dashboard fa-fw orange"></i> وبسایت</a>
+                    </li>
+                    <li>
                         <a class="hover_shadow" href="{{route('admin_index')}}"><i class="fa fa-dashboard fa-fw orange"></i> پیشخوان</a>
                     </li>
                     <li>
@@ -275,22 +279,22 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list orange" aria-hidden="true"></i>  بیمه شخص ثالث<span class="fa arrow"></span> </a>
+                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list orange" aria-hidden="true"></i>  بیمه شخص ثالث و بدنه<span class="fa arrow"></span> </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html"> مشاهده لیست خودروها</a>
+                                <a href="{{route('admin.fire')}}"> مشاهده لیست خودروها</a>
                             </li>
                             <li>
-                                <a href="morris.html"> افزودن</a>
+                                <a href="{{route('admin.fire')}}"> افزودن</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a class="hover_shadow" href="tables.html"><i class="fa fa-life-ring orange" aria-hidden="true"></i> بیمه عمر</a>
+                        <a class="hover_shadow" href="{{route('admin.fire')}}"><i class="fa fa-life-ring orange" aria-hidden="true"></i> بیمه عمر</a>
                     </li>
                     <li>
-                        <a class="hover_shadow" href="tables.html"><i class="fa fa-fire-extinguisher orange" aria-hidden="true"></i> بیمه آتش سوزی</a>
+                        <a class="hover_shadow" href="{{route('admin.fire')}}"><i class="fa fa-fire-extinguisher orange" aria-hidden="true"></i> بیمه آتش سوزی</a>
                     </li>
                     <li>
                         <a class="hover_shadow" href="#"><i class="fa fa-user orange" aria-hidden="true"></i>  کاربران  <span class="fa arrow"></span> </a>
@@ -325,43 +329,47 @@
                             <li>
                                 <a href="{{route('posts.create')}}"> افزودن</a>
                             </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a class="hover_shadow" href="{{route('categories.index')}}"><i class="fa fa-archive orange" aria-hidden="true"></i>  دسته بندی ها<span class="fa arrow"></span> </a>
-                    </li>
-                    <li>
-                    <li>
-                        <a class="hover_shadow" href="#"><i class="fa fa-sitemap fa-fw orange"></i> گزینه ای دیگر<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
                             <li>
-                                <a class="hover_black" href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a class="hover_black" href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a class="hover_green" href="#">Third Level <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a class="hover_green"  href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a class="hover_green"  href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a class="hover_green"  href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a class="hover_green"  href="#">Third Level Item</a>
-                                    </li>
-                                </ul>
-                                <!-- /.nav-third-level -->
+                                <a href="{{route('comments.index')}}"> دیدگاه ها</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
+
+                    <li>
+                        <a class="hover_shadow" href="{{route('categories.index')}}"><i class="fa fa-archive orange" aria-hidden="true"></i>  دسته بندی ها </a>
+                    </li>
+                    {{--<li>--}}
+                   {{----}}
+                        {{--<a class="hover_shadow" href="#"><i class="fa fa-sitemap fa-fw orange"></i> گزینه ای دیگر<span class="fa arrow"></span></a>--}}
+                        {{--<ul class="nav nav-second-level">--}}
+                            {{--<li>--}}
+                                {{--<a class="hover_black" href="#">Second Level Item</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a class="hover_black" href="#">Second Level Item</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a class="hover_green" href="#">Third Level <span class="fa arrow"></span></a>--}}
+                                {{--<ul class="nav nav-third-level">--}}
+                                    {{--<li>--}}
+                                        {{--<a class="hover_green"  href="#">Third Level Item</a>--}}
+                                    {{--</li>--}}
+                                    {{--<li>--}}
+                                        {{--<a class="hover_green"  href="#">Third Level Item</a>--}}
+                                    {{--</li>--}}
+                                    {{--<li>--}}
+                                        {{--<a class="hover_green"  href="#">Third Level Item</a>--}}
+                                    {{--</li>--}}
+                                    {{--<li>--}}
+                                        {{--<a class="hover_green"  href="#">Third Level Item</a>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                                {{--<!-- /.nav-third-level -->--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                        {{--<!-- /.nav-second-level -->--}}
+                    {{--</li>--}}
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->

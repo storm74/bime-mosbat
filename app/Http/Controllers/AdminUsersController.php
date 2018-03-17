@@ -106,7 +106,7 @@ class AdminUsersController extends Controller
 			    $old_photo_name = $user->photo->id;
 			    $old_photo_path = $user->photo->path;
 			    Photo::destroy($old_photo_name);
-			    unlink(public_path()."/".$user->photo->path);
+			    unlink(public_path()."/".$old_photo_path);
 		    }
 			$name = time().$file->getClientOriginalName();
 		    $file->move('admin_assets/images/profiles',$name);
@@ -137,10 +137,12 @@ class AdminUsersController extends Controller
 	        $myUser = User::findOrFail($id);
 	        $name = $myUser->name;
 			$user = User::findOrFail($id);
-			unlink(public_path()."/".$user->photo->user_image());
-			$photo_id = $user->photo->id;
+			if ($user->photo){
+                $photo_id = $user->photo->id;
+                unlink(public_path()."/".$user->photo->user_image());
+                Photo::destroy($user->photo->id);
+            }
 			$user->delete();
-	        Photo::destroy($user->photo->id);
 	    $message ="حساب کاربری".' '.$name." "."با موفقیت حذف گردید";
 	        Session::flash('deleted_user',$message);
 	        return redirect()->action('AdminUsersController@index');

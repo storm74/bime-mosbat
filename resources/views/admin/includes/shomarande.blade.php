@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="products.php">
+                <a href="{{route('admin.fire')}}">
                     <div class="panel-footer">
                         <span class="pull-left">جزئیات بیشتر</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
