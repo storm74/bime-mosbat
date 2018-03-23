@@ -18,6 +18,7 @@ Route::get('/home','PostsController@home_post_section')->name('home');
 Route::get('/','PostsController@home_post_section');
 Route::get('blog','PostsController@blog_home')->name('blog-home');
 Route::get('blog/{title}/{id}','PostsController@blog_single')->name('blog-single');
+Route::post('blog/comment/store','PostsController@commentStore');
 
 Auth::routes();
 Route::group(['middleware'=>'admin'], function (){
@@ -42,6 +43,8 @@ Route::group(['middleware'=>'admin'], function (){
 
 
     Route::resource('admin/comments','PostCommentsController');
+    Route::post('admin/comments/approve','PostCommentsController@approve')->name('comment.approve');
+    Route::post('admin/comments/table','PostCommentsController@indexTable')->name('comment.table');
     Route::resource('admin/comment/replies','CommentRepliesController');
 
     Route::get('/admin/fire',function (){

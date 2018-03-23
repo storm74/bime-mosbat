@@ -10,12 +10,13 @@ class Comment extends Model
         'post_id',
         'email',
         'author',
+        'status',
         'text'
     ];
     public function post(){
         return $this->belongsTo('App\Post');
     }
     public function replies(){
-        return $this->hasMany('App\CommentReply');
+        return $this->hasMany('App\CommentReply')->orderByDesc('created_at');
     }
 }

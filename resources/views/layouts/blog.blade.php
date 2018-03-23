@@ -7,7 +7,6 @@
     <link rel="shortcut icon" type="image/png" href="#">
     <title>مشاوران مثبت فردا</title>
 
-    <!-- This site is optimized with the Yoast SEO Premium plugin v4.1 - https://yoast.com/wordpress/plugins/seo/ -->
     <meta name="description" content="#">
     <meta name="robots" content="noodp">
     <link rel="canonical" href="#">
@@ -150,8 +149,8 @@
     </script>
 
 
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    {{--<link rel="stylesheet" type="text/css" href="css/font-awesome.css">--}}
+    <link rel="stylesheet" type="text/css" href="{{asset('front_assets/css/menu.css')}}">
 
     <script type="text/javascript" src="{{asset('front_assets/js/jquery.js')}}"></script>
     <script type="text/javascript" src="{{asset('front_assets/js/function.js')}}"></script>
@@ -381,7 +380,7 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 90%;ma
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-<script type="text/javascript" src="script/theia-sticky-sidebar.js"></script>
+<script type="text/javascript" src="{{asset('front_assets/script/theia-sticky-sidebar.js')}}"></script>
 
 
 
@@ -466,7 +465,6 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 90%;ma
 <script type="text/javascript" src="{{asset('front_assets/script/edd-ajax.js')}}"></script>
 <script type="text/javascript" src="{{asset('front_assets/script/jquery-home.js')}}"></script>
 <script type="text/javascript" src="{{asset('front_assets/script/monster.js')}}"></script>
-<script type="text/javascript" src="{{asset('front_assets/script/plugins.js')}}"></script>
 <script type="text/javascript" src="{{asset('front_assets/script/wp-embed.js')}}"></script>
 
 @yield('footer-style')

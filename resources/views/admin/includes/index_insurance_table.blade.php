@@ -18,7 +18,7 @@
             <th>  حذف</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody class="fa_number">
         @if($insurances)
             <?php $i=1; ?>
             @foreach($insurances as $insurance)
@@ -44,9 +44,14 @@
                     <td class="fa_number">{{$insurance->satisfactory ? $insurance->satisfactory : 'اطلاعات موجود نیست'}}</td>
                     <td class="fa_number">{{$insurance->branches ? $insurance->branches : 'اطلاعات موجود نیست'}}</td>
                     <td class="fa_number"  >{{$insurance->time_to_ok ? $insurance->time_to_ok : 'اطلاعات موجود نیست'}}</td>
-
-                    <td class="center" style="direction: ltr">{{$insurance->created_at->diffForHumans()}}</td>
-                    <td class="center" style="direction: ltr">{{$insurance->updated_at->diffForHumans()}}</td>
+                    <?php
+                    $created_at = $insurance->created_at;
+                    $updated_at = $insurance->updated_at;
+                    $date_create = jDate::forge($created_at)->format('%d %B %Y');
+                    $date_update = jDate::forge($updated_at)->ago();
+                    ?>
+                    <td class="center">{{$date_create}}</td>
+                    <td class="center">{{$date_update}}</td>
                     <td class="center"><a href="{{route('insurance.edit',['id'=>$insurance->id])}}"><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
 
 

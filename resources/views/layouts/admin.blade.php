@@ -412,6 +412,7 @@
 <!-- Custom Theme JavaScript -->
 
 <script src="{{asset('admin_assets/dist/js/sb-admin-2.js')}}"></script>
+<script src="{{asset('admin_assets/js/ajax.js')}}"></script>
 <script>
     <!-- persiaNumber script -->
     $(document).ready(function() {

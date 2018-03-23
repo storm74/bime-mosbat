@@ -138,10 +138,10 @@ class AdminUsersController extends Controller
 	        $name = $myUser->name;
 			$user = User::findOrFail($id);
 			if ($user->photo){
-                $photo_id = $user->photo->id;
-                unlink(public_path()."/".$user->photo->user_image());
-                Photo::destroy($user->photo->id);
-            }
+        $photo_id = $user->photo->id;
+        unlink(public_path()."/".$user->photo->user_image());
+        Photo::destroy($user->photo->id);
+    }
 			$user->delete();
 	    $message ="حساب کاربری".' '.$name." "."با موفقیت حذف گردید";
 	        Session::flash('deleted_user',$message);

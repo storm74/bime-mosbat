@@ -1,0 +1,27 @@
+<div id="result">
+
+</div>
+{!! Form::open(['method'=>'POST','action'=>'PostCommentsController@indexTable','id'=>'test']) !!}
+{!! Form::button("تست ایجکس",['onclick'=>'updateComents()','type'=>'submit','aria-hidden'=>"true",'style'=>'background: none;border: none;']) !!}
+{{--<a name="submit" onclick="saeed_ajax('approveComment',null,null,null)" type="submit" class="btn btn-outline-success">ذخیره اطلاعات</a>--}}
+{!! Form::close() !!}
+<script>
+    function updateComents() {
+        $('#test').submit(function (event) {
+            event.preventDefault();
+            var url = $(this).attr('action');
+            $.ajax({
+                url: url,
+                data:{_token: '{{csrf_token()}}'},
+                type:'POST',
+                success: function (show_comments) {
+                    if(!show_comments.error){
+                        $('#result').html(show_comments);
+                        // data = show_comments;
+                        // console.log(show_comments);
+                    }
+                }
+            })
+        });
+    }//updateCars
+</script>

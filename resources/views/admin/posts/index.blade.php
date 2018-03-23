@@ -53,7 +53,7 @@
                     <th>  حذف</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody class="fa_number">
                 @if($posts)
 					<?php $i=1; ?>
                     @foreach($posts as $post)
@@ -76,18 +76,21 @@
                                     <h5>عکسی موجود نیست</h5>
                                 @endif
                             </td>
+                            <?php
+                            $created_at = $post->created_at;
+                            $updated_at = $post->updated_at;
+                            $date_create = jDate::forge($created_at)->format('%d %B %Y');
+                            $date_update =jDate::forge($updated_at)->ago();
+                            ?>
 
-                            <td class="center" style="direction: ltr">{{$post->created_at->diffForHumans()}}</td>
-                            <td class="center" style="direction: ltr">{{$post->updated_at->diffForHumans()}}</td>
+                            <td class="center">{{$date_create}}</td>
+                            <td class="center">{{$date_update}}</td>
                             @if($post->status ==1)
                                 <td class="center green">منتشر شده</td>
                             @else
                                 <td class="center red">پیش نویس</td>
                             @endif
                             <td class="center"><a href="{{route('posts.edit',['id'=>$post->id])}}"><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
-
-
-
 
                             {!! Form::open(['method'=>'DELETE','action'=>['AdminPostsController@destroy','id'=>$post->id]]) !!}
 

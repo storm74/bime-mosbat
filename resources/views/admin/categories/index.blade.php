@@ -80,9 +80,14 @@
                                 <td><input type="checkbox"></td>
                                 <td>{{$categor->id}}</td>
                                 <td class="center">{{$categor->name}}</td>
-
-                                <td class="center" style="direction: ltr">{{$categor->created_at->diffForHumans()}}</td>
-                                <td class="center" style="direction: ltr">{{$categor->updated_at->diffForHumans()}}</td>
+                                <?php
+                                $created_at = $categor->created_at;
+                                $updated_at = $categor->updated_at;
+                                $date_create = jDate::forge($created_at)->format('%d %B %Y');
+                                $date_update =jDate::forge($updated_at)->ago();
+                                ?>
+                                <td class="center fa_number">{{$date_create}}</td>
+                                <td class="center fa_number">{{$date_update}}</td>
                                 <td class="center"><a href="{{route('categories.edit',['id'=>$categor->id])}}"><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
 
 

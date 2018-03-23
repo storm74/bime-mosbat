@@ -22,9 +22,9 @@ class Post extends Model
     	return $this->belongsTo('App\Photo');
     }
 	public function category(){
-		return $this->belongsTo('App\Category');
+		return $this->belongsTo('App\Category')->orderByDesc('created_at');
 	}
-	public function comments(){
-        return $this->hasMany('App\Comment');
+	public function postComments(){
+        return $this->hasMany('App\Comment')->orderByDesc('created_at');
     }
 }

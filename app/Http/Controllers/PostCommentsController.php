@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+use App\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PostCommentsController extends Controller
 {
@@ -13,8 +16,13 @@ class PostCommentsController extends Controller
      */
     public function index()
     {
-        return view('admin.comments.index');
+        $comments = Comment::all()->sortByDesc('created_at');
+        return view('admin.comments.index',['comments'=>$comments]);
     }
+    public function indexTable(){
+        $comments = Comment::all()->sortByDesc('created_at');
+        return view('admin.includes.index_comments_table',['comments'=>$comments]);
+    }//it will use for ajax reload of table
 
     /**
      * Show the form for creating a new resource.
@@ -23,7 +31,6 @@ class PostCommentsController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -34,7 +41,7 @@ class PostCommentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -45,7 +52,9 @@ class PostCommentsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $comments = $post->postComments;
+        return view('admin.comments.show',['comments'=>$comments]);
     }
 
     /**
@@ -79,6 +88,21 @@ class PostCommentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comment = Comment::destroy($id);
+        $message ="دیدگاه مورد نظر با موفقیت حذف گردید.";
+        Session::flash('deleted_comment',$message);
+        return redirect(route('comments.index'));
+    }
+    public function approve(Request $request){
+        $comment = Comment::findOrFail($request->id);
+        $comment->status == 0 ? $status = 1: $status = 0;
+        $comment->status = $status;
+        $comment->save();
+//        if ($status==1){
+//            return 'رد دیدگاه';
+//        }else{
+//            return 'پذیرفتن';
+//        }
+        return redirect(route('comments.index'));
     }
 }
