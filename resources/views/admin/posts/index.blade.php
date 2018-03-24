@@ -49,6 +49,7 @@
                     <th>  تاریخ ثبت نام </th>
                     <th>  تاریخ ویرایش </th>
                     <th>  وضعیت </th>
+                    <th>  دیدگاه ها </th>
                     <th> ویرایش</th>
                     <th>  حذف</th>
                 </tr>
@@ -90,6 +91,8 @@
                             @else
                                 <td class="center red">پیش نویس</td>
                             @endif
+                            <td class="center"><a class="fa_number" href="{{route('comments.show',['id'=> $post->id])}}">{{count($post->postComments)}}</a></td>
+                            >
                             <td class="center"><a href="{{route('posts.edit',['id'=>$post->id])}}"><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
 
                             {!! Form::open(['method'=>'DELETE','action'=>['AdminPostsController@destroy','id'=>$post->id]]) !!}

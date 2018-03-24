@@ -3,11 +3,12 @@
 
 @endsection
 @section('page-header')
-    دیدگاه ها
+    دیدگاه های نوشته
+    " {{$title}} "
 @endsection
 @section('main-content')
 
-    @include('admin.includes.')
+    @include('admin.includes.show_comments_table_post')
 
 @endsection
 @section('footer-links')

@@ -19,3 +19,11 @@
      //ajax post send
 
 }
+function reply() {
+    $(".reply").click(function(event) {
+        alert(event.target.id);
+    });
+}
+ $( document ).ready(function() {
+
+ });

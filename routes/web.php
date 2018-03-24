@@ -19,6 +19,7 @@ Route::get('/','PostsController@home_post_section');
 Route::get('blog','PostsController@blog_home')->name('blog-home');
 Route::get('blog/{title}/{id}','PostsController@blog_single')->name('blog-single');
 Route::post('blog/comment/store','PostsController@commentStore');
+Route::post('blog/commentreply/store','PostsController@commentReplyStore');
 
 Auth::routes();
 Route::group(['middleware'=>'admin'], function (){

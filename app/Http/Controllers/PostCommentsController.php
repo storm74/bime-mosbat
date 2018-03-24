@@ -54,7 +54,9 @@ class PostCommentsController extends Controller
     {
         $post = Post::findOrFail($id);
         $comments = $post->postComments;
-        return view('admin.comments.show',['comments'=>$comments]);
+        $title = $post->title;
+//        return $comments;
+        return view('admin.comments.show',['comments'=>$comments,'title'=>$title]);
     }
 
     /**
@@ -91,7 +93,7 @@ class PostCommentsController extends Controller
         $comment = Comment::destroy($id);
         $message ="دیدگاه مورد نظر با موفقیت حذف گردید.";
         Session::flash('deleted_comment',$message);
-        return redirect(route('comments.index'));
+        return redirect()->back();
     }
     public function approve(Request $request){
         $comment = Comment::findOrFail($request->id);
@@ -103,6 +105,6 @@ class PostCommentsController extends Controller
 //        }else{
 //            return 'پذیرفتن';
 //        }
-        return redirect(route('comments.index'));
+        return redirect()->back();
     }
 }
