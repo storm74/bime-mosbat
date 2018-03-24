@@ -19,4 +19,8 @@ class Comment extends Model
     public function replies(){
         return $this->hasMany('App\CommentReply')->orderByDesc('created_at');
     }
+    public function getGravatarAttribute(){
+        $hash = md5(strtolower(trim($this->attributes['email'])))."?d=mm";
+        return "http://www.gravatar.com/avatar/$hash";
+    }
 }

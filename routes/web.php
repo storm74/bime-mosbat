@@ -13,11 +13,13 @@
 
 use App\User;
 use App\Insurance;
-
+Route::get('/test',function (){
+return "<h1 class='center'>This is test page for programmer. Its Not For YOU MAN!!</h1>>";
+});
 Route::get('/home','PostsController@home_post_section')->name('home');
 Route::get('/','PostsController@home_post_section');
 Route::get('blog','PostsController@blog_home')->name('blog-home');
-Route::get('blog/{title}/{id}','PostsController@blog_single')->name('blog-single');
+Route::get('blog/{slug}','PostsController@blog_single')->name('blog-single');
 Route::post('blog/comment/store','PostsController@commentStore');
 Route::post('blog/commentreply/store','PostsController@commentReplyStore');
 

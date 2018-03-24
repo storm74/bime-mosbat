@@ -11,7 +11,7 @@
         <div class="content-content" style="text-align:justify;color: #666666 ;direction: rtl;padding: 3% ; font-size: 13px; line-height: 2.1em"> <p>
                 {{$post->content}}
             </p>
-            <a  href="{{route('blog-single',['title'=>$post->title,'id'=>$post->id])}}" class="btn btn-outline-success float-left xs-full-width blog-home-button">ادامه مطلب</a>
+            <a  href="{{route('blog-single',['slug'=>$post->slug])}}" class="btn btn-outline-success float-left xs-full-width blog-home-button">ادامه مطلب</a>
             {{--<div class="like-print" style="color: #444444 ;  float: left; padding-bottom: 5%; margin-bottom: 2%">--}}
                 {{--<ul>--}}
                     {{--<li><a href="#"> <img src="{{asset('front_assets/pic-video/chat.png')}}" width="30" height="30">  </a></li>--}}
@@ -26,6 +26,7 @@
 <?php $n=$n+1 ?>
 @endif
 @endforeach
+
     @if($n==0)
         <h1 class="center" style="margin-right:-10%; background: #F44336; padding: 200px; border-radius: 3px; color: #fff;">
             مطلبی منتشر نشده است

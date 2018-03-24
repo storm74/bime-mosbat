@@ -1,11 +1,27 @@
 <?php
 
 namespace App;
-use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
-class Post extends Model
+ class Post extends Model
 {
+    use Sluggable;
+
+     /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+     public function sluggable()
+     {
+         return [
+             'slug' => [
+                 'source' => 'title',
+                 'onUpdate'=> true
+             ]
+         ];
+     }
     protected $fillable = [
     	'user_id',
 	    'category_id',
@@ -17,6 +33,9 @@ class Post extends Model
     	];
     public function user(){
     	return $this->belongsTo('App\User');
+    }
+    public function postOrdered(){
+    	return $this->orderByDesc('updated_at');
     }
     public function photo(){
     	return $this->belongsTo('App\Photo');

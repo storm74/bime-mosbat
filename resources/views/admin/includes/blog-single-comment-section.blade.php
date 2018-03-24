@@ -60,7 +60,8 @@
                                     <!-- Avatar -->
                                     <?php
                                     $comment->author == $post->user->name ? $author=true:$author=false;?>
-                                    <div class="comment-avatar"><img src="{{$author ? asset($post->user->photo->user_image()):""}}" alt=""></div>
+                                    <div class="comment-avatar"><img src="{{$author ? asset($post->user->photo->user_image()): $comment->gravatar}}" alt=""></div>
+{{--                                    <div class="comment-avatar"><img src="{{$author ? asset($post->user->gravatar): $comment->gravatar}}" alt=""></div>--}}
                                     <!-- first level comment -->
                                     <div class="comment-box">
                                         <div class="comment-head">
