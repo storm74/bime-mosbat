@@ -21,9 +21,8 @@
                         <hr>
                     </div>
 
-                    <div class="content-content" style="text-align:justify;color: #666666 ;direction: rtl;padding: 3% ; font-size: 13px; line-height: 2.1em"> <p>
-                            {{$post->content}}
-                        </p>
+                    <div class="content-content" style="text-align:justify;color: #666666 ;direction: rtl;padding: 3% ; font-size: 13px; line-height: 2.1em">
+                        {!! $post->content !!}
                     </div>
                 </div>
                 {{--comment section--}}

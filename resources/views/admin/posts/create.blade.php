@@ -41,5 +41,6 @@
         </div>
     </div>
     {!! Form::close() !!}
+    @include('admin.includes.tinyeditor')
 
 @endsection()

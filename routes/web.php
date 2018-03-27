@@ -14,7 +14,8 @@
 use App\User;
 use App\Insurance;
 Route::get('/test',function (){
-return "<h1 class='center'>This is test page for programmer. Its Not For YOU MAN!!</h1>>";
+//return "<h1 class='center'>This is test page for programmer. Its Not For YOU MAN!!</h1>>";
+    return view('admin.includes.tinyeditor');
 });
 Route::get('/home','PostsController@home_post_section')->name('home');
 Route::get('/','PostsController@home_post_section');

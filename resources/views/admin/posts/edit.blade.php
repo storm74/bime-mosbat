@@ -11,11 +11,11 @@
         </div>
         <div class="form-group">
             {!! Form::label('content','متن مقاله') !!}
-            {!! Form::textarea('content',$post->content,['class'=>'form-control','rows'=>'25']) !!}
+            {!! Form::textarea('content',$post->content,['class'=>'form-control','rows'=>'25','style'=>'direction:rtl']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('discription','توضیحات متا') !!}
-            {!! Form::textarea('discription',$post->discription,['class'=>'form-control','rows'=>'7']) !!}
+            {!! Form::textarea('discription',$post->discription,['class'=>'form-control','rows'=>'7','direction'=>'rtl']) !!}
         </div>
 
         <div class="form-group">
@@ -51,5 +51,6 @@
         </div>
     </div>
     {!! Form::close() !!}
+    @include('admin.includes.tinyeditor')
 
 @endsection()
