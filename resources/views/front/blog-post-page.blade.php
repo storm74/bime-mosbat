@@ -1,4 +1,7 @@
 @extends('layouts.blog')
+@section('sidebar')
+    @include('includes.blog-sidebar')
+@endsection
 @section('body')
     @include('includes.blog-single-page')
 @endsection

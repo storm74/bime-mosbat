@@ -282,7 +282,13 @@
                         <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-list orange" aria-hidden="true"></i>  بیمه شخص ثالث و بدنه<span class="fa arrow"></span> </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{route('admin.fire')}}"> مشاهده لیست خودروها</a>
+                                <a id="personal-car-list" href="{{route('personal-car-list')}}"> مشاهده لیست خودروهای شخصی</a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin.fire')}}"> مشاهده لیست خودروهای باری</a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin.fire')}}"> مشاهده لیست خودروهای مخصوص حمل و نقل</a>
                             </li>
                             <li>
                                 <a href="{{route('admin.fire')}}"> افزودن</a>
@@ -382,10 +388,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1  class="page-header">
-                        @yield('page-header')
-                    </h1>
-                    @yield('main-content')
+                    <div id="admin-result">
+                        <h1 id="page-header"  class="page-header">
+                            @yield('page-header')
+                        </h1>
+                        @yield('main-content')
+                    </div>
+
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -413,6 +422,7 @@
 
 <script src="{{asset('admin_assets/dist/js/sb-admin-2.js')}}"></script>
 <script src="{{asset('admin_assets/js/ajax.js')}}"></script>
+<script src="{{asset('admin_assets/js/admin-ajax-reqeuests.js')}}"></script>
 <script>
     <!-- persiaNumber script -->
     $(document).ready(function() {

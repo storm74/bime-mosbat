@@ -25,14 +25,15 @@
     <link rel="stylesheet" id="icons-css" href="{{asset('front_assets/css/icons.css')}}" type="text/css" media="all">
     <script type="text/javascript" src="{{asset('front_assets/script/jquery.js')}}"></script>
     <script type="text/javascript" src="{{asset('front_assets/script/jquery-migrate.js')}}"></script>
-
-    {{--<meta name="generator" content="WordPress 4.9.1">--}}
-    {{--<meta name="generator" content="Easy Digital Downloads v2.8.12">--}}
+    <script type="text/javascript" src="{{asset('front_assets/script/js/bootstrap.min.js')}}"></script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" type="text/css" href="{{asset('front_assets/css/font-awesome.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('front_assets/css/menu.css')}}">
+    <script type="text/javascript" src="{{asset('front_assets/js/jquery.js')}}"></script>
+    <script type="text/javascript" src="{{asset('front_assets/js/function.js')}}"></script>
 
     <script>
         /* When the user clicks on the button,
@@ -149,24 +150,26 @@
     </script>
 
 
-    {{--<link rel="stylesheet" type="text/css" href="css/font-awesome.css">--}}
-    <link rel="stylesheet" type="text/css" href="{{asset('front_assets/css/menu.css')}}">
 
-    <script type="text/javascript" src="{{asset('front_assets/js/jquery.js')}}"></script>
-    <script type="text/javascript" src="{{asset('front_assets/js/function.js')}}"></script>
+
+    <link rel="stylesheet" href="{{asset('front_assets/css/css/main.6bd11556.css')}}">
+
+
+
+
+
+
+
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{asset('front_assets/css/css/Main.css')}}">
+    <!-- endinject -->
+
+
 </head>
 
 
-
-
-
-
-
-
-
-
 <body class="slides zen  animated firstSlide stage-1" style="display: block;">
-
 
 
 <!-- Slide 1 Intro -->
@@ -175,14 +178,15 @@
 <div id="wrap">
 
     <header>
-        <div class="inner relative">
-            <a class="logo" href="#"><img src="{{asset('front_assets/pic-video/logo.png')}}" alt="fresh design web"></a>
+        <div class="inner relative" style="    height: 103px;">
+            <a class="logo" href="#"><img src="{{asset('front_assets/pic-video/logo.png')}}" alt="fresh design web" style="max-width: 50%;"></a>
             <a id="menu-toggle" class="button dark" href="#"><i class="icon-reorder"></i></a>
             <nav id="navigation">
                 <ul id="main-menu">
-                    <li class="current-menu-item"><a href="{{route('home')}}"><i class="icon-credit-card"></i> صفحه اصلی </a></li>
+                    <li class="current-menu-item"><a href="#"><i class="icon-credit-card"></i> صفحه اصلی </a></li>
                     <li class="parent">
-                        <a href="#responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i class="icon-wrench"></i> بیمه ها </a>
+                        <a href="#responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i
+                                    class="icon-wrench"></i> بیمه ها </a>
                         <ul class="sub-menu">
                             <li><a href="#"><i class="icon-wrench"></i> بیمه 1 </a></li>
                             <li><a href="#"><i class="icon-credit-card"></i> بیمه 2 </a></li>
@@ -198,9 +202,11 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="#responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i class="icon-wrench"></i> در باره ما </a></li>
+                    <li><a href="#responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i
+                                    class="icon-wrench"></i> در باره ما </a></li>
                     <li class="parent">
-                        <a href="#responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i class="icon-wrench"></i> وبلاگ مطالب </a>
+                        <a href="#responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i
+                                    class="icon-wrench"></i> وبلاگ مطالب </a>
                         <ul class="sub-menu">
                             <li><a href="#"><i class="icon-wrench"></i> مطلب یک </a></li>
                             <li><a href="#"><i class="icon-wrench"></i> مطلب دو </a></li>
@@ -218,39 +224,57 @@
 
 </div>
 <div class="container-fluid">
-
     <div class="row ">
-          <div class="body-sidebar col-lg-3" style="float:right;background-color: #F0F0F0 !important ;">
-           @yield('sidebar')
+        <div  class="body-sidebar col-lg-3" style="z-index: 1000; float:right;background-color: #F0F0F0 !important ;">
+            @yield('sidebar')
+        </div>
 
 
-                     <div class="body-content col-lg-9 " style="float:left;background-color: #F0F0F0 !important ;z-index: 10;">
+        <style>
+            .ant-btn {
+                background-color: #57BC72 !important;
+            }
+        </style>
+        <div class="body-content col-lg-9 " style="float:left;background-color: #F0F0F0 !important ;z-index: 10;">
+            @yield('body')
+        </div>
 
-                        @yield('body')
 
-                         </div>
-
-             </div>
+    </div>
+</div>
+</div>
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="{{asset('front_assets/script/theia-sticky-sidebar.js')}}"></script>
 
 
-
-
 <style>
-    .titlle-content h2{font-size: 20px !important; }
-    .like-print ul li {float: right; padding-right: 10px; }
+    .titlle-content h2 {
+        font-size: 20px !important;
+    }
+
+    .like-print ul li {
+        float: right;
+        padding-right: 10px;
+    }
+
+    .container {
+        direction: rtl;
+    }
+
+
+
 </style>
 <footer>
     <div class="row">
         <div class="footertitle col-lg-12">
             <div class="row">
-                <div class="footerlogo col-lg-2">   <img class="logo-1" src="{{asset('front_assets/pic-video/logo.png')}}" alt="مشاوران مثبت فردا" > </div>
+                <div class="footerlogo col-lg-2"><img class="logo-1" src="{{asset('front_assets/pic-video/logo.png')}}" alt="مشاوران مثبت فردا">
+                </div>
                 <div class="footerhead col-lg-4">
                     <ul>
-                        <li id="footertitle1">مشاور امروز ، وکیل فردا </li>
+                        <li id="footertitle1">مشاور امروز ، وکیل فردا</li>
                         <li id="footertitle2">سامانه مدیریت ، مشاوره و خرید آنلاین بیمه</li>
                         <li id="footertitle3">مشاوران مثبت فردا</li>
                     </ul>
@@ -265,27 +289,27 @@
 
                 <div class="menu1">
                     <ul>
-                        <li id="id1"> پیوند های مفید </li>
-                        <li id="id2"> پل ارتباطی ما  </li>
-                        <li id="id3"> پل ارتباطی ما  </li>
-                        <li id="id4"> پل ارتباطی ما  </li>
-                        <li id="id2"> پل ارتباطی ما  </li>
-                        <li id="id3"> پل ارتباطی ما  </li>
-                        <li id="id4"> پل ارتباطی ما  </li>
-                        <li id="id2"> پل ارتباطی ما  </li>
+                        <li id="id1"> پیوند های مفید</li>
+                        <li id="id2"> پل ارتباطی ما</li>
+                        <li id="id3"> پل ارتباطی ما</li>
+                        <li id="id4"> پل ارتباطی ما</li>
+                        <li id="id2"> پل ارتباطی ما</li>
+                        <li id="id3"> پل ارتباطی ما</li>
+                        <li id="id4"> پل ارتباطی ما</li>
+                        <li id="id2"> پل ارتباطی ما</li>
 
                     </ul>
                 </div>
                 <div class="menu2">
                     <ul>
-                        <li id="id1"> راهنمای سایت </li>
-                        <li id="id2"> پل ارتباطی ما  </li>
-                        <li id="id3"> پل ارتباطی ما  </li>
-                        <li id="id4"> پل ارتباطی ما  </li>
-                        <li id="id2"> پل ارتباطی ما  </li>
-                        <li id="id3"> پل ارتباطی ما  </li>
-                        <li id="id4"> پل ارتباطی ما  </li>
-                        <li id="id2"> پل ارتباطی ما  </li>
+                        <li id="id1"> راهنمای سایت</li>
+                        <li id="id2"> پل ارتباطی ما</li>
+                        <li id="id3"> پل ارتباطی ما</li>
+                        <li id="id4"> پل ارتباطی ما</li>
+                        <li id="id2"> پل ارتباطی ما</li>
+                        <li id="id3"> پل ارتباطی ما</li>
+                        <li id="id4"> پل ارتباطی ما</li>
+                        <li id="id2"> پل ارتباطی ما</li>
 
                     </ul>
                 </div>
@@ -299,32 +323,34 @@
 
             <div class="divultamas">
                 <ul>
-                    <li id="id1"> پل ارتباطی ما  </li>
-                    <li id="id2"><i class="fas fa-map-marker"></i> آدرس : تهران خیابان شهید بهشتی ، بین سهند و سهروردی پلا87 ، واحد 11 </li>
-                    <li id="id3"><i class="fas fa-phone"></i> تلفن تماس : 021- 123456789  </li>
-                    <li id="id4"><i class="fas fa-envelope"></i>  ایمیل : info@moshaveran.ir  </li>
-                    <li id="id4"><i class="fas fa-envelope"></i>  ایمیل : info@moshaveran.ir  </li>
+                    <li id="id1"> پل ارتباطی ما</li>
+                    <li id="id2"><i class="fas fa-map-marker"></i> آدرس : تهران خیابان شهید بهشتی ، بین سهند و سهروردی
+                        پلا87 ، واحد 11
+                    </li>
+                    <li id="id3"><i class="fas fa-phone"></i> تلفن تماس : 021- 123456789</li>
+                    <li id="id4"><i class="fas fa-envelope"></i> ایمیل : info@moshaveran.ir</li>
+                    <li id="id4"><i class="fas fa-envelope"></i> ایمیل : info@moshaveran.ir</li>
                 </ul>
             </div>
 
         </div>
     </div>
 </footer>
-
-
-
-
-
+@yield('footer-style')
+<script src="{{asset('admin_assets/dist/js/persianumber.js')}}"></script>
 
 <script type="text/javascript" src="{{asset('front_assets/script/edd-ajax.js')}}"></script>
-<script type="text/javascript" src="{{asset('front_assets/script/jquery-home.js')}}"></script>
+{{--<script type="text/javascript" src="{{asset('front_assets/script/jquery-home.js')}}"></script>--}}
 <script type="text/javascript" src="{{asset('front_assets/script/monster.js')}}"></script>
+<script type="text/javascript" src="{{asset('front_assets/script/plugins.js')}}"></script>
 <script type="text/javascript" src="{{asset('front_assets/script/wp-embed.js')}}"></script>
-    <script type="text/javascript" src="{{asset('front_assets/script/js/bootstrap.min.js')}}"></script>
 
-</div>
-@yield('footer-style')
-
+<script>
+    <!-- persiaNumber script -->
+    $(document).ready(function() {
+        $('.fa_number').persiaNumber();
+    });
+</script>
 
 </body>
 </html>

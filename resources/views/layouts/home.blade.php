@@ -41,6 +41,9 @@
         function myFunction1() {
             document.getElementById("myDropdown1").classList.toggle("show");
         }
+        function myFunction7() {
+            document.getElementById("saze").classList.toggle("show");
+        }
 
         function filterFunction1() {
             var input, filter, ul, li, a, i;
@@ -316,7 +319,6 @@
                             </div>
 
                             <div id="tab1" class="tabcontent selecte-car" style="display: block">
-
                                 <div class="row">
                                     <ul>
                                         <li>
@@ -456,21 +458,15 @@
                                     </div>
 
                                 </div>
-
-
-
-
-
                             </div>
 
-                            <div id="tab2" class="tabcontent">
-
-                                <p>tab2</p>
+                            <div id="tab2" class="tabcontent selecte-car">
+                                @yield('third-insurance')
                             </div>
 
-                            <div id="tab3" class="tabcontent">
+                            <div id="tab3" class="tabcontent selecte-car">
 
-                                <p>tab3</p>
+                                @yield('fire-insurance')
                             </div>
 
                             <div id="tab4" class="tabcontent">

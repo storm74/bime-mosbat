@@ -20,5 +20,8 @@ class Insurance extends Model
 	public function user(){
 		return $this->belongsTo('App\User');
 	}
+	public function fire(){
+	    return $this->hasOne('App\Fire');
+    }
 
 }
