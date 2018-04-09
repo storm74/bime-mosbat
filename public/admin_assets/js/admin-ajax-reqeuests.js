@@ -21,6 +21,8 @@ $(document).ready(function () {
 
 
     //admin functions
-    personalCarList("personal-car-list",'admin-result');
+    // personalCarList("personal-car-list",'admin-result');
+    // personalCarList('personal-car-list-refresh','admin-result');
+
 
 });

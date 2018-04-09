@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Fire;
 use App\Http\Requests\InsuranceRequest;
 use App\Insurance;
 use App\Photo;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -41,6 +43,7 @@ class AdminInsuranceController extends Controller
      */
     public function store(InsuranceRequest $request)
     {
+
 				$input = $request->all();
 	    if ($file = $request->file('photo_id')){
 		    $name = time().$file ->getClientOriginalName();
@@ -50,9 +53,10 @@ class AdminInsuranceController extends Controller
 	    $input['photo_id'] = $photo->id;
 	    $input['third_party_insurance_id'] = null;
 	    $user = Auth::user();
-	    $user->insurances()->create($input);
+	    $insurance = $user->insurances()->create($input);
 	    $message ="شرکت بیمه".' '.$request->name." "."با موفقیت ایجاد شد";
 	    Session::flash('added_insurance',$message);
+        $insurance->fire()->create(null);
 	    return redirect()->action('AdminInsuranceController@index');
 
     }
@@ -77,7 +81,14 @@ class AdminInsuranceController extends Controller
     public function edit($id)
     {
     	$insurance = Insurance::findOrFail($id);
-        return view('admin.insurance.edit',compact('insurance'));
+    	$third_party = $insurance->thirdParty;
+        return view('admin.insurance.edit',['insurance'=>$insurance,'thirdParty'=>$third_party]);
+    }
+    public function thirdPartyEdit(Request $request){
+        $third = Insurance::findOrFail($request->id)->thirdParty;
+        $input = $request->all();
+        $third->update($input);
+        return redirect()->back();
     }
 
     /**

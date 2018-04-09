@@ -10,30 +10,80 @@
             // document.getElementById(id).classList.toggle("show");
             $('#'+id).slideToggle();
         }
-        function carModelSet(id,data) {
+        function carFamilySet(id,data,Url,familyId) {
+            var dataCollection = "<img src=\"{{asset('front_assets/pic-video/car-2.png')}}\"> "+ data +"  <img class=\"img2\" src=\"{{asset('front_assets/pic-video/chevron-right.png')}}\">";
+            document.getElementById(id+"-set").innerHTML = dataCollection;
+            // document.getElementById(id).classList.toggle("show");
+            $("#familyId").val(familyId);
+            $('#'+id).slideToggle();
+            $.ajax({
+                url:Url,
+                type:'GET',
+                success:function (personalCarList) {
+                    if (!personalCarList.error){
+                        // $('#car-noa-third-party').html(personalCarList);
+                        // $(personalCarList).appendTo('#car-noa-third-party');
+                        $('#car-noa-third-party').html(personalCarList);
+                        // console.log($('#'+Result));
+                    }
+                }
+            });
+            //ajax call
+            // console.log(data);
+        }
+
+        function carModelSet(id,data,modelId1) {
 
             var dataCollection = "<img src=\"{{asset('front_assets/pic-video/car-2.png')}}\"> "+ data +"  <img class=\"img2\" src=\"{{asset('front_assets/pic-video/chevron-right.png')}}\">";
             document.getElementById(id+"-set").innerHTML = dataCollection;
+            $("#modelId").val(modelId1);
             // document.getElementById(id).classList.toggle("show");
             $('#'+id).slideToggle();
             // console.log(data);
         }
+        function carProductSet(id,data) {
+
+            var dataCollection = "<img src=\"{{asset('front_assets/pic-video/car-2.png')}}\"> "+ data +"  <img class=\"img2\" src=\"{{asset('front_assets/pic-video/chevron-right.png')}}\">";
+            document.getElementById(id+"-set").innerHTML = dataCollection;
+            $("#productYear").val(data);
+            // document.getElementById(id).classList.toggle("show");
+            $('#'+id).slideToggle();
+            // console.log(data);
+        }
+        function carOffSet(id,data,year) {
+
+            var dataCollection = "<img src=\"{{asset('front_assets/pic-video/car-2.png')}}\"> "+ data +"  <img class=\"img2\" src=\"{{asset('front_assets/pic-video/chevron-right.png')}}\">";
+            document.getElementById(id+"-set").innerHTML = dataCollection;
+            $("#takhfifiKhesarat").val(year);
+            // document.getElementById(id).classList.toggle("show");
+            $('#'+id).slideToggle();
+            // console.log(data);
+        }
+        function submiThirdPartyInsurance() {
+            $('#third-party-submit').click(function () {
+                $('form#third-party-form').submit();
+            })
+        }
     </script>
+    {!! Form::open(['target'=>'_blank','id'=>'third-party-form','method'=>'POST','action'=>'FrontInsuranceController@thirdpartyInsuranceFromHome']) !!}
+    <input type="hidden" id="familyId" name="familyId" value="">
+    <input type="hidden" id="modelId" name="modelId" value="">
+    <input type="hidden" id="productYear" name="productYear" value="">
+    <input type="hidden" id="takhfifiKhesarat" name="off" value="">
+    {!! Form::close() !!}
     <div class="row">
         <ul>
             <li>
                 <div class="dropdown1">
 
+
+
                     <button id="car_model-third-set" onclick="dropDown('car_model-third')" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> نوع خودرو <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>
                     <div id="car_model-third" class="dropdown-content">
                         <input type="text" placeholder="جست جو  ... " id="myInput1" onkeyup="">
-                        <a data="پراید" onclick="carModelSet('car_model-third',this.getAttribute('data'))"  href="#pride">پراید</a>
-                        <a data="پژو 405" onclick="carModelSet('car_model-third',getAttribute('data'))"  href="#pejo405">پژو 405</a>
-                        <a data="پژو آردی" onclick="carModelSet('car_model-third',getAttribute('data'))"  href="#pejoardi">پژو آردی</a>
-                        <a data="پیکان" onclick="carModelSet('car_model-third',getAttribute('data'))"  href="#pekan">پیکان</a>
-                        <a data="دنا" onclick="carModelSet('car_model-third',getAttribute('data'))" href="#dena">دنا</a>
-                        <a data="پراید" onclick="carModelSet('car_model-third',getAttribute('data'))"  href="#samand">سمند </a>
-                        <a data="سمند" onclick="carModelSet('car_model-third',getAttribute('data'))" href="#pejopars">پژو پارس</a>
+                        @foreach($carFamily as $family)
+                            <a family_id ="{{$family->id}}" Url="{{route('modelSet',['id'=>$family->id])}}" data="{{$family->family}}" onclick="carFamilySet('car_model-third',this.getAttribute('data'),this.getAttribute('Url'),this.getAttribute('family_id'))" >{{$family->family}}</a>
+                        @endforeach
                     </div>
                 </div>
             </li>
@@ -45,8 +95,11 @@
                     <button id="car-noa-third-party-set" onclick="dropDown('car-noa-third-party')" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}">  مدل خودرو <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>
                     <div id="car-noa-third-party" class="dropdown-content">
                         <input type="text" placeholder="جست جو  ... " id="myInput2" onkeyup="">
-                        <a data="نوع 1" onclick="carModelSet('car-noa-third-party',this.getAttribute('data'))" href="#model1">نوع 1</a>
-                        <a data="نو 2" onclick="carModelSet('car-noa-third-party',this.getAttribute('data'))" href="#model2">نوع 2</a>
+                        {{--<div id="carModelResult">--}}
+
+                        {{--</div>--}}
+                        {{--<a data="نوع 1" onclick="carModelSet('car-noa-third-party',this.getAttribute('data'))" href="#model1">نوع 1</a>--}}
+                        {{--<a data="نو 2" onclick="carModelSet('car-noa-third-party',this.getAttribute('data'))" href="#model2">نوع 2</a>--}}
                     </div>
                 </div>
             </li>
@@ -58,24 +111,24 @@
                     <button id="third-party-produce-set" onclick="dropDown('third-party-produce')" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> سال تولید <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>
                     <div id="third-party-produce" class="dropdown-content">
                         <input type="text" placeholder="جست جو  ... " id="myInput3" onkeyup="">
-                        <a data="1380" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1380">سال 1380</a>
-                        <a data="1381" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1381">سال 1381</a>
-                        <a data="1382" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1382">سال 1382</a>
-                        <a data="1383" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1383">سال 1383</a>
-                        <a data="1384" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1384">سال 1384</a>
-                        <a data="1385" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1385">سال 1385</a>
-                        <a data="1386" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1386">سال 1386</a>
-                        <a data="1387" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1387">سال 1387</a>
-                        <a data="1388" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1388">سال 1388</a>
-                        <a data="1389" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1389">سال 1389</a>
-                        <a data="1390" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1390">سال 1390</a>
-                        <a data="1391" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1391">سال 1391</a>
-                        <a data="1392" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1392">سال 1392</a>
-                        <a data="1393" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1393">سال 1393</a>
-                        <a data="1394" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1394">سال 1394</a>
-                        <a data="1395" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1394">سال 1395</a>
-                        <a data="1396" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1394">سال 1396</a>
-                        <a data="1397" onclick="carModelSet('third-party-produce',this.getAttribute('data'))" href="#1394">سال 1397</a>
+                        <a data="1380" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1380">سال 1380</a>
+                        <a data="1381" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1381">سال 1381</a>
+                        <a data="1382" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1382">سال 1382</a>
+                        <a data="1383" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1383">سال 1383</a>
+                        <a data="1384" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1384">سال 1384</a>
+                        <a data="1385" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1385">سال 1385</a>
+                        <a data="1386" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1386">سال 1386</a>
+                        <a data="1387" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1387">سال 1387</a>
+                        <a data="1388" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1388">سال 1388</a>
+                        <a data="1389" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1389">سال 1389</a>
+                        <a data="1390" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1390">سال 1390</a>
+                        <a data="1391" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1391">سال 1391</a>
+                        <a data="1392" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1392">سال 1392</a>
+                        <a data="1393" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1393">سال 1393</a>
+                        <a data="1394" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1394">سال 1394</a>
+                        <a data="1395" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1394">سال 1395</a>
+                        <a data="1396" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1394">سال 1396</a>
+                        <a data="1397" onclick="carProductSet('third-party-produce',this.getAttribute('data'))" href="#1394">سال 1397</a>
 
                     </div>
                 </div>
@@ -90,22 +143,22 @@
                     <div id="third-party-takhfif" class="dropdown-content">
                         <input type="text" placeholder="جست جو  ... " id="myInput4" onkeyup="">
                         {{--<a href="#takhfifadmekhesarat">تخفیف عدم خسارت</a>--}}
-                        <a data="بدون خسارت" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#bdoonkhesarat">بدون خسارت</a>
-                        <a data="1 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#1year">1 سال</a>
-                        <a data="2 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#2year">2 سال</a>
-                        <a data="3 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#3year">3 سال</a>
-                        <a data="4 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#4year">4 سال</a>
-                        <a data="5 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#5year">5 سال</a>
-                        <a data="6 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#6year">6 سال</a>
-                        <a data="7 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#7year">7 سال</a>
-                        <a data="8 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#8year">8 سال</a>
-                        <a data="9 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#9year">9 سال</a>
-                        <a data="10 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#10year">10 سال</a>
-                        <a data="11 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#10year">11 سال</a>
-                        <a data="12 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#10year">12 سال</a>
-                        <a data="13 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#10year">13 سال</a>
-                        <a data="14 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#10year">14 سال</a>
-                        <a data="بیش از 14 سال" onclick="carModelSet('third-party-takhfif',this.getAttribute('data'))" href="#bishaz10">بیش از 14 سال</a>
+                        <a year="0" data="بدون خسارت" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#bdoonkhesarat">بدون خسارت</a>
+                        <a year="1" data="1 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#1year">1 سال</a>
+                        <a year="2" data="2 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#2year">2 سال</a>
+                        <a year="3" data="3 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#3year">3 سال</a>
+                        <a year="4" data="4 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#4year">4 سال</a>
+                        <a year="5" data="5 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#5year">5 سال</a>
+                        <a year="6" data="6 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#6year">6 سال</a>
+                        <a year="7" data="7 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#7year">7 سال</a>
+                        <a year="8" data="8 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#8year">8 سال</a>
+                        <a year="9" data="9 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#9year">9 سال</a>
+                        <a year="10" data="10 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#10year">10 سال</a>
+                        <a year="11" data="11 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#10year">11 سال</a>
+                        <a year="12" data="12 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#10year">12 سال</a>
+                        <a year="13" data="13 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#10year">13 سال</a>
+                        <a year="14" data="14 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#10year">14 سال</a>
+                        <a year="m14" data="بیش از 14 سال" onclick="carOffSet('third-party-takhfif',this.getAttribute('data'),this.getAttribute('year'))" href="#bishaz10">بیش از 14 سال</a>
 
                     </div>
                 </div>
@@ -141,7 +194,7 @@
 
                 <a href="#">
 
-                    <button class="dropbtn btnenter"><img src="{{asset('front_assets/pic-video/search.png')}}"> مقایسه کن ... !  </button>
+                    <button onclick="submiThirdPartyInsurance()" id="third-party-submit" class="dropbtn btnenter"><img src="{{asset('front_assets/pic-video/search.png')}}"> مقایسه کن ... !  </button>
                 </a>
 
 

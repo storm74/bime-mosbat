@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\carsCategory;
 use App\Comment;
 use App\CommentReply;
+use App\personal_car_list;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +25,8 @@ class PostsController extends Controller
     }
     public function home_post_section(){
         $posts = Post::all()->sortByDesc('updated_at');
-        return view('homepage',['posts'=>$posts]);
+        $carFamily = carsCategory::all()->sortByDesc('updated_at');
+        return view('homepage',['posts'=>$posts,'carFamily'=>$carFamily]);
     }
     public function commentStore(Request $request){
 

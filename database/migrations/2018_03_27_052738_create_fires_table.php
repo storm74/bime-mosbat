@@ -16,17 +16,17 @@ class CreateFiresTable extends Migration
         Schema::create('fires', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('insurance_id')->index();
-            $table->float('base',10,6);
-            $table->float('eb',10,6);
-            $table->float('ef',10,6);
-            $table->float('tl',10,6);
-            $table->float('nz',10,6);
-            $table->float('shm5',10,6);
-            $table->float('shl5',10,6);
-            $table->float('storm',10,6);
-            $table->float('flood',10,6);
-            $table->float('s_va_sh',10,6);
-            $table->float('rain',10,6);
+            $table->float('base',10,6)->nullable();
+            $table->float('eb',10,6)->nullable();
+            $table->float('ef',10,6)->nullable();
+            $table->float('tl',10,6)->nullable();
+            $table->float('nz',10,6)->nullable();
+            $table->float('shm5',10,6)->nullable();
+            $table->float('shl5',10,6)->nullable();
+            $table->float('storm',10,6)->nullable();
+            $table->float('flood',10,6)->nullable();
+            $table->float('s_va_sh',10,6)->nullable();
+            $table->float('rain',10,6)->nullable();
             $table->timestamps();
         });
     }

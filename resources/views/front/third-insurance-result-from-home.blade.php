@@ -1,12 +1,11 @@
 @extends('layouts.insurance_result')
 @section('sidebar')
-    @include('includes.fire-siebar-result')
-
+    @include('includes.third-siebar-result')
 @endsection
 @section('body')
 
-    <div id="fire-result">
-        @include('includes.fire-single-body')
+    <div id="third-result">
+        @include('includes.third-single-body')
     </div>
 @endsection
 

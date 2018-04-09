@@ -23,5 +23,8 @@ class Insurance extends Model
 	public function fire(){
 	    return $this->hasOne('App\Fire');
     }
+    public function thirdParty(){
+	    return $this->belongsTo('App\ThirdPartyInsurance','third_party_insurance_id','id');
+    }
 
 }

@@ -42,4 +42,7 @@ class ThirdPartyInsurance extends Model
         'tr_10',
         // transaction cars with the capacity of 7 people with driver
     ];
+    public function insuranceCompany(){
+        return $this->hasOne('App\Insurance','third_party_insurance_id','id');
+    }
 }

@@ -182,7 +182,8 @@
                         <ul>
                             <a href="#page6">
                                 <li><img src="{{asset('front_assets/pic-video/car.png')}}"> بیمه بدنه </li>
-                            </a> <a href="#page7">
+                            </a>
+                            <a href="#page7">
                                 <li><img src="{{asset('front_assets/pic-video/third-party.png')}}"> بیمه شخص ثالث </li>
                             </a> <a href="#page8">
                                 <li><img src="{{asset('front_assets/pic-video/fire.png')}}"> بیمه آتش  سوزی </li>
@@ -311,156 +312,156 @@
                         <div class="boxtab ">
 
                             <div class="tab">
-                                <button class="tablinks active" onclick="openCity(event, 'tab1')"><img src="{{asset('front_assets/pic-video/car.png')}}">  بیمه بدنه خودرو</button>
+                                {{--<button class="tablinks active" onclick="openCity(event, 'tab1')"><img src="{{asset('front_assets/pic-video/car.png')}}">  بیمه بدنه خودرو</button>--}}
                                 <button class="tablinks" onclick="openCity(event, 'tab2')"><img src="{{asset('front_assets/pic-video/third-party.png')}}">  بیمه شخص ثالث </button>
                                 <button class="tablinks" onclick="openCity(event, 'tab3')"><img src="{{asset('front_assets/pic-video/fire.png')}}"> بیمه آتش سوزی</button><button class="tablinks" onclick="openCity(event, 'tab4')"><img src="{{asset('front_assets/pic-video/Earthquake.png')}}"> بیمه زلزله</button>
                                 <button class="tablinks" onclick="openCity(event, 'tab5')"><img src="{{asset('front_assets/pic-video/life.png')}}"> بیمه عمر</button>
                                 <button class="tablinks" onclick="openCity(event, 'tab6')">مشاوره آنلاین بیمه</button>
                             </div>
 
-                            <div id="tab1" class="tabcontent selecte-car" style="display: block">
-                                <div class="row">
-                                    <ul>
-                                        <li>
-                                            <div class="dropdown1">
+                            {{--<div id="tab1" class="tabcontent selecte-car" style="display: block">--}}
+                                {{--<div class="row">--}}
+                                    {{--<ul>--}}
+                                        {{--<li>--}}
+                                            {{--<div class="dropdown1">--}}
 
-                                                <button onclick="myFunction1()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> نوع خودرو <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>
-                                                <div id="myDropdown1" class="dropdown-content">
-                                                    <input type="text" placeholder="جست جو  ... " id="myInput1" onkeyup="filterFunction1()">
-                                                    <a href="#pride">پراید</a>
-                                                    <a href="#pejo405">پژو 405</a>
-                                                    <a href="#pejoardi">پژو آردی</a>
-                                                    <a href="#pekan">پیکان</a>
-                                                    <a href="#dena">دنا</a>
-                                                    <a href="#samand">سمند </a>
-                                                    <a href="#pejopars">پژو پارس</a>
-                                                </div>
-                                            </div>
-                                        </li>
-
-
-                                        <li>
-                                            <div class="dropdown2">
-
-                                                <button onclick="myFunction2()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}">  مدل خودرو <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>
-                                                <div id="myDropdown2" class="dropdown-content">
-                                                    <input type="text" placeholder="جست جو  ... " id="myInput2" onkeyup="filterFunction2()">
-                                                    <a href="#model1">نوع 1</a>
-                                                    <a href="#model2">نوع 2</a>
-                                                    <a href="#model3">نوع 3</a>
-                                                    <a href="#model4">نوع 4</a>
-                                                    <a href="#model5">نوع 5</a>
-                                                    <a href="#model6">نوع 6</a>
-                                                    <a href="#model7">نوع 7</a>
-                                                </div>
-                                            </div>
-                                        </li>
+                                                {{--<button onclick="myFunction1()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> نوع خودرو <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>--}}
+                                                {{--<div id="myDropdown1" class="dropdown-content">--}}
+                                                    {{--<input type="text" placeholder="جست جو  ... " id="myInput1" onkeyup="filterFunction1()">--}}
+                                                    {{--<a href="#pride">پراید</a>--}}
+                                                    {{--<a href="#pejo405">پژو 405</a>--}}
+                                                    {{--<a href="#pejoardi">پژو آردی</a>--}}
+                                                    {{--<a href="#pekan">پیکان</a>--}}
+                                                    {{--<a href="#dena">دنا</a>--}}
+                                                    {{--<a href="#samand">سمند </a>--}}
+                                                    {{--<a href="#pejopars">پژو پارس</a>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</li>--}}
 
 
-                                        <li>
-                                            <div class="dropdown3">
+                                        {{--<li>--}}
+                                            {{--<div class="dropdown2">--}}
 
-                                                <button onclick="myFunction3()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> سال تولید <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>
-                                                <div id="myDropdown3" class="dropdown-content">
-                                                    <input type="text" placeholder="جست جو  ... " id="myInput3" onkeyup="filterFunction3()">
-                                                    <a href="#1380">سال 1380</a>
-                                                    <a href="#1381">سال 1381</a>
-                                                    <a href="#1382">سال 1382</a>
-                                                    <a href="#1383">سال 1383</a>
-                                                    <a href="#1384">سال 1384</a>
-                                                    <a href="#1385">سال 1385</a>
-                                                    <a href="#1386">سال 1386</a>
-                                                    <a href="#1387">سال 1387</a>
-                                                    <a href="#1388">سال 1388</a>
-                                                    <a href="#1389">سال 1389</a>
-                                                    <a href="#1390">سال 1390</a>
-                                                    <a href="#1391">سال 1391</a>
-                                                    <a href="#1392">سال 1392</a>
-                                                    <a href="#1393">سال 1393</a>
-                                                    <a href="#1394">سال 1394</a>
-
-                                                </div>
-                                            </div>
-
-                                        </li>
+                                                {{--<button onclick="myFunction2()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}">  مدل خودرو <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>--}}
+                                                {{--<div id="myDropdown2" class="dropdown-content">--}}
+                                                    {{--<input type="text" placeholder="جست جو  ... " id="myInput2" onkeyup="filterFunction2()">--}}
+                                                    {{--<a href="#model1">نوع 1</a>--}}
+                                                    {{--<a href="#model2">نوع 2</a>--}}
+                                                    {{--<a href="#model3">نوع 3</a>--}}
+                                                    {{--<a href="#model4">نوع 4</a>--}}
+                                                    {{--<a href="#model5">نوع 5</a>--}}
+                                                    {{--<a href="#model6">نوع 6</a>--}}
+                                                    {{--<a href="#model7">نوع 7</a>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</li>--}}
 
 
-                                        <li>
-                                            <div class="dropdown4">
+                                        {{--<li>--}}
+                                            {{--<div class="dropdown3">--}}
 
-                                                <button onclick="myFunction4()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> تخفیف عدم خسارت <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>
-                                                <div id="myDropdown4" class="dropdown-content">
-                                                    <input type="text" placeholder="جست جو  ... " id="myInput4" onkeyup="filterFunction4()">
-                                                    <a href="#takhfifadmekhesarat">تخفیف عدم خسارت</a>
-                                                    <a href="#bdoonkhesarat">بدون خسارت</a>
-                                                    <a href="#1year">1 سال</a>
-                                                    <a href="#2year">2 سال</a>
-                                                    <a href="#3year">3 سال</a>
-                                                    <a href="#4year">4 سال</a>
-                                                    <a href="#5year">5 سال</a>
-                                                    <a href="#6year">6 سال</a>
-                                                    <a href="#7year">7 سال</a>
-                                                    <a href="#8year">8 سال</a>
-                                                    <a href="#9year">9 سال</a>
-                                                    <a href="#10year">10 سال</a>
-                                                    <a href="#bishaz10">بیش از 10 سال</a>
+                                                {{--<button onclick="myFunction3()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> سال تولید <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>--}}
+                                                {{--<div id="myDropdown3" class="dropdown-content">--}}
+                                                    {{--<input type="text" placeholder="جست جو  ... " id="myInput3" onkeyup="filterFunction3()">--}}
+                                                    {{--<a href="#1380">سال 1380</a>--}}
+                                                    {{--<a href="#1381">سال 1381</a>--}}
+                                                    {{--<a href="#1382">سال 1382</a>--}}
+                                                    {{--<a href="#1383">سال 1383</a>--}}
+                                                    {{--<a href="#1384">سال 1384</a>--}}
+                                                    {{--<a href="#1385">سال 1385</a>--}}
+                                                    {{--<a href="#1386">سال 1386</a>--}}
+                                                    {{--<a href="#1387">سال 1387</a>--}}
+                                                    {{--<a href="#1388">سال 1388</a>--}}
+                                                    {{--<a href="#1389">سال 1389</a>--}}
+                                                    {{--<a href="#1390">سال 1390</a>--}}
+                                                    {{--<a href="#1391">سال 1391</a>--}}
+                                                    {{--<a href="#1392">سال 1392</a>--}}
+                                                    {{--<a href="#1393">سال 1393</a>--}}
+                                                    {{--<a href="#1394">سال 1394</a>--}}
 
-                                                </div>
-                                            </div>
+                                                {{--</div>--}}
+                                            {{--</div>--}}
 
-                                        </li>
-
-
-                                        <li>
-                                            <div class="dropdown5">
-
-                                                <button onclick="myFunction5()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> تاریخ انقضاء بیمه <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>
-                                                <div id="myDropdown5" class="dropdown-content">
-                                                    <input type="text" placeholder="جست جو  ... " id="myInput5" onkeyup="filterFunction5()">
-                                                    <a href="#takhfifadmekhesarat">تخفیف عدم خسارت</a>
-                                                    <a href="#bdoonkhesarat">بدون خسارت</a>
-                                                    <a href="#1year">1 سال</a>
-                                                    <a href="#2year">2 سال</a>
-                                                    <a href="#3year">3 سال</a>
-                                                    <a href="#4year">4 سال</a>
-                                                    <a href="#5year">5 سال</a>
-                                                    <a href="#6year">6 سال</a>
-                                                    <a href="#7year">7 سال</a>
-                                                    <a href="#8year">8 سال</a>
-                                                    <a href="#9year">9 سال</a>
-                                                    <a href="#10year">10 سال</a>
-                                                    <a href="#bishaz10">بیش از 10 سال</a>
-
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                        <li>
-
-                                            <a href="#">
-
-                                                <button class="dropbtn btnenter"><img src="{{asset('front_assets/pic-video/search.png')}}"> مقایسه کن ... !  </button>
-                                            </a>
+                                        {{--</li>--}}
 
 
-                                        </li>
+                                        {{--<li>--}}
+                                            {{--<div class="dropdown4">--}}
+
+                                                {{--<button onclick="myFunction4()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> تخفیف عدم خسارت <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>--}}
+                                                {{--<div id="myDropdown4" class="dropdown-content">--}}
+                                                    {{--<input type="text" placeholder="جست جو  ... " id="myInput4" onkeyup="filterFunction4()">--}}
+                                                    {{--<a href="#takhfifadmekhesarat">تخفیف عدم خسارت</a>--}}
+                                                    {{--<a href="#bdoonkhesarat">بدون خسارت</a>--}}
+                                                    {{--<a href="#1year">1 سال</a>--}}
+                                                    {{--<a href="#2year">2 سال</a>--}}
+                                                    {{--<a href="#3year">3 سال</a>--}}
+                                                    {{--<a href="#4year">4 سال</a>--}}
+                                                    {{--<a href="#5year">5 سال</a>--}}
+                                                    {{--<a href="#6year">6 سال</a>--}}
+                                                    {{--<a href="#7year">7 سال</a>--}}
+                                                    {{--<a href="#8year">8 سال</a>--}}
+                                                    {{--<a href="#9year">9 سال</a>--}}
+                                                    {{--<a href="#10year">10 سال</a>--}}
+                                                    {{--<a href="#bishaz10">بیش از 10 سال</a>--}}
+
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+
+                                        {{--</li>--}}
 
 
-                                    </ul>
-                                </div>
-                                <div class="row">
+                                        {{--<li>--}}
+                                            {{--<div class="dropdown5">--}}
 
-                                    <div class="matnenter col-lg-12" >
-                                        <div class="tozihat p1 col-lg-3" ><h3>♦ مقایسه و انتخاب بهترین بیمه</h3><br><p>قیمت و سایر مشخصات هر شرکت بیمه رو مقایسه کنید و اگر نیاز به مشاوره داشتید از بیمه‌بازار بپرسید </p></div>
-                                        <div class="tozihat p2 col-lg-3" ><h3>♦ درخواست خرید و تکمیل اطلاعات</h3><br><p>بعد از انتخاب بهترین بیمه، اطلاعاتی که برای صدور بیمه نامتون لازمه رو وارد کنید و زمان ارسال رو انتخاب کنید</p></div>
-                                        <div class="tozihat p3 col-lg-3" ><h3>♦ صدور و ارسال بیمه‌نامه</h3><br><p>با پرداخت حق بیمه، سفارش شما کامل می‌شه. بیمه‌بازار بیمه‌نامه شمارو به نشونیتون ارسال می‌کنه</p></div>
-                                        <div class="tozihat p3 col-lg-3" ><h3>♦ تحویل در محل</h3><br><p>در صورت ثبت سفارش قبل از ساعت 3 بعد از ظهر، می‌تونید همون روز بیمه‌نامتون رو از پیک بیمه‌بازار تحویل بگیرید</p></div>
-                                    </div>
+                                                {{--<button onclick="myFunction5()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> تاریخ انقضاء بیمه <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>--}}
+                                                {{--<div id="myDropdown5" class="dropdown-content">--}}
+                                                    {{--<input type="text" placeholder="جست جو  ... " id="myInput5" onkeyup="filterFunction5()">--}}
+                                                    {{--<a href="#takhfifadmekhesarat">تخفیف عدم خسارت</a>--}}
+                                                    {{--<a href="#bdoonkhesarat">بدون خسارت</a>--}}
+                                                    {{--<a href="#1year">1 سال</a>--}}
+                                                    {{--<a href="#2year">2 سال</a>--}}
+                                                    {{--<a href="#3year">3 سال</a>--}}
+                                                    {{--<a href="#4year">4 سال</a>--}}
+                                                    {{--<a href="#5year">5 سال</a>--}}
+                                                    {{--<a href="#6year">6 سال</a>--}}
+                                                    {{--<a href="#7year">7 سال</a>--}}
+                                                    {{--<a href="#8year">8 سال</a>--}}
+                                                    {{--<a href="#9year">9 سال</a>--}}
+                                                    {{--<a href="#10year">10 سال</a>--}}
+                                                    {{--<a href="#bishaz10">بیش از 10 سال</a>--}}
 
-                                </div>
-                            </div>
+                                                {{--</div>--}}
+                                            {{--</div>--}}
 
-                            <div id="tab2" class="tabcontent selecte-car">
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+
+                                            {{--<a href="#">--}}
+
+                                                {{--<button class="dropbtn btnenter"><img src="{{asset('front_assets/pic-video/search.png')}}"> مقایسه کن ... !  </button>--}}
+                                            {{--</a>--}}
+
+
+                                        {{--</li>--}}
+
+
+                                    {{--</ul>--}}
+                                {{--</div>--}}
+                                {{--<div class="row">--}}
+
+                                    {{--<div class="matnenter col-lg-12" >--}}
+                                        {{--<div class="tozihat p1 col-lg-3" ><h3>♦ مقایسه و انتخاب بهترین بیمه</h3><br><p>قیمت و سایر مشخصات هر شرکت بیمه رو مقایسه کنید و اگر نیاز به مشاوره داشتید از بیمه‌بازار بپرسید </p></div>--}}
+                                        {{--<div class="tozihat p2 col-lg-3" ><h3>♦ درخواست خرید و تکمیل اطلاعات</h3><br><p>بعد از انتخاب بهترین بیمه، اطلاعاتی که برای صدور بیمه نامتون لازمه رو وارد کنید و زمان ارسال رو انتخاب کنید</p></div>--}}
+                                        {{--<div class="tozihat p3 col-lg-3" ><h3>♦ صدور و ارسال بیمه‌نامه</h3><br><p>با پرداخت حق بیمه، سفارش شما کامل می‌شه. بیمه‌بازار بیمه‌نامه شمارو به نشونیتون ارسال می‌کنه</p></div>--}}
+                                        {{--<div class="tozihat p3 col-lg-3" ><h3>♦ تحویل در محل</h3><br><p>در صورت ثبت سفارش قبل از ساعت 3 بعد از ظهر، می‌تونید همون روز بیمه‌نامتون رو از پیک بیمه‌بازار تحویل بگیرید</p></div>--}}
+                                    {{--</div>--}}
+
+                                {{--</div>--}}
+                            {{--</div>--}}
+
+                            <div id="tab2" class="tabcontent selecte-car" style="display: block;">
                                 @yield('third-insurance')
                             </div>
 
@@ -471,17 +472,23 @@
 
                             <div id="tab4" class="tabcontent">
 
-                                <p>tab4</p>
+                                <p style="font-size: 140%;" class="center">
+                                    در حال تکمیل
+                                </p>
                             </div>
 
                             <div id="tab5" class="tabcontent">
 
-                                <p>tab5</p>
+                                <p style="font-size: 140%;" class="center">
+                                    در حال تکمیل
+                                </p>
                             </div>
 
                             <div id="tab6" class="tabcontent">
 
-                                <p>tab6</p>
+                                <p style="font-size: 140%;" class="center">
+                                    در حال تکمیل
+                                </p>
                             </div>
                         </div>
 

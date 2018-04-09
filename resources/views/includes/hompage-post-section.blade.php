@@ -21,7 +21,7 @@
                                     <div class="picblog"><img src="{{$post->photo->post_image()}}"></div>
                                     <div class="titleblog"><h3>{{$post->title}}</h3></div>
                                     <div class="contentblog"><p>
-                                           {{str_limit($post->content,290,' ...')}}
+                                            {!! str_limit($post->content,290,' ...') !!}
                                         </p></div>
                                 </li>
                             </ul>
