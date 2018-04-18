@@ -9,7 +9,7 @@
         <div class="titlle-content" style="color: #444444 ;  padding-left: 10%;  padding-right: 3% ; direction: rtl"><h2> {{$post->title}} </h2></div>
 
         <div class="content-content" style="text-align:justify;color: #666666 ;direction: rtl;padding: 3% ; font-size: 13px; line-height: 2.1em"> <p>
-                {{$post->content}}
+                {!! str_limit($post->content,690,' ...') !!}
             </p>
             <a  href="{{route('blog-single',['slug'=>$post->slug])}}" class="btn btn-outline-success float-left xs-full-width blog-home-button">ادامه مطلب</a>
             {{--<div class="like-print" style="color: #444444 ;  float: left; padding-bottom: 5%; margin-bottom: 2%">--}}

@@ -59,8 +59,10 @@
                                 <div class="comment-main-level">
                                     <!-- Avatar -->
                                     <?php
-                                    $comment->author == $post->user->name ? $author=true:$author=false;?>
-                                    <div class="comment-avatar"><img src="{{$author ? asset($post->user->photo->user_image()): $comment->gravatar}}" alt=""></div>
+                                    $comment->author == $post->user->name ? $author=true:$author=false;
+                                    $author_image = $post->user->photo ? asset($post->user->photo->user_image()) : $comment->gravatar;
+                                    ?>
+                                    <div class="comment-avatar"><img src="{{$author ? $author_image : $comment->gravatar}}" alt=""></div>
 {{--                                    <div class="comment-avatar"><img src="{{$author ? asset($post->user->gravatar): $comment->gravatar}}" alt=""></div>--}}
                                     <!-- first level comment -->
                                     <div class="comment-box">
@@ -116,10 +118,17 @@
                                     @foreach($comment->replies->where('status','==','1') as $reply)
                                         <?php
                                         $reply->author == $post->user->name ? $r_author=true:$r_author=false;
+                                        if ($r_author){
+                                            $reply_author_image = $post->user->photo ? asset($post->user->photo->user_image()) : $comment->gravatar;
+
+                                        }else{
+                                            $reply_author_image = "";
+                                        }
+
                                         ?>
                                         <li>
                                             <!-- Avatar -->
-                                            <div class="comment-avatar"><img src="{{$r_author ? asset($post->user->photo->user_image()):""}}" alt=""></div>
+                                            <div class="comment-avatar"><img src="{{$r_author ? $reply_author_image :""}}" alt=""></div>
                                             <!-- reply first level -->
                                             <div class="comment-box">
                                                 <div class="comment-head">

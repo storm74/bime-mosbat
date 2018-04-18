@@ -1,85 +1,56 @@
 <div class="row">
     <div class="alert-info">
         <p>
-            توجه نمایید که جهت کارکرد مناسب سیتم بایستی پارامترهای موجود برای محاسبه بیمه شخص ثالث را به دقت پر نمایید و از خالی گذاشتن پرامترها پرهیز نمایید
+            توجه نمایید که جهت کارکرد مناسب سیتم بایستی پارامترهای موجود برای محاسبه بیمه آتش را به دقت پر نمایید و از خالی گذاشتن پرامترها پرهیز نمایید
         </p>
     </div>
-    {!! Form::open(['method'=>'POST','action'=>'AdminInsuranceController@thirdPartyEdit']) !!}
+    {!! Form::open(['method'=>'POST','action'=>'AdminInsuranceController@fireEdit']) !!}
     <input type="hidden" name="id" value="{{$insurance->id}}">
     {{--<form action="">--}}
     <div class="col-lg-8">
-        <h2 class="page-header">خودروهای سواری : </h2>
         <div class="form-group">
-            {!! Form::label('lfs','قیمت پایه بیمه خودروهای کمتر از چهار سیلندر') !!}
-            {!! Form::text('lfs',$thirdParty->lfs,['class'=>'form-control']) !!}
+            {!! Form::label('base','تعرفه پایه بیمه آتش سوزی') !!}
+            {!! Form::text('base',$fire->base,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('g4s','قیمت پایه بیمه خودروهای بیشتر از چهار سیلندر') !!}
-            {!! Form::text('g4s',$thirdParty->g4s,['class'=>'form-control']) !!}
+            {!! Form::label('ef','تعرفه پوشش زلزله برای اسکلت فلزی') !!}
+            {!! Form::text('ef',$fire->ef,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('pps','قیمت پایه بیمه خودروهای پراید، پیکان، سپند ') !!}
-            {!! Form::text('pps',$thirdParty->pps,['class'=>'form-control']) !!}
+            {!! Form::label('eb','تعرفه پوشش زلزله برای اسکلت بتنی') !!}
+            {!! Form::text('eb',$fire->eb,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('o4s','قیمت پایه بیمه سایر خودروهای چهار سیلندر ') !!}
-            {!! Form::text('o4s',$thirdParty->o4s,['class'=>'form-control']) !!}
-        </div>
-        <h2 class="page-header">تعرفه خودروهای مسافرکشی شخصی، آژانس و تاکسی ها : </h2>
-        <div class="form-group">
-            {!! Form::label('t_in','تعرفه افزوده شده برای تاکسی ها، آزانس ها و مسافرکشی های شخصی درون شهری : ') !!}
-            {!! Form::text('t_in',$thirdParty->t_in,['class'=>'form-control']) !!}
+            {!! Form::label('tl','تعرفه پوشش ترکیدگی لوله ') !!}
+            {!! Form::text('tl',$fire->tl,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('t_out','تعرفه افزوده شده برای تاکسی ها، آزانس ها و مسافرکشی های شخصی برون شهری : ') !!}
-            {!! Form::text('t_out',$thirdParty->t_out,['class'=>'form-control']) !!}
-        </div>
-        <h2 class="page-header">خودروهای باری :  </h2>
-        <div class="form-group">
-            {!! Form::label('bl_1','قیمت پایه برای خودروهای باری با ظرفیت کمتر از 1 تن :') !!}
-            {!! Form::text('bl_1',$thirdParty->bl_1,['class'=>'form-control']) !!}
+            {!! Form::label('nz','تعرفه پوشش نشست زمین  ') !!}
+            {!! Form::text('nz',$fire->nz,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('b_13','قیمت پایه برای خودروهای باری با ظرفیت 1 تا 3 تن :') !!}
-            {!! Form::text('b_13',$thirdParty->b_13,['class'=>'form-control fa_number']) !!}
+            {!! Form::label('shm5','تعرفه پوشش سقوط هواپیما با فاصله بیشتر از 5 کیلومتر : ') !!}
+            {!! Form::text('shm5',$fire->shm5,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('b_35','قیمت پایه برای خودروهای باری با ظرفیت 3 تا 5 تن :') !!}
-            {!! Form::text('b_35',$thirdParty->b_35,['class'=>'form-control fa_number']) !!}
+            {!! Form::label('shl5','تعرفه پوشش سقوط هواپیما با فاصله کمتر از 5 کیلومتر ') !!}
+            {!! Form::text('shl5',$fire->shl5,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('b_510','قیمت پایه برای خودروهای باری با ظرفیت بین 5 تا 10 تن :') !!}
-            {!! Form::text('b_510',$thirdParty->b_510,['class'=>'form-control fa_number']) !!}
+            {!! Form::label('storm','تعرفه پوشش خسارات ناشی از طوفان') !!}
+            {!! Form::text('storm',$fire->storm,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('b_1020','قیمت پایه برای خودروهای باری با ظرفیت بین 10 تا 20 تن :') !!}
-            {!! Form::text('b_1020',$thirdParty->b_1020,['class'=>'form-control fa_number']) !!}
+            {!! Form::label('flood','تعرفه پوشش خسارات ناشی از سیل :') !!}
+            {!! Form::text('flood',$fire->flood,['class'=>'form-control fa_number']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('b_m20','قیمت پایه برای خودروهای باری با ظرفیت بیشتر از 20 تن :') !!}
-            {!! Form::text('b_m20',$thirdParty->b_m20,['class'=>'form-control fa_number']) !!}
-        </div>
-        <h2 class="page-header">خودرو های مسافربری : </h2>
-        <div class="form-group">
-            {!! Form::label('tr_7',' تعرفه افزوده برای خودروهای مسافربری با ظرفیت 7 نفر') !!}
-            {!! Form::text('tr_7',$thirdParty->tr_7,['class'=>'form-control']) !!}
+            {!! Form::label('s_va_sh','تعرفه پوشش خسارات ناشی از سرقت و شکست حرص') !!}
+            {!! Form::text('s_va_sh',$fire->s_va_sh,['class'=>'form-control fa_number']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('tr_9','  تعرفه افزوده برای خودروهای مسافربری با ظرفیت 9 نفر') !!}
-            {!! Form::text('tr_9',$thirdParty->tr_9,['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('tr_10','  تعرفه افزوده برای خودروهای مسافربری با ظرفیت 10 نفر') !!}
-            {!! Form::text('tr_10',$thirdParty->tr_10,['class'=>'form-control']) !!}
-        </div>
-        <h2 class="page-header">سال ساخت : </h2>
-        <div class="form-group">
-            {!! Form::label('sakhtm_15','  تعرفه افزوده برای خودروهایی با عمر بیش از 15 سال') !!}
-            {!! Form::text('sakhtm_15',$thirdParty->sakhtm_15,['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('sakhtm_20','  تعرفه افزوده برای خودروهایی با عمر بیش از 20 سال') !!}
-            {!! Form::text('sakhtm_20',$thirdParty->sakhtm_20,['class'=>'form-control']) !!}
+            {!! Form::label('rain','تعرفه پوشش خسارات ناشی از باران :') !!}
+            {!! Form::text('rain',$fire->rain,['class'=>'form-control fa_number']) !!}
         </div>
         {{--<h2 class="page-header">سال تخفیف : </h2>--}}
         {{--<div class="form-group">--}}

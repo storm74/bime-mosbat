@@ -23,11 +23,6 @@
         </div>
 
         <div class="form-group">
-            {!! Form::label('content','توضیحاتی در  مورد شرکت بیمه') !!}
-            {!! Form::textarea('content',null,['class'=>'form-control','rows'=>'25']) !!}
-        </div>
-
-        <div class="form-group">
             {!! Form::submit('افزودن',['name'=>'add_insurance','class'=>'btn btn-primary']) !!}
         </div>
 

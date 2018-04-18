@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading ">
                     {{"مشخصات کلی و تعرفه های محاسباتی بیمه"." ".$insurance->name}}
                 </div>
                 <!-- .panel-heading -->
@@ -14,7 +14,7 @@
                     <div class="panel-group" id="accordion">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-title">
+                                <h4 class="panel-title green">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#general">مشخصات عمومی</a>
                                 </h4>
                             </div>
@@ -27,13 +27,26 @@
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-title">
+                                <h4 class="panel-title green">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#thirdParty">تعرفه ها و قیمت های پایه بیمه شخص ثالث</a>
                                 </h4>
                             </div>
                             <div id="thirdParty" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     @include('admin.includes.insu_edit_thirdParty_section')
+                                    {{--./edit Third Party of insurance company--}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title green">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#fire">تعرفه های مربوط به بیمه آتش سوزی : (اعداد با دقت اعشاری کامل نوشته شوند)</a>
+                                </h4>
+                            </div>
+                            <div id="fire" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    @include('admin.includes.insu_edit_fire_section')
                                     {{--./edit Third Party of insurance company--}}
                                 </div>
                             </div>

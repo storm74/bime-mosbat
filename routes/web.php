@@ -48,6 +48,7 @@ Route::group(['middleware'=>'admin'], function (){
 	Route::resource('admin/categories','AdminCategoriesController');
 	Route::resource('admin/insurance','AdminInsuranceController');
 	Route::post('admin/insurance-third','AdminInsuranceController@thirdPartyEdit');
+	Route::post('admin/insurance-fire','AdminInsuranceController@fireEdit');
 	Route::get('/admin',function (){
         $insurances = Insurance::all()->sortBy('created_at');
         return view('admin.index',compact('insurances'));

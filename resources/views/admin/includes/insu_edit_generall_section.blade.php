@@ -17,12 +17,6 @@
             {!! Form::label('time_to_ok','سرعت شرکت در پرداخت خسارت ( نمره از 10 )') !!}
             {!! Form::text('time_to_ok',$insurance->time_to_ok,['class'=>'form-control']) !!}
         </div>
-
-        <div class="form-group">
-            {!! Form::label('content','توضیحاتی در  مورد شرکت بیمه') !!}
-            {!! Form::textarea('content',null,['class'=>'form-control','rows'=>'25']) !!}
-        </div>
-
         <div class="form-group">
             {!! Form::submit('ویرایش',['name'=>'add_insurance','class'=>'btn btn-primary']) !!}
         </div>

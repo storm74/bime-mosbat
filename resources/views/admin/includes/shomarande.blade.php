@@ -16,12 +16,12 @@
                             <i class="fa fa-car fa-5x" aria-hidden="true" style="font-size: 4.5em"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class='huge fa_number'>10</div>
+                            <div class='huge fa_number'>{{\App\personal_car_list::all()->count()}}</div>
                             <div style="font-size: 80%">خودروهای تحت پوشش</div>
                         </div>
                     </div>
                 </div>
-                <a href="{{route('admin.fire')}}">
+                <a href="{{route('personal-car-list')}}">
                     <div class="panel-footer">
                         <span class="pull-left">جزئیات بیشتر</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

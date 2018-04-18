@@ -36,7 +36,7 @@
                     <td><input type="checkbox"></td>
                     <td class="fa_number">{{$comment->id}}</td>
                     <td class="center">{{$comment->author}}</td>
-                    <td class="fa_number"><a target="_blank" href="{{route('blog-single',['id'=>$comment->post_id,"title"=>$comment->post->title])}}">{{$comment->post->title}}</a></td>
+                    <td class="fa_number"><a target="_blank" href="{{route('blog-single',["slug"=>$comment->post->slug])}}">{{$comment->post->title}}</a></td>
                     <td>{{$comment->email}}</td>
                     <td>{{$comment->text}}</td>
                     <?php

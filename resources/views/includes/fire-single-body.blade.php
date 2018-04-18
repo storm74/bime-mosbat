@@ -29,7 +29,8 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 98%;ma
                                                    <div id="table-body" class="ant-row">
                                                       <div class="ant-row">
                                                         <div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-24" style="padding-left: 0px; padding-right: 0px;">
-                                                            <div data-show="true" class="ant-alert ant-alert-info ant-alert-no-icon"><span class="ant-alert-message">توجه:&zwnj; با اعمال قانون جدید تخفیف&zwnj;های بیمه شخص ثالث، قیمت&zwnj;های مشاوران مثبت فردا هم&zwnj;گام با شرکت&zwnj;های بیمه به&zwnj;روزرسانی شده&zwnj;است</span><span class="ant-alert-description"></span></div>
+                                                            <div data-show="true" class="ant-alert ant-alert-info ant-alert-no-icon"><span class="ant-alert-message">
+                                                                </span><span class="ant-alert-description"></span></div>
                                                         </div>
                                                     </div>
                                                        {{--./ant-row-tavajjoh-box--}}

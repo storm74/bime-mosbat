@@ -6,6 +6,7 @@ use App\Fire;
 use App\Http\Requests\InsuranceRequest;
 use App\Insurance;
 use App\Photo;
+use App\ThirdPartyInsurance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -51,12 +52,16 @@ class AdminInsuranceController extends Controller
 		    $photo = Photo::create(['path' => $name]);
 	    }
 	    $input['photo_id'] = $photo->id;
-	    $input['third_party_insurance_id'] = null;
+	    $third = new ThirdPartyInsurance();
+	    $third->save();
+	    $input['third_party_insurance_id'] = $third->id;
 	    $user = Auth::user();
 	    $insurance = $user->insurances()->create($input);
+	    $insurance->fire()->create();
+
 	    $message ="شرکت بیمه".' '.$request->name." "."با موفقیت ایجاد شد";
 	    Session::flash('added_insurance',$message);
-        $insurance->fire()->create(null);
+//        $insurance->fire()->create(null);
 	    return redirect()->action('AdminInsuranceController@index');
 
     }
@@ -82,12 +87,19 @@ class AdminInsuranceController extends Controller
     {
     	$insurance = Insurance::findOrFail($id);
     	$third_party = $insurance->thirdParty;
-        return view('admin.insurance.edit',['insurance'=>$insurance,'thirdParty'=>$third_party]);
+    	$fire = $insurance->fire;
+        return view('admin.insurance.edit',['insurance'=>$insurance,'thirdParty'=>$third_party,'fire'=>$fire]);
     }
     public function thirdPartyEdit(Request $request){
         $third = Insurance::findOrFail($request->id)->thirdParty;
         $input = $request->all();
         $third->update($input);
+        return redirect()->back();
+    }
+    public function fireEdit(Request $request){
+        $fire = Insurance::findOrFail($request->id)->fire;
+        $input = $request->all();
+        $fire->update($input);
         return redirect()->back();
     }
 

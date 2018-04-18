@@ -40,7 +40,7 @@
             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                 <tr>
-                    <th><input type="checkbox"></th></th>
+                    <th><input type="checkbox"></th>
                     <th>  آیدی</th>
                     <th>  نویسنده</th>
                     <th>عنوان مقاله</th>

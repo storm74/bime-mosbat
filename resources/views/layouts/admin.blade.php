@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>پیشخوان برنزی شاتل وب 24</title>
+    <title>پیشخوان برنزی الماس</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('admin_assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -48,7 +48,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand IRANSans fa_number" href="index.html">پیشخوان برنزی شاتل وب 24</a>
+            <a class="navbar-brand IRANSans fa_number" href="index.html">پیشخوان برنزی الماس</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -61,12 +61,12 @@
                     <li>
                         <a href="#">
                             <div>
-                                <strong>تیم فنی شاتل وب :</strong>
+                                <strong>تیم فنی الماس :</strong>
                                 <span class="pull-right text-muted">
                                         <em class="fa_number green">1396/12/23</em>
                                     </span>
                             </div>
-                            <div>جهت تکمیل بخش های مربوط به بیمه پنل مدیریتی، لطفا اطلاعات مورد نیاز را به بخش پشتیبانی شاتل وب تحویل دهید.</div>
+                            <div>جهت تکمیل بخش های مربوط به بیمه پنل مدیریتی، لطفا اطلاعات مورد نیاز را به بخش پشتیبانی الماس تحویل دهید.</div>
                         </a>
                     </li>
                     <li class="divider"></li>

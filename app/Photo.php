@@ -14,7 +14,8 @@ class Photo extends Model
 	protected $noImage = 'تصویری موجود نیست';
 	public function user_image(){
 		$name = $this->path;
-		return $this->profile_uploads.$name;
+
+            return $this->profile_uploads.$name;
 	}
 	public function post_image(){
 		$name = $this->path;
