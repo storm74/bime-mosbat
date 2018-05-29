@@ -219,55 +219,7 @@
     @endsection
 
 @section('fire-insurance')
-    {!! Form::open(['method'=>'POST','action'=>'FrontInsuranceController@fireInsuranceResultPage','id'=>'fireInsuranceAjax','target'=>'_blank']) !!}
-    <input type="hidden" name="metr_sakht_hazine" value="1000000">
-    <div class="row">
-        <style>
-            .pad-l-4{
-                margin-left: .5rem !important;
-            }
-            .pad-l-4 .saeed-input{
-                max-width: 100% !important;
-            }
-        </style>
-        <ul>
-            <li class="pad-l-4">
-                    <div class="form-group">
-                        <label style="color: #1a691d" for="exampleFormControlSelect1"> سازه ساختمانی : </label>
-                        <select  style="height: calc(2.25rem + 11px)" required class="form-control saeed-input" name="saze" id="exampleFormControlSelect1">
-                            <option disabled>انتخاب کنید...</option>
-                            <option value="ef">اسکلت فلزی</option>
-                            <option value="eb">اسکلت بتنی</option>
-                        </select>
-                    </div>
-            </li>
-            <li class="pad-l-4">
-                <div class="form-group">
-                    <label style="color: #1a691d" for="car_model"class="ant-form-item-required">
-                        متراژ ساختمان :<i style="color: red;" class="fas fa-question-circle"></i>
-                    </label>
-                    <input required name="metr" type="text" placeholder="متراژ ساختمان" class="form-control saeed-input">
-                </div>
-            </li>
-            <li class="pad-l-4">
-                <div class="form-group">
-                    <label style="color: #1a691d" for="car_model"class="ant-form-item-required">
-                        ارزش لوازم منزل :<i style="color: red;" class="fas fa-question-circle"></i>
-                    </label>
-                    <input required name="lavazem" type="text" placeholder="ارزش لوازم منزل" class="form-control saeed-input">
-                </div>
-            </li>
-
-            <li>
-
-                    <button style="top: 2.5rem; position: relative;"  type="submit" name="submit" class="dropbtn btnenter"><img src="{{asset('front_assets/pic-video/search.png')}}"> مقایسه کن ... !  </button>
-
-                {!! Form::close() !!}
-            </li>
-
-
-        </ul>
-    </div>
+ @include('includes.fire-section-homepage')
     @endsection
 @section('page4-posts-section')
     @include('includes.hompage-post-section')

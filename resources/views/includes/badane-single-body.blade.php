@@ -8,7 +8,7 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 98%;ma
         <hr>
         <div class="titlle-content" style="margin-top: 2%; color: #57BC72 ;  padding-left: 10%;  padding-right: 3% ; direction: rtl">
             <img src="{{asset('front_assets/pic-video/term.png')}}" width="35" height="35" style="float: right">
-            <h2 style="padding-right: 3% "> مقایسه بیمه آتش سوزی </h2></div>
+            <h2 style="padding-right: 3% "> مقایسه بیمه بدنه </h2></div>
         <hr>
         </p>
         <div id="root">
@@ -29,14 +29,13 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 98%;ma
                                                    <div id="table-body" class="ant-row">
                                                       <div class="ant-row">
                                                         <div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-24" style="padding-left: 0px; padding-right: 0px;">
-                                                            <div data-show="true" class="ant-alert ant-alert-info ant-alert-no-icon"><span class="ant-alert-message">
-                                                                </span><span class="ant-alert-description"></span></div>
+                                                            <div data-show="true" class="ant-alert ant-alert-info ant-alert-no-icon"><span class="ant-alert-message">توجه :</span><span class="ant-alert-description"></span></div>
                                                         </div>
                                                     </div>
                                                        {{--./ant-row-tavajjoh-box--}}
                                                        @for($i=0;$i<$n ; $i++)
                                                            <?php
-                                                                $insurance = \App\Insurance::findOrFail($fire_insrance_factor[$i]['insurance_id'])
+                                                                $insurance = \App\ThirdPartyInsurance::findOrFail($insurance_id[$i])->insuranceCompany;
                                                            ?>
                                                        {{--./shurue box namyesh--}}
                                                          <div class="ant-row-flex ant-row-flex-middle itemList hasgift">
@@ -54,7 +53,7 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 98%;ma
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <span class="maxtariff"><span>بیشترین قیمت</span></span><span class="mintariff"><span>کمترین قیمت</span></span><span class="show showprice"><span class="">{{number_format($capital * $fire_insrance_factor[$i]['factor'],0,'/',',')}}</span><sum> تومان</sum></span>
+                                                                <span class="maxtariff"><span>بیشترین قیمت</span></span><span class="mintariff"><span>کمترین قیمت</span></span><span class="show showprice"><span class="">{{number_format($natije[$i] ,0,'/',',')}}</span><sum> تومان</sum></span>
                                                             </div>
                                                         </div>
                                                         <div class="comparebtncol ant-col-xs-24 ant-col-sm-6 ant-col-md-6">
@@ -68,7 +67,7 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 98%;ma
                                                             <div class="subBoxList col-md-12 " id="myDIV{{$i+1}}" style="height:  100%;">
                                                                          <div class="ant-row">
                                                             <div class="ant-col-xs-24 ant-col-sm-12 fa_number">مبلغ پایه بیمه
-                                                                :{{number_format($capital * $fire_insrance_factor[$i]['factor'],0,'/',',')}}
+                                                                :{{number_format($natije[$i] ,0,'/',',')}}
                                                             </div>
                                                             {{--<div class="ant-col-xs-24 ant-col-sm-12">سهم از بازار : 5 درصد--}}
                                                             {{--</div>--}}

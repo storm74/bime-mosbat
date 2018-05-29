@@ -183,39 +183,28 @@
             <a id="menu-toggle" class="button dark" href="#"><i class="icon-reorder"></i></a>
             <nav id="navigation">
                 <ul id="main-menu">
-                    <li class="current-menu-item"><a href="#"><i class="icon-credit-card"></i> صفحه اصلی </a></li>
-                    <li class="parent">
-                        <a href="#responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i
-                                    class="icon-wrench"></i> بیمه ها </a>
-                        <ul class="sub-menu">
-                            <li><a href="#"><i class="icon-wrench"></i> بیمه 1 </a></li>
-                            <li><a href="#"><i class="icon-credit-card"></i> بیمه 2 </a></li>
-                            <li><a href="#"><i class="icon-gift"></i> بیمه 3 </a></li>
-                            <li>
-                                <a class="parent" href="#"><i class="icon-file-alt"></i> مقایسه کن </a>
-                                <ul class="sub-menu">
-                                    <li><a href=""> گزینه یک </a></li>
-                                    <li><a href=""> گزینه دو </a></li>
-                                    <li><a href=""> گزینه سه </a></li>
-                                    <li><a href=""> گزینه چهار </a></li>
+                    <li class="current-menu-item"><a href="{{route('home')}}"><i class="icon-credit-card"></i> صفحه اصلی </a></li>
+                    <?php $menuList = Menu::get($menu_array[2]); ?>
+                    @foreach($menuList as $item)
+                        <li class="{{$item['child'] ? "parent" : ""}}"><a href="{{$item['link']}}">{{$item['label']}}</a>
+                            @if($item['child'])
+                                <ul class="sub-menu" >
+                                    @foreach($item['child'] as $s_item)
+                                        <li><a href="{{$s_item['link']}}">{{$s_item['label']}}</a></li>
+                                    @endforeach
                                 </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i
-                                    class="icon-wrench"></i> در باره ما </a></li>
-                    <li class="parent">
-                        <a href="#responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i
-                                    class="icon-wrench"></i> وبلاگ مطالب </a>
-                        <ul class="sub-menu">
-                            <li><a href="#"><i class="icon-wrench"></i> مطلب یک </a></li>
-                            <li><a href="#"><i class="icon-wrench"></i> مطلب دو </a></li>
-                            <li><a href="#"><i class="icon-wrench"></i> مطلب سه </a></li>
-                            <li><a href="#"><i class="icon-wrench"></i> مطلب چهار </a></li>
-                            <li><a href="#"><i class="icon-wrench"></i> مطلب پنج </a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="icon-wrench"></i>تماس با ما </a></li>
+                            @endif
+                        </li>
+                    @endforeach
+                    {{--<li class="parent">--}}
+                    {{--<a href="><i class="icon-wrench"></i> بیمه ها </a>--}}
+                    {{--<ul class="sub-menu">--}}
+                    {{--<li><a href="#"><i class="icon-wrench"></i> بیمه 1 </a></li>--}}
+                    {{--<li><a href="#"><i class="icon-credit-card"></i> بیمه 2 </a></li>--}}
+                    {{--<li><a href="#"><i class="icon-gift"></i> بیمه 3 </a></li>--}}
+                    {{--</ul>--}}
+                    {{--</li>--}}
+                    {{--<li><a href="#"><i class="icon-wrench"></i>تماس با ما </a></li>--}}
                 </ul>
             </nav>
             <div class="clear"></div>
@@ -274,9 +263,9 @@
                 </div>
                 <div class="footerhead col-lg-4">
                     <ul>
-                        <li id="footertitle1">مشاور امروز ، وکیل فردا</li>
-                        <li id="footertitle2">سامانه مدیریت ، مشاوره و خرید آنلاین بیمه</li>
-                        <li id="footertitle3">مشاوران مثبت فردا</li>
+                        <li id="footertitle1">{{$meta->meta_description_1}}</li>
+                        <li id="footertitle2">{{$meta->meta_description_2}}</li>
+                        <li id="footertitle3">{{$meta->title}}</li>
                     </ul>
                 </div>
 
@@ -289,28 +278,43 @@
 
                 <div class="menu1">
                     <ul>
-                        <li id="id1"> پیوند های مفید</li>
-                        <li id="id2"> پل ارتباطی ما</li>
-                        <li id="id3"> پل ارتباطی ما</li>
-                        <li id="id4"> پل ارتباطی ما</li>
-                        <li id="id2"> پل ارتباطی ما</li>
-                        <li id="id3"> پل ارتباطی ما</li>
-                        <li id="id4"> پل ارتباطی ما</li>
-                        <li id="id2"> پل ارتباطی ما</li>
+                        <li id="id1"> پیوند های مفید </li>
+                        <?php
+
+                        $menuList = Menu::get($menu_array[3]);
+                        ?>
+                        @foreach($menuList as $item)
+                            <li><a href="{{$item['link']}}">{{$item['label']}}</a>
+                                @if($item['child'])
+                                    <ul >
+                                        @foreach($item['child'] as $s_item)
+                                            <li><a href="{{$s_item['link']}}">{{$s_item['label']}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            </li>
+                        @endforeach
 
                     </ul>
                 </div>
                 <div class="menu2">
                     <ul>
-                        <li id="id1"> راهنمای سایت</li>
-                        <li id="id2"> پل ارتباطی ما</li>
-                        <li id="id3"> پل ارتباطی ما</li>
-                        <li id="id4"> پل ارتباطی ما</li>
-                        <li id="id2"> پل ارتباطی ما</li>
-                        <li id="id3"> پل ارتباطی ما</li>
-                        <li id="id4"> پل ارتباطی ما</li>
-                        <li id="id2"> پل ارتباطی ما</li>
+                        <li id="id1"> راهنمای سایت </li>
+                        <?php
 
+                        $menuList = Menu::get($menu_array[5]); ?>
+                        @foreach($menuList as $item)
+                            <li><a href="{{$item['link']}}">{{$item['label']}}</a>
+                                @if($item['child'])
+                                    <ul >
+                                        @foreach($item['child'] as $s_item)
+                                            <li><a href="{{$s_item['link']}}">{{$s_item['label']}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            </li>
+                        @endforeach
+                        {{--<li id="id2"> پل ارتباطی ما  </li>--}}
                     </ul>
                 </div>
             </div>
@@ -323,13 +327,11 @@
 
             <div class="divultamas">
                 <ul>
-                    <li id="id1"> پل ارتباطی ما</li>
-                    <li id="id2"><i class="fas fa-map-marker"></i> آدرس : تهران خیابان شهید بهشتی ، بین سهند و سهروردی
-                        پلا87 ، واحد 11
-                    </li>
-                    <li id="id3"><i class="fas fa-phone"></i> تلفن تماس : 021- 123456789</li>
-                    <li id="id4"><i class="fas fa-envelope"></i> ایمیل : info@moshaveran.ir</li>
-                    <li id="id4"><i class="fas fa-envelope"></i> ایمیل : info@moshaveran.ir</li>
+                    <li id="id1"> پل ارتباطی ما  </li>
+                    <li id="id2"><i class="fas fa-map-marker"></i> {{$meta->address}} </li>
+                    <li id="id3"><i class="fas fa-phone"></i> تلفن تماس : <span dir="ltr">{{$meta->call_1}}</span>  </li>
+                    <li id="id4"><i class="fas fa-envelope"></i>  ایمیل : <span dir="ltr">{{$meta->email_1}}</span>  </li>
+                    <li id="id4"><i class="fas fa-envelope"></i>  ایمیل : <span dir="ltr">{{$meta->email_2}}</span>  </li>
                 </ul>
             </div>
 

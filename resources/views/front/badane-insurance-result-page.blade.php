@@ -4,9 +4,7 @@
 
 @endsection
 @section('body')
-
-    {{--@include('includes.fire-single-body')--}}
-    <div id="fire-result">
+    <div id="badane-result">
 
     </div>
 @endsection

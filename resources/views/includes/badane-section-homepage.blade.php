@@ -123,19 +123,19 @@
         <li>
             <style>
                 .badane-value{
-                    border: 2px solid #55ab53;
-                    height: 50px;
-                    margin-left: 25px;
-                    border-radius: 4px;
-                    color: #fff;
-                    background: #55ab53;
-                    font-size: 15px;
-                    -webkit-text-fill-color: #fdfbfb;
-                    padding-right: 5px;
+                    border: 2px solid #55ab53 !important;
+                    height: 50px !important;
+                    margin-left: 25px !important;
+                    border-radius: 4px !important;
+                    color: #fff !important;
+                    background: #55ab53 !important;
+                    font-size: 15px !important;
+                    -webkit-text-fill-color: #fdfbfb !important;
+                    padding-right: 5px !important;
                 }
                 .badane-span{
-                    color: #b1adab;
-                    padding-left: 6px;
+                    color: #b1adab !important;
+                    padding-left: 6px !important;
                 }
             </style>
             <span class="badane-span">ارزش خودرو: </span>  <input id="badane-value-set" placeholder="ارزش خودرو به تومان ..." class="badane-value" type="text">
