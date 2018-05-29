@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" type="image/png" href="#">
-    <title>مشاوران مثبت فردا</title>
+    <title>{{$meta->title}}</title>
 
     <!-- This site is optimized with the Yoast SEO Premium plugin v4.1 - https://yoast.com/wordpress/plugins/seo/ -->
     <meta name="description" content="#">
@@ -13,7 +13,7 @@
     <link rel="canonical" href="#">
     <meta property="og:locale" content="fa_IR">
     <meta property="og:type" content="#">
-    <meta property="og:site_name" content="مشاوران مثبت فردا">
+    <meta property="og:site_name" content="{{$meta->title}}">
     <script async="" src="{{asset('front_assets/script/analytics.js')}}"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
@@ -159,7 +159,7 @@
 
 
 <!-- Slide 1 Intro -->
-<section class="slide video page1 kenBurns selected active animate" data-title="مشاوران مثبت فردا" name="page1">
+<section class="slide video page1 kenBurns selected active animate" data-title="{{$meta->title}}" name="page1">
 
 
 
@@ -168,14 +168,14 @@
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  panelright">
                 <div class="row">
-                    <div class="titellogo col-lg-4 col-md-5 col-sm-5 col-xs-5">مشاوران مثبت فردا
+                    <div class="titellogo col-lg-4 col-md-5 col-sm-5 col-xs-5">{{$meta->title}}
                         <br >
-                        <p style="margin-top:  10px ; font-size: 13px">مشاور امروز ، وکیل فردا </p>
+                        <p style="margin-top:  10px ; font-size: 13px">{{$meta->meta_description_1}} </p>
                     </div>
 
-                    <img class="logo-1 col-lg-4 col-md-4 col-sm-2 col-xs-2 " src="{{asset('front_assets/pic-video/logo.png')}}" alt="مشاوران مثبت فردا" > </div>
+                    <img class="logo-1 col-lg-4 col-md-4 col-sm-2 col-xs-2 " src="{{asset('front_assets/pic-video/logo.png')}}" alt="{{$meta->title}}" > </div>
                 <div class="row">
-                    <div class="descr col-lg-12">سامانه مدیریت ، مشاوره ، خرید آنلاین بیمه</div>
+                    <div class="descr col-lg-12">{{$meta->meta_description_2}}</div>
                 </div>
                 <div class="row">
                     <div class="menu col-lg-7 col-md-8 col-sm-6 col-xs-6">
@@ -312,161 +312,21 @@
                         <div class="boxtab ">
 
                             <div class="tab">
-                                {{--<button class="tablinks active" onclick="openCity(event, 'tab1')"><img src="{{asset('front_assets/pic-video/car.png')}}">  بیمه بدنه خودرو</button>--}}
+                                <button class="tablinks active" onclick="openCity(event, 'tab1')"><img src="{{asset('front_assets/pic-video/car.png')}}">  بیمه بدنه خودرو</button>
                                 <button class="tablinks" onclick="openCity(event, 'tab2')"><img src="{{asset('front_assets/pic-video/third-party.png')}}">  بیمه شخص ثالث </button>
                                 <button class="tablinks" onclick="openCity(event, 'tab3')"><img src="{{asset('front_assets/pic-video/fire.png')}}"> بیمه آتش سوزی</button><button class="tablinks" onclick="openCity(event, 'tab4')"><img src="{{asset('front_assets/pic-video/Earthquake.png')}}"> بیمه زلزله</button>
-                                <button class="tablinks" onclick="openCity(event, 'tab5')"><img src="{{asset('front_assets/pic-video/life.png')}}"> بیمه عمر</button>
-                                <button class="tablinks" onclick="openCity(event, 'tab6')">مشاوره آنلاین بیمه</button>
+                                <button class="tablinks" onclick="openCity(event, 'tab4')"><img src="{{asset('front_assets/pic-video/life.png')}}"> بیمه عمر</button>
+                                <button class="tablinks" onclick="openCity(event, 'tab5')">مشاوره آنلاین بیمه</button>
+                            </div>
+                            <div id="tab1" class="tabcontent selecte-car" style="display: block;">
+                                @yield('badane-insurance')
                             </div>
 
-                            {{--<div id="tab1" class="tabcontent selecte-car" style="display: block">--}}
-                                {{--<div class="row">--}}
-                                    {{--<ul>--}}
-                                        {{--<li>--}}
-                                            {{--<div class="dropdown1">--}}
-
-                                                {{--<button onclick="myFunction1()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> نوع خودرو <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>--}}
-                                                {{--<div id="myDropdown1" class="dropdown-content">--}}
-                                                    {{--<input type="text" placeholder="جست جو  ... " id="myInput1" onkeyup="filterFunction1()">--}}
-                                                    {{--<a href="#pride">پراید</a>--}}
-                                                    {{--<a href="#pejo405">پژو 405</a>--}}
-                                                    {{--<a href="#pejoardi">پژو آردی</a>--}}
-                                                    {{--<a href="#pekan">پیکان</a>--}}
-                                                    {{--<a href="#dena">دنا</a>--}}
-                                                    {{--<a href="#samand">سمند </a>--}}
-                                                    {{--<a href="#pejopars">پژو پارس</a>--}}
-                                                {{--</div>--}}
-                                            {{--</div>--}}
-                                        {{--</li>--}}
-
-
-                                        {{--<li>--}}
-                                            {{--<div class="dropdown2">--}}
-
-                                                {{--<button onclick="myFunction2()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}">  مدل خودرو <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>--}}
-                                                {{--<div id="myDropdown2" class="dropdown-content">--}}
-                                                    {{--<input type="text" placeholder="جست جو  ... " id="myInput2" onkeyup="filterFunction2()">--}}
-                                                    {{--<a href="#model1">نوع 1</a>--}}
-                                                    {{--<a href="#model2">نوع 2</a>--}}
-                                                    {{--<a href="#model3">نوع 3</a>--}}
-                                                    {{--<a href="#model4">نوع 4</a>--}}
-                                                    {{--<a href="#model5">نوع 5</a>--}}
-                                                    {{--<a href="#model6">نوع 6</a>--}}
-                                                    {{--<a href="#model7">نوع 7</a>--}}
-                                                {{--</div>--}}
-                                            {{--</div>--}}
-                                        {{--</li>--}}
-
-
-                                        {{--<li>--}}
-                                            {{--<div class="dropdown3">--}}
-
-                                                {{--<button onclick="myFunction3()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> سال تولید <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>--}}
-                                                {{--<div id="myDropdown3" class="dropdown-content">--}}
-                                                    {{--<input type="text" placeholder="جست جو  ... " id="myInput3" onkeyup="filterFunction3()">--}}
-                                                    {{--<a href="#1380">سال 1380</a>--}}
-                                                    {{--<a href="#1381">سال 1381</a>--}}
-                                                    {{--<a href="#1382">سال 1382</a>--}}
-                                                    {{--<a href="#1383">سال 1383</a>--}}
-                                                    {{--<a href="#1384">سال 1384</a>--}}
-                                                    {{--<a href="#1385">سال 1385</a>--}}
-                                                    {{--<a href="#1386">سال 1386</a>--}}
-                                                    {{--<a href="#1387">سال 1387</a>--}}
-                                                    {{--<a href="#1388">سال 1388</a>--}}
-                                                    {{--<a href="#1389">سال 1389</a>--}}
-                                                    {{--<a href="#1390">سال 1390</a>--}}
-                                                    {{--<a href="#1391">سال 1391</a>--}}
-                                                    {{--<a href="#1392">سال 1392</a>--}}
-                                                    {{--<a href="#1393">سال 1393</a>--}}
-                                                    {{--<a href="#1394">سال 1394</a>--}}
-
-                                                {{--</div>--}}
-                                            {{--</div>--}}
-
-                                        {{--</li>--}}
-
-
-                                        {{--<li>--}}
-                                            {{--<div class="dropdown4">--}}
-
-                                                {{--<button onclick="myFunction4()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> تخفیف عدم خسارت <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>--}}
-                                                {{--<div id="myDropdown4" class="dropdown-content">--}}
-                                                    {{--<input type="text" placeholder="جست جو  ... " id="myInput4" onkeyup="filterFunction4()">--}}
-                                                    {{--<a href="#takhfifadmekhesarat">تخفیف عدم خسارت</a>--}}
-                                                    {{--<a href="#bdoonkhesarat">بدون خسارت</a>--}}
-                                                    {{--<a href="#1year">1 سال</a>--}}
-                                                    {{--<a href="#2year">2 سال</a>--}}
-                                                    {{--<a href="#3year">3 سال</a>--}}
-                                                    {{--<a href="#4year">4 سال</a>--}}
-                                                    {{--<a href="#5year">5 سال</a>--}}
-                                                    {{--<a href="#6year">6 سال</a>--}}
-                                                    {{--<a href="#7year">7 سال</a>--}}
-                                                    {{--<a href="#8year">8 سال</a>--}}
-                                                    {{--<a href="#9year">9 سال</a>--}}
-                                                    {{--<a href="#10year">10 سال</a>--}}
-                                                    {{--<a href="#bishaz10">بیش از 10 سال</a>--}}
-
-                                                {{--</div>--}}
-                                            {{--</div>--}}
-
-                                        {{--</li>--}}
-
-
-                                        {{--<li>--}}
-                                            {{--<div class="dropdown5">--}}
-
-                                                {{--<button onclick="myFunction5()" class="dropbtn"><img src="{{asset('front_assets/pic-video/car-2.png')}}"> تاریخ انقضاء بیمه <img class="img2" src="{{asset('front_assets/pic-video/chevron-right.png')}}"></button>--}}
-                                                {{--<div id="myDropdown5" class="dropdown-content">--}}
-                                                    {{--<input type="text" placeholder="جست جو  ... " id="myInput5" onkeyup="filterFunction5()">--}}
-                                                    {{--<a href="#takhfifadmekhesarat">تخفیف عدم خسارت</a>--}}
-                                                    {{--<a href="#bdoonkhesarat">بدون خسارت</a>--}}
-                                                    {{--<a href="#1year">1 سال</a>--}}
-                                                    {{--<a href="#2year">2 سال</a>--}}
-                                                    {{--<a href="#3year">3 سال</a>--}}
-                                                    {{--<a href="#4year">4 سال</a>--}}
-                                                    {{--<a href="#5year">5 سال</a>--}}
-                                                    {{--<a href="#6year">6 سال</a>--}}
-                                                    {{--<a href="#7year">7 سال</a>--}}
-                                                    {{--<a href="#8year">8 سال</a>--}}
-                                                    {{--<a href="#9year">9 سال</a>--}}
-                                                    {{--<a href="#10year">10 سال</a>--}}
-                                                    {{--<a href="#bishaz10">بیش از 10 سال</a>--}}
-
-                                                {{--</div>--}}
-                                            {{--</div>--}}
-
-                                        {{--</li>--}}
-                                        {{--<li>--}}
-
-                                            {{--<a href="#">--}}
-
-                                                {{--<button class="dropbtn btnenter"><img src="{{asset('front_assets/pic-video/search.png')}}"> مقایسه کن ... !  </button>--}}
-                                            {{--</a>--}}
-
-
-                                        {{--</li>--}}
-
-
-                                    {{--</ul>--}}
-                                {{--</div>--}}
-                                {{--<div class="row">--}}
-
-                                    {{--<div class="matnenter col-lg-12" >--}}
-                                        {{--<div class="tozihat p1 col-lg-3" ><h3>♦ مقایسه و انتخاب بهترین بیمه</h3><br><p>قیمت و سایر مشخصات هر شرکت بیمه رو مقایسه کنید و اگر نیاز به مشاوره داشتید از بیمه‌بازار بپرسید </p></div>--}}
-                                        {{--<div class="tozihat p2 col-lg-3" ><h3>♦ درخواست خرید و تکمیل اطلاعات</h3><br><p>بعد از انتخاب بهترین بیمه، اطلاعاتی که برای صدور بیمه نامتون لازمه رو وارد کنید و زمان ارسال رو انتخاب کنید</p></div>--}}
-                                        {{--<div class="tozihat p3 col-lg-3" ><h3>♦ صدور و ارسال بیمه‌نامه</h3><br><p>با پرداخت حق بیمه، سفارش شما کامل می‌شه. بیمه‌بازار بیمه‌نامه شمارو به نشونیتون ارسال می‌کنه</p></div>--}}
-                                        {{--<div class="tozihat p3 col-lg-3" ><h3>♦ تحویل در محل</h3><br><p>در صورت ثبت سفارش قبل از ساعت 3 بعد از ظهر، می‌تونید همون روز بیمه‌نامتون رو از پیک بیمه‌بازار تحویل بگیرید</p></div>--}}
-                                    {{--</div>--}}
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-
-                            <div id="tab2" class="tabcontent selecte-car" style="display: block;">
+                            <div id="tab2" class="tabcontent selecte-car">
                                 @yield('third-insurance')
                             </div>
 
                             <div id="tab3" class="tabcontent selecte-car">
-
                                 @yield('fire-insurance')
                             </div>
 
@@ -562,10 +422,11 @@
                 <div class="row">
                     <div class="capshen col-lg-3 col-md-4">
                         <ul>
-                            <li class="cap1"><p>مشاوران مثبت فردا</p></li>
-                            <li class="cap1"><p>مشاور امروز ، وکیل فردا </p></li>
-                            <li class="cap2"><p>سامانه مدیریت ، مشاوره و خرید آنلاین بیمه</p></li>
+                            <li class="cap1"><p>{{$meta->title}}</p></li>
+                            <li class="cap1"><p>{{$meta->meta_description_1}} </p></li>
+                            <li class="cap2"><p>{{$meta->meta_description_2}}</p></li>
                         </ul>
+
                     </div> </div>
                 <img class="backgroundpage3" src="{{asset('front_assets/pic-video/pic3.png')}}">
 
@@ -588,12 +449,12 @@
     <div class="row">
         <div class="footertitle col-lg-12">
             <div class="row">
-                <div class="footerlogo col-lg-2">   <img class="logo-1" src="{{asset('front_assets/pic-video/logo.png')}}" alt="مشاوران مثبت فردا" > </div>
+                <div class="footerlogo col-lg-2">   <img class="logo-1" src="{{asset('front_assets/pic-video/logo.png')}}" alt="{{$meta->title}}" > </div>
                 <div class="footerhead col-lg-4">
                     <ul>
-                        <li id="footertitle1">مشاور امروز ، وکیل فردا </li>
-                        <li id="footertitle2">سامانه مدیریت ، مشاوره و خرید آنلاین بیمه</li>
-                        <li id="footertitle3">مشاوران مثبت فردا</li>
+                        <li id="footertitle1">{{$meta->meta_description_1}}</li>
+                        <li id="footertitle2">{{$meta->meta_description_2}}</li>
+                        <li id="footertitle3">{{$meta->title}}</li>
                     </ul>
                 </div>
 
@@ -612,27 +473,42 @@
                 <div class="menu1">
                     <ul>
                         <li id="id1"> پیوند های مفید </li>
-                        <li id="id2"> پل ارتباطی ما  </li>
-                        <li id="id3"> پل ارتباطی ما  </li>
-                        <li id="id4"> پل ارتباطی ما  </li>
-                        <li id="id2"> پل ارتباطی ما  </li>
-                        <li id="id3"> پل ارتباطی ما  </li>
-                        <li id="id4"> پل ارتباطی ما  </li>
-                        <li id="id2"> پل ارتباطی ما  </li>
+                        <?php
+
+                        $menuList = Menu::get($menu_array[3]);
+                        ?>
+                        @foreach($menuList as $item)
+                            <li><a href="{{$item['link']}}">{{$item['label']}}</a>
+                                @if($item['child'])
+                                    <ul >
+                                        @foreach($item['child'] as $s_item)
+                                            <li><a href="{{$s_item['link']}}">{{$s_item['label']}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            </li>
+                        @endforeach
 
                     </ul>
                 </div>
                 <div class="menu2">
                     <ul>
                         <li id="id1"> راهنمای سایت </li>
-                        <li id="id2"> پل ارتباطی ما  </li>
-                        <li id="id3"> پل ارتباطی ما  </li>
-                        <li id="id4"> پل ارتباطی ما  </li>
-                        <li id="id2"> پل ارتباطی ما  </li>
-                        <li id="id3"> پل ارتباطی ما  </li>
-                        <li id="id4"> پل ارتباطی ما  </li>
-                        <li id="id2"> پل ارتباطی ما  </li>
+                        <?php
 
+                        $menuList = Menu::get($menu_array[5]); ?>
+                        @foreach($menuList as $item)
+                            <li><a href="{{$item['link']}}">{{$item['label']}}</a>
+                                @if($item['child'])
+                                    <ul >
+                                        @foreach($item['child'] as $s_item)
+                                            <li><a href="{{$s_item['link']}}">{{$s_item['label']}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            </li>
+                        @endforeach
+                        {{--<li id="id2"> پل ارتباطی ما  </li>--}}
                     </ul>
                 </div>
             </div>
@@ -646,10 +522,10 @@
             <div class="divultamas">
                 <ul>
                     <li id="id1"> پل ارتباطی ما  </li>
-                    <li id="id2"><i class="fas fa-map-marker"></i> آدرس : تهران خیابان شهید بهشتی ، بین سهند و سهروردی پلا87 ، واحد 11 </li>
-                    <li id="id3"><i class="fas fa-phone"></i> تلفن تماس : 021- 123456789  </li>
-                    <li id="id4"><i class="fas fa-envelope"></i>  ایمیل : info@moshaveran.ir  </li>
-                    <li id="id4"><i class="fas fa-envelope"></i>  ایمیل : info@moshaveran.ir  </li>
+                    <li id="id2"><i class="fas fa-map-marker"></i> {{$meta->address}} </li>
+                    <li id="id3"><i class="fas fa-phone"></i> تلفن تماس : <span dir="ltr">{{$meta->call_1}}</span>  </li>
+                    <li id="id4"><i class="fas fa-envelope"></i>  ایمیل : <span dir="ltr">{{$meta->email_1}}</span>  </li>
+                    <li id="id4"><i class="fas fa-envelope"></i>  ایمیل : <span dir="ltr">{{$meta->email_2}}</span>  </li>
                 </ul>
             </div>
 
@@ -665,7 +541,7 @@
     <div class="navigation">
         <div class="nav-wrap"> <span class="pather prevSlide"> </span>
             <ul>
-                <li data-title="مشاوران مثبت فردا" class="selected"></li>
+                <li data-title="{{$meta->title}}" class="selected"></li>
                 <li data-title="ثبت نام و مقایسه"></li>
                 <li data-title="چگونه بیمه بخریم"></li>
                 <li data-title="آخرین مقالات و اخبار وبلاگ"></li>
@@ -678,7 +554,7 @@
     <div class="close"><i class="zmdi zmdi-close"></i></div>
     <div class="content">
         <ul class="mainMenu light">
-            <li><a href="#page1" class="active">مشاوران مثبت فردا</a></li>
+            <li><a href="#page1" class="active">{{$meta->title}}</a></li>
             <li><a href="#page2">ثبت نام و مقایسه</a></li>
             <li><a href="#page3">چگونه بیمه بخریم</a></li>
             <li><a href="#page4">آخرین مقالات و اخبار وبلاگ</a></li>

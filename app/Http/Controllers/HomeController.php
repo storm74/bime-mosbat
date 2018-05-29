@@ -27,4 +27,5 @@ class HomeController extends Controller
         $posts = Post::all()->sortByDesc('created_at');
         return view('homepage',['posts'=>$posts]);
     }
+
 }

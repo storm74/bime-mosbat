@@ -345,6 +345,21 @@
                     <li>
                         <a class="hover_shadow" href="{{route('categories.index')}}"><i class="fa fa-archive orange" aria-hidden="true"></i>  دسته بندی ها </a>
                     </li>
+                    <li>
+                        <a class="hover_shadow" href="#"><i style="transform: rotate(180deg)" class="fa fa-file-pdf-o orange" aria-hidden="true"></i>  منوها<span class="fa arrow"></span> </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{route('menu-set')}}">شخصی سازی جایگاه منوها</a>
+                            </li>
+                            <li>
+                                <a href="{{route('menu')}}"> افزودن و یا ویرایش منوها</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a class="hover_shadow" href="{{route('admin-setting')}}"><i class="fa fa-archive orange" aria-hidden="true"></i>  تنظیمات سایت </a>
+                    </li>
                     {{--<li>--}}
                    {{----}}
                         {{--<a class="hover_shadow" href="#"><i class="fa fa-sitemap fa-fw orange"></i> گزینه ای دیگر<span class="fa arrow"></span></a>--}}

@@ -13,28 +13,25 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 90%;ma
         <div class="sid-category col-lg-11" style="z-index: 10; height: auto ;margin-top: 1%;">
             <div class="titlle-sid-content" style="margin-right: 10%; padding: 20px"><h3 style="color:#57BC72;font-size: 18px"> <i class="icon-gift" style="font-size: large"></i>  دسته بندی مطالب </h3></div>
             <ul class="sid-content ">
-                <li><a href="#"><i class="icon-wrench"></i> بیمه 1 </a></li>
-                <li><a href="#"><i class="icon-credit-card"></i> بیمه 2 </a></li>
-                <li><a href="#"><i class="icon-gift"></i> بیمه 3 </a></li>
-                <li><a href="#"><i class="icon-file-alt"></i> مقایسه کن </a>
-                <li><a href="#"><i class="icon-wrench"></i> بیمه 1 </a></li>
-                <li><a href="#"><i class="icon-credit-card"></i> بیمه 2 </a></li>
-                <li><a href="#"><i class="icon-gift"></i> بیمه 3 </a></li>
-                <li><a href="#"><i class="icon-file-alt"></i> مقایسه کن </a>
+                @foreach($categories as $category)
+                    <li><a href="{{route('blog-category',['id'=>$category->id])}}"><i class="fas fa-folder-open"></i> {{$category->name}} </a></li>
+                    @endforeach
+                {{--<li><a href="#"><i class="fas fa-folder-open"></i> بیمه 1 </a></li>--}}
+
             </ul>
         </div>
         <hr>
         <div class="sid-category col-lg-11" style="z-index: 10; height: auto ;margin-top: 1%;">
-            <div class="titlle-sid-content" style="margin-right: 10%; padding: 20px"><h3 style="color:#57BC72;font-size: 18px"> <i class="icon-gift" style="font-size: large"></i>  دسته بندی مطالب </h3></div>
+            <div class="titlle-sid-content" style="margin-right: 10%; padding: 20px"><h3 style="color:#57BC72;font-size: 18px"> <i class="icon-gift" style="font-size: large"></i>  آخرین مطالب وبلاگ </h3></div>
             <ul class="sid-content ">
-                <li><a href="#"><i class="icon-wrench"></i> بیمه 1 </a></li>
-                <li><a href="#"><i class="icon-credit-card"></i> بیمه 2 </a></li>
-                <li><a href="#"><i class="icon-gift"></i> بیمه 3 </a></li>
-                <li><a href="#"><i class="icon-file-alt"></i> مقایسه کن </a>
-                <li><a href="#"><i class="icon-wrench"></i> بیمه 1 </a></li>
-                <li><a href="#"><i class="icon-credit-card"></i> بیمه 2 </a></li>
-                <li><a href="#"><i class="icon-gift"></i> بیمه 3 </a></li>
-                <li><a href="#"><i class="icon-file-alt"></i> مقایسه کن </a>
+                <?php $n_last_articles =0 ?>
+              @foreach($posts as $post)
+                  <?php $n_last_articles++ ?>
+                  @if($n_last_articles >7)
+                      @break
+                    @endif
+                      <li><a href="{{route('blog-single',['slug'=>$post->slug])}}"><i class="fa fa-list-alt"></i> {{ $post->title}} </a></li>
+                @endforeach
             </ul>
         </div>
         <style>

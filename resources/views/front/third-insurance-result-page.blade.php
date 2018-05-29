@@ -1,6 +1,6 @@
 @extends('layouts.insurance_result')
 @section('sidebar')
-    @include('includes.fire-siebar-result')
+    @include('includes.fire-sidebar-result')
 
 @endsection
 @section('body')

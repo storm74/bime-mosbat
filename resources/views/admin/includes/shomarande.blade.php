@@ -83,7 +83,7 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class='huge fa_number'>{{\App\Category::all()->count()}}</div>
-                            <div >دسته بندی نوشته ها</div>
+                            <div style="font-size: 80%" >دسته بندی ها</div>
                         </div>
                     </div>
                 </div>

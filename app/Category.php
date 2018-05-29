@@ -8,7 +8,7 @@ class Category extends Model
 {
     protected $fillable = ['name'];
     public function posts() {
-	    return $this->hasMany( 'App\Post' );
+	    return $this->hasMany( 'App\Post' )->orderByDesc('updated_at');
     }
     public function list_array(){
 			$all= $this->all();

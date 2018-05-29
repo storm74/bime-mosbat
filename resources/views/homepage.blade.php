@@ -214,6 +214,10 @@
 
     </div>
     @endsection
+@section('badane-insurance')
+    @include('includes.badane-section-homepage')
+    @endsection
+
 @section('fire-insurance')
     {!! Form::open(['method'=>'POST','action'=>'FrontInsuranceController@fireInsuranceResultPage','id'=>'fireInsuranceAjax','target'=>'_blank']) !!}
     <input type="hidden" name="metr_sakht_hazine" value="1000000">

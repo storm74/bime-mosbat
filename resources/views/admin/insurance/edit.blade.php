@@ -38,6 +38,20 @@
                                 </div>
                             </div>
                         </div>
+                        {{--./third-party-datas--}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title green">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#badane">تعرفه های پایه بیمه بدنه</a>
+                                </h4>
+                            </div>
+                            <div id="badane" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    @include('admin.includes.insu_edit_badane_section')
+                                    {{--./edit Third Party of insurance company--}}
+                                </div>
+                            </div>
+                        </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title green">

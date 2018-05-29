@@ -11,9 +11,24 @@
 .bniloofar{font-family: "XB Niloofar"}
 .btitr{font-family: "B Titr"}
 .bzar{font-family: "B Zar"}
-
-
 /*fonts*/
+/*animations*/
+.result-anim{
+  animation-name: result-anim;
+  animation-fill-mode: both;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  position: relative;
+  left: -400px;
+}
+@keyframes  result-anim {
+  0%{opacity: 1;}
+  10%{left: 0px;}
+  50%{left: 0px;}
+  90%{left: 0px;opacity: 1;}
+  100%{opacity: 0; display: none;}
+}
+/*animations*/
 /*colors*/
 .orange{color: #ff6501;}
 .wheat{color : wheat !important;}
@@ -58,6 +73,9 @@
 
 
 /*my own classes*/
+ul#menu-to-edit {
+  direction: ltr;
+}
 .full-height{
   height: 100%;
 }

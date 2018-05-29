@@ -58,6 +58,7 @@ class AdminInsuranceController extends Controller
 	    $user = Auth::user();
 	    $insurance = $user->insurances()->create($input);
 	    $insurance->fire()->create();
+	    $insurance->badane()->create();
 
 	    $message ="شرکت بیمه".' '.$request->name." "."با موفقیت ایجاد شد";
 	    Session::flash('added_insurance',$message);
@@ -88,13 +89,20 @@ class AdminInsuranceController extends Controller
     	$insurance = Insurance::findOrFail($id);
     	$third_party = $insurance->thirdParty;
     	$fire = $insurance->fire;
-        return view('admin.insurance.edit',['insurance'=>$insurance,'thirdParty'=>$third_party,'fire'=>$fire]);
+    	$badane = $insurance->badane;
+        return view('admin.insurance.edit',['insurance'=>$insurance,'thirdParty'=>$third_party,'fire'=>$fire,'badane'=>$badane]);
     }
     public function thirdPartyEdit(Request $request){
         $third = Insurance::findOrFail($request->id)->thirdParty;
         $input = $request->all();
         $third->update($input);
         return redirect()->back();
+    }
+    public function badaneEdit(Request $request){
+        $badane = Insurance::findOrFail($request->id)->badane;
+        $input = $request->all();
+        $badane->update($input);
+        return "<div class='result-anim'><i class=\"fa fa-reply fa-fw orange\"></i> تغیرات با موفقیت اعمال گردید </div>";
     }
     public function fireEdit(Request $request){
         $fire = Insurance::findOrFail($request->id)->fire;

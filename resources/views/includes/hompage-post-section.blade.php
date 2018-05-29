@@ -16,7 +16,7 @@
                         @foreach($posts as $post)
 
                             @if($post->status==1 && $n<3)
-                        <a href="#"><ul>
+                        <a href="{{route('blog-single',['slug'=>$post->slug])}}"><ul>
                                 <li>
                                     <div class="picblog"><img src="{{$post->photo->post_image()}}"></div>
                                     <div class="titleblog"><h3>{{$post->title}}</h3></div>
@@ -40,6 +40,12 @@
                             @endif
                         @endif
                 </div>
+                <style>
+                    a .moreblog p{
+                        position: absolute;
+                        right: 40%;
+                    }
+                </style>
                 <a href="{{route('blog-home')}}"><div class="moreblog col-lg-12"><p>
                             نمایش بیشتر ...
                         </p> </div> </a>
