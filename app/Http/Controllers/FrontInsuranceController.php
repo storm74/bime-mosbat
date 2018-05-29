@@ -326,68 +326,107 @@ class FrontInsuranceController extends Controller
             'productYear'=>$request->productYearBadane,
             'value'=>$request->value,
         ];
-        $badanes = Badane::all();
-        $insurances = Insurance::all();
-        $car = personal_car_list::findOrFail($data['modelId']);
-        $car->gfs==1 ? $silandr = "gfs" : $silandr = "lfs";
-        for ($i=0;$i<count($badanes);$i++){
-            $insurance_id[$i]=$badanes[$i]['insurance_id'];
-            $base[$i]=[
-                $silandr."l_20"=>$badanes[$i][$silandr."l_20"]/100,
-                $silandr."m_20"=>$badanes[$i][$silandr."m_20"]/100,
-                $silandr."m_50"=>$badanes[$i][$silandr."m_50"]/100,
-                $silandr."m_100"=>$badanes[$i][$silandr."m_100"]/100,
-            ];//base tarefe
-            $year_product_percent[$i] =[
-                'l5'=>$badanes[$i]['yearl_5']/100,
-                '510'=>$badanes[$i]['year_510']/100,
-                'm10'=>$badanes[$i]['yearm_10']/100
-            ];
-        }//data extracted from badane records
-
         //calculate deduction
         $deduct100 = $data['value']-100000000;
         if ($deduct100 > 0){
             $deduct =[
-                'l_20' => 20000000,
+                'l20' => 20000000,
                 'm20'=>30000000,
                 'm50'=>30000000,
                 'm100'=>$deduct100
             ];
         }else{
             $deduct50 = $data['value']-50000000;
-          if ($deduct50>0){
-              $deduct =[
-                  'l_20' => 20000000,
-                  'm20'=>30000000,
-                  'm50'=>$deduct50,
-                  'm100'=>0
-              ];
-          }else{
-              $deduct20 = $data['value']-20000000;
-              if ($deduct20>0){
-                  $deduct =[
-                      'l_20' => 20000000,
-                      'm20'=>$deduct20,
-                      'm50'=>0,
-                      'm100'=>0
-                  ];
-              }else{
-                  $deduct =[
-                      'l_20' => $data['value'],
-                      'm20'=>0,
-                      'm50'=>0,
-                      'm100'=>0
-                  ];
-              }//deduct20
-              }//deduct50
+            if ($deduct50>0){
+                $deduct =[
+                    'l20' => 20000000,
+                    'm20'=>30000000,
+                    'm50'=>$deduct50,
+                    'm100'=>0
+                ];
+            }else{
+                $deduct20 = $data['value']-20000000;
+                if ($deduct20>0){
+                    $deduct =[
+                        'l20' => 20000000,
+                        'm20'=>$deduct20,
+                        'm50'=>0,
+                        'm100'=>0
+                    ];
+                }else{
+                    $deduct =[
+                        'l20' => $data['value'],
+                        'm20'=>0,
+                        'm50'=>0,
+                        'm100'=>0
+                    ];
+                }//deduct20
+            }//deduct50
         }//deduct100
         //year calculation
         $now = now();
         $now_time = jDate::forge($now)->format('%Y');
         $year_producted = $now_time - $data['productYear'];
+        $year_deduct10 =  $year_producted - 10;
+        if ($year_deduct10 >0){
+            $year_deduct = [
+                'l5'=>5,
+                '510'=>5,
+                'm10'=>$year_deduct10,
+            ];
+        }else{
+            $year_deduct5 =  $year_producted - 5;
+            if ($year_deduct5 >0){
+                $year_deduct = [
+                    'l5'=>5,
+                    '510'=>$year_deduct5,
+                    'm10'=>0,
+                ];
+            }else{
+                $year_deduct = [
+                    'l5'=>5,
+                    '510'=>$year_deduct5,
+                    'm10'=>0,
+                ];
+            }
+        }
+        $badanes = Badane::all();
+        $insurances = Insurance::all();
+        $car = personal_car_list::findOrFail($data['modelId']);
+        $car->gfs==1 ? $silandr = "gfs" : $silandr = "lfs";
+        for ($i=0;$i<count($badanes);$i++){
+            $insurance_id[$i]=$badanes[$i]['insurance_id'];
+            $year_product_percent[$i] =[
+                'l5'=>($badanes[$i]['yearl_5']/100)*$year_deduct['l5'],
+                '510'=>($badanes[$i]['year_510']/100)*$year_deduct['510'],
+                'm10'=>($badanes[$i]['yearm_10']/100)*$year_deduct['m10']
+            ];
+            $year_product_percent_one[$i]=$year_product_percent[$i]['l5']+
+                $year_product_percent[$i]['510']+
+                $year_product_percent[$i]['m10'];
+            $base[$i]=[
+                "l20"=>$badanes[$i][$silandr."l_20"]/100,
+                "m20"=>$badanes[$i][$silandr."m_20"]/100,
+                "m50"=>$badanes[$i][$silandr."m_50"]/100,
+                "m100"=>$badanes[$i][$silandr."m_100"]/100,
+            ];//base tarefe
+            $base_p_production[$i]=[
+                "l20"=>$base[$i]['l20'] + $year_product_percent_one[$i]*$base[$i]['l20'],
+                "m20"=>$base[$i]['m20'] + $year_product_percent_one[$i]*$base[$i]['m20'],
+                "m50"=>$base[$i]['m50'] + $year_product_percent_one[$i]*$base[$i]['m50'],
+                "m100"=>$base[$i]['m100'] + $year_product_percent_one[$i]*$base[$i]['m100']
+            ];//base tarefe
+            $natije[$i] =[
+                $base[$i]['l20']*$deduct['l20'] +
+                $base[$i]['m20']*$deduct['m20'] +
+                $base[$i]['m50']*$deduct['m50'] +
+                $base[$i]['m100']*$deduct['m100']
+            ];
+
+        }//data extracted from badane records
 //        return $data['productYear'];
-        return $year_producted;
+//        return $base_p_production;
+        return $base;
     }
     public function badaneInsuranceResultAjax(Request $request){
         $pushesh = [
