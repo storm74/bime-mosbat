@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>پیشخوان برنزی الماس</title>
+    <title>پیشخوان برنزی شاتل وب 24</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('admin_assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -48,7 +48,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand IRANSans fa_number" href="index.html">پیشخوان برنزی الماس</a>
+            <a class="navbar-brand IRANSans fa_number" href="index.html">پیشخوان برنزی شاتل وب 24</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -61,103 +61,103 @@
                     <li>
                         <a href="#">
                             <div>
-                                <strong>تیم فنی الماس :</strong>
+                                <strong>تیم فنی شاتل وب 24 :</strong>
                                 <span class="pull-right text-muted">
                                         <em class="fa_number green">1396/12/23</em>
                                     </span>
                             </div>
-                            <div>جهت تکمیل بخش های مربوط به بیمه پنل مدیریتی، لطفا اطلاعات مورد نیاز را به بخش پشتیبانی الماس تحویل دهید.</div>
+                            <div>به سیستم مدیریتی شاتل وب 24 خوش آمدید.</div>
                         </a>
                     </li>
                     <li class="divider"></li>
                     <li>
                         <a class="text-center" href="#">
                             <strong>پیام دیگری موجود نیست</strong>
-                            <i class="fa fa-angle-right"></i>
+                            <i class="fa fa-angle-left"></i>
                         </a>
                     </li>
                 </ul>
                 <!-- /.dropdown-messages -->
             </li>
             <!-- /.dropdown -->
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu l2 dropdown-tasks">
-                    <li>
-                        <a href="#">
-                            <div>
-                                <p>
-                                    <strong>بیمه شخص ثالث</strong>
-                                    <span class="pull-left text-muted fa_number">90% تکمیل شده است</span>
-                                </p>
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                        <span class="sr-only fa_number">90% تکمیل شده است</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <p>
-                                    <strong>بیمه بدنه</strong>
-                                    <span class="pull-left text-muted fa_number">60% تکمیل شده است</span>
-                                </p>
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only fa_number">60% تکمیل شده است</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <p>
-                                    <strong>بیمه آتش سوزی</strong>
-                                    <span class="pull-left text-muted fa_number">70% تکمیل شده است</span>
-                                </p>
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                        <span class="sr-only fa_number">70% تکمیل شده است</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <p>
-                                    <strong>قسمت مقالات</strong>
-                                    <span class="pull-left text-muted fa_number">93 درصد تکمیل شده است</span>
-                                </p>
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="81" aria-valuemin="0" aria-valuemax="100" style="width: 93%">
-                                        <span class="sr-only fa_number">93 درصد تکمیل شده است</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
+            {{--<li class="dropdown">--}}
+                {{--<a class="dropdown-toggle" data-toggle="dropdown" href="#">--}}
+                    {{--<i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>--}}
+                {{--</a>--}}
+                {{--<ul class="dropdown-menu l2 dropdown-tasks">--}}
+                    {{--<li>--}}
+                        {{--<a href="#">--}}
+                            {{--<div>--}}
+                                {{--<p>--}}
+                                    {{--<strong>بیمه شخص ثالث</strong>--}}
+                                    {{--<span class="pull-left text-muted fa_number">90% تکمیل شده است</span>--}}
+                                {{--</p>--}}
+                                {{--<div class="progress progress-striped active">--}}
+                                    {{--<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%">--}}
+                                        {{--<span class="sr-only fa_number">90% تکمیل شده است</span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="divider"></li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#">--}}
+                            {{--<div>--}}
+                                {{--<p>--}}
+                                    {{--<strong>بیمه بدنه</strong>--}}
+                                    {{--<span class="pull-left text-muted fa_number">60% تکمیل شده است</span>--}}
+                                {{--</p>--}}
+                                {{--<div class="progress progress-striped active">--}}
+                                    {{--<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 60%">--}}
+                                        {{--<span class="sr-only fa_number">60% تکمیل شده است</span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="divider"></li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#">--}}
+                            {{--<div>--}}
+                                {{--<p>--}}
+                                    {{--<strong>بیمه آتش سوزی</strong>--}}
+                                    {{--<span class="pull-left text-muted fa_number">70% تکمیل شده است</span>--}}
+                                {{--</p>--}}
+                                {{--<div class="progress progress-striped active">--}}
+                                    {{--<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 70%">--}}
+                                        {{--<span class="sr-only fa_number">70% تکمیل شده است</span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="divider"></li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#">--}}
+                            {{--<div>--}}
+                                {{--<p>--}}
+                                    {{--<strong>قسمت مقالات</strong>--}}
+                                    {{--<span class="pull-left text-muted fa_number">93 درصد تکمیل شده است</span>--}}
+                                {{--</p>--}}
+                                {{--<div class="progress progress-striped active">--}}
+                                    {{--<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="81" aria-valuemin="0" aria-valuemax="100" style="width: 93%">--}}
+                                        {{--<span class="sr-only fa_number">93 درصد تکمیل شده است</span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="divider"></li>--}}
                     {{--<li>--}}
                         {{--<a class="text-center" href="#">--}}
                             {{--<strong>See All Tasks</strong>--}}
                             {{--<i class="fa fa-angle-right"></i>--}}
                         {{--</a>--}}
                     {{--</li>--}}
-                </ul>
-                <!-- /.dropdown-tasks -->
-            </li>
+                {{--</ul>--}}
+                {{--<!-- /.dropdown-tasks -->--}}
+            {{--</li>--}}
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -167,7 +167,7 @@
                     <li>
                         <a href="#">
                             <div>
-                                <i class="fa fa-comment fa-fw"></i> نسخه 1 پنل مدیریتی الماس
+                                <i class="fa fa-comment fa-fw"></i> نسخه 1 پنل مدیریتی شاتل وب 24
                                 <span class="pull-right text-muted small fa_number">اسفند ماه 96</span>
                             </div>
                         </a>

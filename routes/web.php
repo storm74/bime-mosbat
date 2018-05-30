@@ -11,6 +11,8 @@
 |
 */
 
+use App\Category;
+use App\Post;
 use App\User;
 use App\Insurance;
 use App\Meta;
@@ -105,7 +107,14 @@ Route::group(['middleware'=>'admin'], function (){
     });
 });
 Route::get('/status',function (){
-    return view('auth.login');
+    $meta = Meta::all()->first();
+    $places = \App\Menu::all();
+    foreach ($places as $place){
+        $menu_array[$place->id] =$place->menu_id;
+    }
+    $posts = Post::all()->sortByDesc('updated_at');
+    $categories = Category::all()->sortByDesc('updated_at');
+    return view('auth.login',['posts'=>$posts,'categories'=>$categories,'menu_array'=>$menu_array,'meta'=>$meta]);
 });
 
 
