@@ -132,10 +132,14 @@
                     font-size: 15px !important;
                     -webkit-text-fill-color: #fdfbfb !important;
                     padding-right: 5px !important;
+                    box-shadow: none !important;
+                    width: unset !important;
+                    margin-bottom: 0px !important;
                 }
                 .badane-span{
                     color: #b1adab !important;
                     padding-left: 6px !important;
+                    font-size: 16px !important;
                 }
             </style>
             <span class="badane-span">ارزش خودرو: </span>  <input id="badane-value-set" placeholder="ارزش خودرو به تومان ..." class="badane-value" type="text">

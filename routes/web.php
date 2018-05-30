@@ -53,6 +53,10 @@ Route::group(['middleware'=>'admin'], function (){
     Route::get('admin/personal-car-category-list-show','AdminInsuranseController@personalCarCategoryList')->name('personal-car-category-list');
     Route::post('admin/personal-car-category-add','AdminInsuranseController@personalCarsCategoryAdd')->name('personal-car-category-add');
     Route::post('admin/personal-car-add','AdminInsuranseController@personalCarsAdd')->name('personal-car-add');
+    Route::get('admin/personal-car-edit/{id}','AdminInsuranseController@personalCarsEdit')->name('personal-car-edit');
+    Route::post('admin/personal-car-update','AdminInsuranseController@personalCarUpdate')->name('personal-car-update');
+    Route::get('admin/personal-car-category-edit/{id}','AdminInsuranseController@personalCarCategoryEdit')->name('personal-car-category-edit');
+    Route::post('admin/personal-car-category-update','AdminInsuranseController@personalCarCategoryUpdate')->name('personal-car-category-update');
     Route::post('admin/p-car-category-delete','AdminInsuranseController@personalCarCategoryDelete')->name('personal-car-category-delete');
     Route::post('admin/p-car-delete','AdminInsuranseController@personalCarDelete')->name('personal-car-delete');
 	Route::resource('admin/users','AdminUsersController');

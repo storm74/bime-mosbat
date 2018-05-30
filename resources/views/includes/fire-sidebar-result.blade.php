@@ -51,7 +51,7 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 90%;ma
                                         <div class="ant-form-item-label"><label for="car_brand"
                                                                                 class="ant-form-item-required"
                                                                                 title="نوع سازه">
-                                                نوع سازه :
+                                                نوع سازه
                                             </label></div>
                                         <div class="ant-form-item-control-wrapper">
                                             <div class="ant-form-item-control">
@@ -74,7 +74,7 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 90%;ma
                                     <div class="ant-row ant-form-item ant-form-no-margin">
                                         <div class="ant-form-item-label">
                                             <label for="car_model"class="ant-form-item-required">
-                                                متراژ ساختمان :<i style="color: red;" class="fas fa-question-circle"></i>
+                                                متراژ ساختمان <i style="color: red;" class="fas fa-question-circle"></i>
                                             </label></div>
                                         <div class="ant-form-item-control-wrapper">
                                             <div class="ant-form-item-control">
@@ -87,7 +87,7 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 90%;ma
                                     <div class="ant-row ant-form-item ant-form-no-margin">
                                         <div class="ant-form-item-label">
                                             <label for="car_model"class="ant-form-item-required">
-                                                ارزش لوازم منزل :<i style="color: red;" class="fas fa-question-circle"></i>
+                                                ارزش لوازم منزل <i style="color: red;" class="fas fa-question-circle"></i>
                                             </label></div>
                                         <div class="ant-form-item-control-wrapper">
                                             <div class="ant-form-item-control">
@@ -100,7 +100,7 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 90%;ma
                                     <div class="ant-row ant-form-item ant-form-no-margin">
                                         <div class="ant-form-item-label">
                                             <label for="car_model"class="ant-form-item-required">
-                                                هزینه ساخت هر متر مربع بنا :<i style="color: red;" class="fas fa-question-circle"></i>
+                                                هزینه ساخت هر متر مربع بنا <i style="color: red;" class="fas fa-question-circle"></i>
                                             </label></div>
                                         <div class="ant-form-item-control-wrapper">
                                             <div class="ant-form-item-control">
@@ -116,7 +116,7 @@ box-shadow: 0 2px 6px -2px #777;background-color: #fff !important ;width: 90%;ma
                                     <div class="ant-row ant-form-item ant-form-no-margin">
                                         <div class="ant-form-item-label">
                                             <label for="car_model"class="ant-form-item-required">
-                                                پوشش های اضافی:<i style="color: red;" class="fas fa-question-circle"></i>
+                                                پوشش های اضافی<i style="color: red;" class="fas fa-question-circle"></i>
                                             </label></div>
                                         <div class="ant-form-item-control-wrapper">
                                             <div class="ant-form-item-control">

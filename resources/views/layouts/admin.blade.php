@@ -284,24 +284,24 @@
                             <li>
                                 <a id="personal-car-list" href="{{route('personal-car-list')}}"> مشاهده لیست خودروهای شخصی</a>
                             </li>
-                            <li>
-                                <a href="{{route('admin.fire')}}"> مشاهده لیست خودروهای باری</a>
-                            </li>
-                            <li>
-                                <a href="{{route('admin.fire')}}"> مشاهده لیست خودروهای مخصوص حمل و نقل</a>
-                            </li>
+                            {{--<li>--}}
+                                {{--<a href="{{route('admin.fire')}}"> مشاهده لیست خودروهای باری</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="{{route('admin.fire')}}"> مشاهده لیست خودروهای مخصوص حمل و نقل</a>--}}
+                            {{--</li>--}}
                             <li>
                                 <a href="{{route('admin.fire')}}"> افزودن</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
-                    <li>
-                        <a class="hover_shadow" href="{{route('admin.fire')}}"><i class="fa fa-life-ring orange" aria-hidden="true"></i> بیمه عمر</a>
-                    </li>
-                    <li>
-                        <a class="hover_shadow" href="{{route('admin.fire')}}"><i class="fa fa-fire-extinguisher orange" aria-hidden="true"></i> بیمه آتش سوزی</a>
-                    </li>
+                    {{--<li>--}}
+                        {{--<a class="hover_shadow" href="{{route('admin.fire')}}"><i class="fa fa-life-ring orange" aria-hidden="true"></i> بیمه عمر</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a class="hover_shadow" href="{{route('admin.fire')}}"><i class="fa fa-fire-extinguisher orange" aria-hidden="true"></i> بیمه آتش سوزی</a>--}}
+                    {{--</li>--}}
                     <li>
                         <a class="hover_shadow" href="#"><i class="fa fa-user orange" aria-hidden="true"></i>  کاربران  <span class="fa arrow"></span> </a>
                         <ul class="nav nav-second-level">

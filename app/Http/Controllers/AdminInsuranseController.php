@@ -36,6 +36,29 @@ class AdminInsuranseController extends Controller
                 خودرو موردنظر با موفقیت افزوده شد
             </div>";
     }
+    public function personalCarsEdit($id){
+        $car = personal_car_list::findOrFail($id);
+        $car_category = carsCategory::all()->sortByDesc('updated_at');
+        return view('admin.car-list.personal-car-edit',['car'=>$car,'car_category'=>$car_category]);
+    }
+    public function personalCarUpdate(Request $request){
+        $id = $request->id;
+        $input = $request->all();
+        $car = personal_car_list::findOrFail($id);
+        $car->update($input);
+        return "<div class='result-anim'><i class=\"fa fa-reply fa-fw orange\"></i> تغیرات با موفقیت اعمال گردید </div>";
+    }
+    public function personalCarCategoryEdit($id){
+        $car_category = carsCategory::findOrFail($id);
+        return view('admin.car-list.personal-car-category-edit',['car_category'=>$car_category]);
+    }
+    public function personalCarCategoryUpdate(Request $request){
+        $id = $request->id;
+        $input = $request->all();
+        $car_category = carsCategory::findOrFail($id);
+        $car_category->update($input);
+        return "<div class='result-anim'><i class=\"fa fa-reply fa-fw orange\"></i> تغیرات با موفقیت اعمال گردید </div>";
+    }
     public function personalCarCategoryDelete(Request $request){
 
         $category = carsCategory::findOrFail($request->id);

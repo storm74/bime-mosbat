@@ -59,7 +59,7 @@
                 <select style="margin-top: 1rem; padding: 0px 6px 0 0;" name="detail" id="" class="form-control">
                     <option value="lfs">کمتر از چهارسیلندر</option>
                     <option value="gfs">بیشتر از چهارسیلندر</option>
-                    <option value="ofs">سایر چهارسیلند ها از چهارسیلندر</option>
+                    <option value="ofs">سایر چهارسیلند ها</option>
                     <option value="pps">پیکان، پراید و سمند</option>
                 </select>
             </div>
@@ -122,8 +122,7 @@
                                 <td>{{$categor->id}}</td>
                                 <td class="center">{{$categor->family}}</td>
 
-                                <td class="center"><a href="#"><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
-
+                                <td class="center"><a href="{{route('personal-car-category-edit',['id'=>$categor->id])}}"><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
 
                                 {!! Form::open(['method'=>'POST','action'=>['AdminInsuranseController@personalCarCategoryDelete','id'=>$categor->id]]) !!}
                                 {{--<input type="hidden" name="cat_id" value="{{$categor->id}}">--}}
@@ -165,6 +164,7 @@
                         <th>  آیدی</th>
                         <th>  مدل خودرو</th>
                         <th>دسته بندی خودرو</th>
+                        <th>مشخصات خودرو</th>
                         <th> ویرایش</th>
                         <th>  حذف</th>
                     </tr>
@@ -184,10 +184,19 @@
                                 <td>{{$car->id}}</td>
                                 <td class="center">{{$car->name}}</td>
                                 <td class="center">{{$car->carFamily ? $car->carFamily->family : 'دسته بندی موردنظر موجود نیست!'}}</td>
-
-                                <td class="center"><a href="{{route('categories.edit',['id'=>$car->id])}}"><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
-
-
+                                <?php
+                                    if ($car->pps ==1){
+                                        $detail = "پراید، پیکان و سپند";
+                                    }elseif($car->lfs ==1){
+                                      $detail = "کمتر از چهار سیلندر";
+                                    }elseif ($car->gfs ==1){
+                                        $detail = "بیش تر از چهار سیلند";
+                                    }elseif ($car->ofs ==1){
+                                        $detail = "جزو سایر چهار سیلندر ها";
+                                    }
+                                ?>
+                                <td class="center">{{$detail}}</td>
+                                <td class="center"><a href="{{route('personal-car-edit',['id'=>$car->id])}}"><i class="fa fa-edit green fa-2x" aria-hidden="true"></i></a></td>
                                 {!! Form::open(['method'=>'POST','action'=>'AdminInsuranseController@personalCarDelete']) !!}
                                 <input name="id" type="hidden" value="{{$car->id}}">
                                 <td class="center">
